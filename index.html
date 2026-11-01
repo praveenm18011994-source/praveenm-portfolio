@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Praveen M — Senior Graphic Designer | AI Video &amp; Design | UI/UX | Motion Graphics</title>
+<meta name="description" content="Praveen M, Senior Graphic Designer with 10+ years of experience in branding, campaigns, UI/UX, motion graphics, video editing and AI-generated video and graphics using ChatGPT, Claude and Google Flow.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#06060a;--ink-2:#0e0e14;--ink-3:#171720;--on-ink:#f4f4f6;--mut-ink:#a0a0ad;--line-ink:#2a2a36;
+ --paper:#f0efea;--on-paper:#101014;--mut-paper:#585862;--line-paper:#d2d1ca;
+ --g1:#7c3aed;--g2:#ec4899;--g3:#fb923c;
+ --head:"Archivo Black","Arial Black",Impact,sans-serif;--body:"Space Grotesk",system-ui,-apple-system,sans-serif;
+ color-scheme:dark;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#ebeae4}}
+:root[data-theme="dark"]{--paper:#ebeae4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--on-ink);font:16px/1.65 var(--body);overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:.98;text-transform:uppercase}
+img{max-width:100%}
+.metal{background:linear-gradient(180deg,#ffffff 0%,#cfd2d9 42%,#7e828e 68%,#e8eaee 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.out{color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.92);background-image:linear-gradient(90deg,#fff,#fff);background-repeat:no-repeat;background-size:calc(var(--p,0)*100%) 100%;-webkit-background-clip:text;background-clip:text}
+.light .out{-webkit-text-stroke-color:#101014;background-image:linear-gradient(90deg,#101014,#101014)}
+.pill{display:inline-block;border:2px solid transparent;border-radius:99px;padding:.8em 1.7em;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff;cursor:pointer;font-family:var(--body);background:linear-gradient(#0a0a10,#0a0a10) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box;transition:transform .25s,box-shadow .25s}
+.pill:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(236,72,153,.35)}
+.pill.sm{padding:.55em 1.2em;font-size:.7rem;border-width:1.5px;background:linear-gradient(var(--ink-2),var(--ink-2)) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box}
+.pill.dim{background:none;border:1.5px solid var(--line-ink);color:var(--mut-ink);cursor:default}
+.pill.dim:hover{transform:none;box-shadow:none}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+.logo{font-family:var(--head);letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--g2)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;background:rgba(6,6,10,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+nav .logo{font-size:1.35rem;text-decoration:none}
+nav .links{display:flex;gap:clamp(14px,4vw,56px);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+nav .links a{text-decoration:none;color:var(--on-ink)}
+nav .links a:hover{color:var(--g2)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:118px 5vw 56px;overflow:hidden}
+.hero h1{font-size:clamp(2.4rem,9vw,8.4rem);letter-spacing:-.025em;text-align:center;position:relative;z-index:1}
+.hero .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2vw;margin-top:-3.2vw;position:relative;z-index:2}
+.hero .tag{max-width:260px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:#e7e7ec}
+.hero .tag b{display:block;color:#fff;margin-bottom:6px}
+.hero .cta{justify-self:end}
+.emb{width:clamp(210px,32vw,400px);perspective:900px}
+.emb svg{display:block;width:100%;height:auto;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s;animation:flt 6s ease-in-out infinite}
+.emb .orb{transform-origin:200px 200px;animation:spin 22s linear infinite}
+@keyframes flt{50%{translate:0 -12px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.hero .row{grid-template-columns:1fr;justify-items:center;text-align:center;margin-top:2vh}.hero .cta{justify-self:center}.hero .tag{max-width:340px}}
+
+/* marquees */
+.clients{border-block:1px solid var(--line-ink);padding:18px 0;overflow:hidden;white-space:nowrap}
+.clients .tr{display:inline-block;animation:mv 55s linear infinite;font-family:var(--head);font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:.08em;text-transform:uppercase;color:var(--mut-ink)}
+.clients .tr span{margin:0 1.4em}
+.clients .tr i{font-style:normal;color:var(--g2)}
+@keyframes mv{to{transform:translateX(-50%)}}
+.strip{padding:6vh 0;overflow:hidden;display:grid;gap:14px}
+.strip .tk{display:flex;gap:14px;width:max-content;animation:mv 70s linear infinite}
+.strip .tk.r{animation-direction:reverse;animation-duration:85s}
+.strip:hover .tk{animation-play-state:paused}
+.strip img{height:clamp(110px,16vw,205px);aspect-ratio:4/3;border-radius:18px;object-fit:cover;cursor:pointer;background:var(--ink-3)}
+
+/* about */
+.about{position:relative;padding:15vh 5vw;text-align:center;overflow:hidden}
+.about h2,.proj h2{font-size:clamp(3rem,13vw,11rem);letter-spacing:-.02em}
+.about .in{max-width:800px;margin:4vh auto 0;position:relative;z-index:1}
+.about .lead{font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.5;color:#fff}
+.about p{color:#d6d6de;margin:18px 0 0}
+.about p b{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.chips span{border:1px solid var(--line-ink);border-radius:99px;padding:5px 14px;font-size:.8rem;color:#d6d6de;background:var(--ink-2)}
+.about .pill{margin-top:34px}
+.fl{position:absolute;pointer-events:none;will-change:transform;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+.fl svg{display:block;width:100%;height:auto}
+
+/* light sections */
+.light{background:var(--paper);color:var(--on-paper);position:relative;overflow:hidden}
+.light .wrap{max-width:1180px;margin:0 auto;padding:11vh 5vw 4vh}
+.light h2{font-size:clamp(2.6rem,9vw,7rem);letter-spacing:-.02em;margin-bottom:5vh}
+.svc{display:grid;grid-template-columns:clamp(64px,11vw,150px) 1fr;gap:clamp(12px,3vw,40px);align-items:start;padding:clamp(18px,3vw,34px) 0;border-bottom:1px solid var(--line-paper);transition:padding .3s}
+.svc:hover{padding-left:12px}
+.svc .n{font-family:var(--head);font-size:clamp(2.2rem,6vw,4.6rem);line-height:.9}
+.svc h3{font-size:clamp(1rem,1.8vw,1.35rem);letter-spacing:.02em;margin:6px 0 8px;line-height:1.15}
+.svc p{margin:0;color:var(--mut-paper);max-width:640px}
+.xp{display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:20px 0;border-bottom:1px solid var(--line-paper);align-items:baseline}
+.xp b{font-size:1.05rem}
+.xp span{color:var(--mut-paper)}
+.xp .yr{font-family:var(--head);font-size:.85rem;white-space:nowrap;color:var(--on-paper)}
+
+/* projects */
+.proj{padding:14vh 5vw 10vh;position:relative}
+.proj h2{text-align:center}
+.pc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:5vh 0 14px}
+.pc button{font:inherit;font-size:.82rem;font-weight:600;padding:9px 20px;border-radius:99px;border:1px solid var(--line-ink);background:var(--ink-2);color:#fff;cursor:pointer}
+.pc button.on,.pc button:hover{background:#fff;color:var(--ink);border-color:#fff}
+.cd{max-width:680px;margin:0 auto 6vh;text-align:center;color:var(--mut-ink)}
+.stack{display:grid;gap:30px;max-width:1180px;margin:0 auto}
+.card{position:sticky;top:calc(78px + var(--o,0px));border:1px solid var(--line-ink);border-radius:28px;background:var(--ink-2);padding:clamp(14px,2.2vw,26px);box-shadow:0 -26px 60px rgba(0,0,0,.6)}
+.card .hd{display:flex;align-items:center;gap:clamp(12px,2vw,24px);margin-bottom:clamp(12px,1.8vw,20px);flex-wrap:wrap}
+.card .no{font-family:var(--head);font-size:clamp(1.7rem,3.4vw,3rem);line-height:1}
+.card .mt{flex:1;min-width:160px}
+.card .mt small{display:block;color:var(--g2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
+.card .mt h3{font-size:clamp(1rem,1.9vw,1.5rem);margin-top:4px;line-height:1.15}
+.card .lk{display:flex;gap:8px;flex-wrap:wrap}
+.cm{display:grid;grid-template-columns:1.7fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(230px,40vw,440px)}
+.cm>*{border-radius:18px;overflow:hidden;background:var(--ink-3);position:relative;min-height:0}
+.cm .a{grid-row:1/3}
+.cm img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;transition:transform .6s}
+.cm>*:hover img{transform:scale(1.04)}
+.cm .ph{width:100%;height:100%;display:grid;place-items:center;color:rgba(255,255,255,.85);font-weight:700;letter-spacing:.14em;font-size:.72rem;text-transform:uppercase;text-align:center;padding:10px}
+.cm .pl{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;display:grid;place-items:center;font-size:.9rem;pointer-events:none}
+@media(max-width:700px){.card{position:relative;top:auto}.cm{grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr;height:clamp(300px,100vw,480px)}.cm .a{grid-column:1/3;grid-row:1}}
+
+/* tools */
+.tools{padding:8vh 0 12vh;overflow:hidden}
+.tools h2{text-align:center;font-size:clamp(2rem,6vw,4.6rem);padding:0 5vw;margin-bottom:6vh}
+.tools .tk{display:flex;gap:16px;width:max-content;animation:mv 60s linear infinite;margin-bottom:16px}
+.tools .tk.r{animation-direction:reverse;animation-duration:75s}
+.tools:hover .tk{animation-play-state:paused}
+.tc{flex:none;min-width:260px;border:1px solid var(--line-ink);border-radius:26px;padding:20px 26px;background:var(--ink-2)}
+.tc b{display:block;font-family:var(--head);font-weight:400;font-size:1.1rem;text-transform:uppercase}
+.tc span{color:var(--mut-ink);font-size:.9rem}
+
+/* contact */
+.contact .wrap{padding-bottom:14vh}
+.contact h2{margin-bottom:3vh}
+.contact .em{font-family:var(--head);font-size:clamp(1.2rem,3.4vw,2.4rem);text-decoration:none;word-break:break-all;display:inline-block;border-bottom:3px solid var(--g2);margin-bottom:5vh}
+.contact form{display:grid;gap:14px;max-width:640px}
+.contact label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mut-paper)}
+.contact input,.contact textarea{width:100%;font:inherit;padding:14px 18px;border-radius:16px;border:1.5px solid var(--line-paper);background:#fff;color:var(--on-paper)}
+.contact input:focus,.contact textarea:focus{outline:none;border-color:var(--g1)}
+.contact textarea{min-height:130px;resize:vertical}
+.contact .pill{justify-self:start;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box;color:var(--on-paper)}
+.contact .soc{margin-top:26px;color:var(--mut-paper)}
+
+/* footer */
+.ft{background:var(--paper);padding:0 2.5vw 2.5vw}
+.ftp{background:var(--ink);color:var(--on-ink);border-radius:30px;padding:clamp(24px,4vw,56px) clamp(20px,4vw,56px) clamp(20px,3vw,40px);overflow:hidden}
+.ftp .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.ftp .nm{font-family:var(--head);font-size:clamp(2.4rem,8vw,6.4rem);line-height:.95;text-transform:uppercase;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.88)}
+.ftp .cols{display:flex;gap:clamp(24px,5vw,70px);font-size:.85rem}
+.ftp .cols b{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.ftp .cols a,.ftp .cols span{display:block;color:var(--mut-ink);text-decoration:none;margin-bottom:2px}
+.ftp .cols a:hover{color:#fff}
+.shp{display:flex;justify-content:space-between;gap:1.5%;margin-top:clamp(24px,5vw,60px)}
+.shp svg{width:10%;height:auto;flex:none}
+.cp{text-align:center;color:var(--mut-ink);font-size:.8rem;margin-top:20px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(5,5,8,.95);display:none;align-items:center;justify-content:center;padding:5vw;overflow:auto}
+.lb.on{display:flex}
+.lb .box{max-width:1100px;width:100%;color:#fff;text-align:center;position:relative;margin:auto}
+.lb .box>img:first-child,.lb .box>video:first-child,.lb .box>.empty{max-width:100%;max-height:62vh;border-radius:12px;margin:auto;display:block;object-fit:contain;background:#fff}
+.lb .box>video:first-child{background:#000}
+.lb .box>iframe:first-child{width:min(100%,900px);aspect-ratio:16/9;height:auto;border:0;border-radius:12px;display:block;margin:auto;background:#000}
+
+.lb .empty{height:50vh;width:100%}
+.lb a.plb{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:40px;background:#e01b24;color:#fff;font-weight:700;text-decoration:none}.lb h3{margin:16px 0 4px;font-size:1.4rem;line-height:1.15}
+.lb p{max-width:720px;margin:8px auto 0;opacity:.85;font-size:.95rem}
+.lb button#x{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:18px;font-size:2.2rem;background:none;border:0;color:#fff;cursor:pointer;z-index:2}
+.lb button.nv{position:absolute;top:34%;left:6px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.18);border:0;color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
+.lb button.nv.r{left:auto;right:6px}
+.th{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+.th img{width:64px;height:48px;object-fit:cover;border-radius:6px;opacity:.5;cursor:pointer;border:2px solid transparent;background:#fff}
+.th img.on{opacity:1;border-color:var(--g2)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050509'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial Black' text-anchor='middle' fill='%23ec4899'%3EPr.M%3C/text%3E%3C/svg%3E"><meta property="og:title" content="Praveen M — Senior Graphic Designer"><meta property="og:description" content="Senior Graphic Designer portfolio: brand identity, UI/UX, motion graphics, AI video and AI-generated design."><meta property="og:type" content="website"></head>
+<body>
+<nav><a class="logo" href="#top" aria-label="Pr.M home">Pr<i>.</i>M</a><div class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero" id="top">
+  <h1 class="metal">Hi, I'm Praveen</h1>
+  <div class="row">
+    <p class="tag"><b>Senior Graphic Designer</b>10+ years crafting bold, memorable brands, campaigns, UI/UX and motion, now also creating AI video &amp; AI-generated graphics ✨</p>
+    <div class="emb" id="emb" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <radialGradient id="ch" cx=".34" cy=".28" r=".85"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#c3c7d2"/><stop offset=".68" stop-color="#5a5e6d"/><stop offset="1" stop-color="#16171f"/></radialGradient>
+          <linearGradient id="dk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1c27"/><stop offset="1" stop-color="#07070b"/></linearGradient>
+          <linearGradient id="tx" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset=".55" stop-color="#ec4899"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+          <radialGradient id="b1" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e9d5ff"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b0f8c"/></radialGradient>
+          <radialGradient id="b2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fbcfe8"/><stop offset=".5" stop-color="#ec4899"/><stop offset="1" stop-color="#7f1245"/></radialGradient>
+          <radialGradient id="b3" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fed7aa"/><stop offset=".5" stop-color="#fb923c"/><stop offset="1" stop-color="#9a3a07"/></radialGradient>
+        </defs>
+        <g class="orb">
+          <circle cx="200" cy="18" r="22" fill="url(#b1)"/>
+          <circle cx="372" cy="250" r="17" fill="url(#b2)"/>
+          <circle cx="60" cy="300" r="26" fill="url(#b3)"/>
+        </g>
+        <circle cx="200" cy="200" r="168" fill="url(#ch)"/>
+        <circle cx="200" cy="200" r="138" fill="url(#dk)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+        <text x="200" y="236" text-anchor="middle" font-family="Archivo Black,Arial Black,sans-serif" font-size="104" fill="url(#tx)" letter-spacing="-4">Pr.M</text>
+        <ellipse cx="146" cy="104" rx="70" ry="26" fill="#fff" opacity=".28" transform="rotate(-28 146 104)"/>
+      </svg>
+    </div>
+    <div class="cta"><a class="pill" href="#contact">Contact me ✦</a></div>
+  </div>
+</header>
+
+<div class="clients" aria-label="Companies and brands I have designed for"><div class="tr" id="cl"></div></div>
+<div class="strip" id="strip" aria-label="Selected work"></div>
+
+<section class="about" id="about">
+  <div class="fl" data-s=".10" style="top:10%;left:3%;width:clamp(70px,11vw,150px)" id="f1"></div>
+  <div class="fl" data-s="-.08" style="top:6%;right:3%;width:clamp(60px,9vw,130px)" id="f2"></div>
+  <div class="fl" data-s=".12" style="bottom:12%;left:5%;width:clamp(60px,10vw,140px)" id="f3"></div>
+  <div class="fl" data-s="-.10" style="bottom:10%;right:5%;width:clamp(70px,11vw,150px)" id="f4"></div>
+  <h2 class="out" data-fill>About me</h2>
+  <div class="in">
+    <p class="lead"><b>Senior Graphic Designer with 10+ years of experience</b> in brand identity, marketing campaigns, UI/UX design, digital and print design, video editing and motion graphics. I have delivered work across fintech, F&amp;B, lifestyle, luxury interiors and e-learning, partnering with product, marketing and engineering teams from concept to production-ready artwork.</p>
+    <p><b>AI video generation and AI-powered design:</b> I use ChatGPT, Claude and Google Flow to create visual concepts, custom illustrations, AI-generated graphics and AI-generated videos, then refine them in Adobe Illustrator, Photoshop, After Effects and Premiere Pro. This speeds up concept-to-delivery while keeping professional craft and brand consistency.</p>
+    <p><b>Core skills:</b> Brand Identity, Campaign Design, Graphic Design, UI/UX, Landing Pages, Packaging, Catalog and Print Design, Design Systems, Motion Graphics, Video Editing, Explainer and Product Launch Videos, Lottie Animation, AI Video Generation, AI Image and Illustration Generation.</p>
+    <p><b>Tools:</b> Figma, Adobe Illustrator, Photoshop, InDesign, After Effects, Premiere Pro, Captivate, Adobe XD, Miro, PowerPoint, ChatGPT, Claude, Google Flow.</p>
+    <a class="pill" href="#contact">Contact me ✦</a>
+  </div>
+</section>
+
+<section class="light" id="services">
+  <div class="wrap">
+    <h2 class="out" data-fill>Services</h2>
+    <div class="svc rv"><div class="n">01</div><div><h3>Brand Identity &amp; Logo Design</h3><p>Logos, colour and typography systems, brand guidelines and applications across stationery, signage, vehicles and merchandise.</p></div></div>
+    <div class="svc rv"><div class="n">02</div><div><h3>Print, Packaging &amp; Catalogs</h3><p>Brochures, catalogs, packaging pouches, banners and billboards, delivered as production-ready artwork.</p></div></div>
+    <div class="svc rv"><div class="n">03</div><div><h3>Campaign &amp; Social Media Design</h3><p>Campaign visuals, posters and carousels with one consistent brand look, for fintech, cybersecurity and consumer brands.</p></div></div>
+    <div class="svc rv"><div class="n">04</div><div><h3>UI/UX Design</h3><p>App and web interfaces, flows and design systems in Figma, from the innoviti link payments app to e-learning platforms.</p></div></div>
+    <div class="svc rv"><div class="n">05</div><div><h3>Motion Graphics &amp; AI Video</h3><p>Explainer and launch videos, logo animation and Lottie, plus AI video and AI-generated graphics made with ChatGPT, Claude and Google Flow.</p></div></div>
+  </div>
+  <div class="wrap" style="padding-top:2vh;padding-bottom:12vh">
+    <h2 class="out" data-fill>Experience</h2>
+    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Ampcus Cyber Pvt Ltd</span></div><div class="yr">Oct 2025 — Now</div></div>
+    <div class="xp rv"><div><b>Senior Graphic Designer &amp; Asst. Product Designer</b><br><span>Innoviti Technologies — Genie, LINK, Unipay</span></div><div class="yr">2022 — 2025</div></div>
+    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Christian Horta Design &amp; Mfg.</span></div><div class="yr">2019 — 2022</div></div>
+    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Ikthara Technocraft</span></div><div class="yr">2017 — 2018</div></div>
+    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Cornea Entertainment</span></div><div class="yr">2016 — 2017</div></div>
+  </div>
+</section>
+
+<section class="proj" id="work">
+  <h2 class="out" data-fill>Projects</h2>
+  <div class="pc" id="chips"></div>
+  <p class="cd" id="cd"></p>
+  <div class="stack" id="stack"></div>
+</section>
+
+<section class="tools" aria-label="Tools and skills">
+  <h2>What I work with ✨</h2>
+  <div class="tk" id="t1"></div>
+  <div class="tk r" id="t2"></div>
+</section>
+
+<section class="light contact" id="contact">
+  <div class="fl" data-s="-.10" style="top:8%;right:4%;width:clamp(70px,10vw,140px)" id="f5"></div>
+  <div class="fl" data-s=".09" style="bottom:10%;left:3%;width:clamp(60px,9vw,120px)" id="f6"></div>
+  <div class="wrap">
+    <h2>Let's get<br>in touch</h2>
+    <a class="em" href="mailto:praveenm18011994@gmail.com">praveenm18011994@gmail.com</a>
+    <form id="cf" autocomplete="on">
+      <div><label for="fn">Name</label><input id="fn" name="n" required placeholder="Your name"></div>
+      <div><label for="fe">Email</label><input id="fe" name="e" type="email" required placeholder="you@company.com"></div>
+      <div><label for="fm">Message</label><textarea id="fm" name="m" required placeholder="Tell me about the role or project"></textarea></div>
+      <button class="pill" type="submit">Send</button>
+    </form>
+    <p class="soc">Also on <a href="https://behance.net/PraveenM-Designer" target="_blank" rel="noopener">Behance</a></p>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ftp">
+    <div class="top">
+      <div class="nm">Praveen<br>M</div>
+      <div class="cols">
+        <div><b>Social</b><a href="https://behance.net/PraveenM-Designer" target="_blank" rel="noopener">Behance</a></div>
+        <div><b>Contact</b><a href="mailto:praveenm18011994@gmail.com">praveenm18011994@gmail.com</a><span>Kolar, Karnataka, India</span></div>
+      </div>
+    </div>
+    <div class="shp" id="shp" aria-hidden="true"></div>
+    <div class="cp"><span class="logo">Pr<i>.</i>M</span> &nbsp;© <span id="yr"></span> Praveen M · Senior Graphic Designer</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><button id="x" aria-label="Close">×</button><div class="box" id="bx"></div></div>
+
+<script>
+/* ===== PROJECT DATA (images, titles, descriptions) ===== */
+var CLIP=[{"src":"images1/img-1cea96cf1b.webp","cap":"Logo on sky blue"},{"src":"images2/img-a301f07e98.webp","cap":"Logo on white"},{"src":"images2/img-c192016229.webp","cap":"Logo reversed on navy"},{"src":"images2/img-820b3453be.webp","cap":"Cap with sparkle pattern"},{"src":"images2/img-9f8ba0c967.webp","cap":"Mug set"},{"src":"images2/img-b6014d4510.webp","cap":"Van livery"},{"src":"images1/img-7c45d2730c.webp","cap":"Alternate logo direction: mug set"},{"src":"images2/img-8dee219365.webp","cap":"Alternate logo direction: cap"},{"src":"images2/img-abd2ef165f.webp","cap":"Alternate logo direction: van"}];
+var SNG=[{"src":"images1/img-74363817d3.webp","cap":"Street billboard mock-up: 24x7 primary health care clinic"},{"src":"images2/img-ab6cd282b8.webp","cap":"Street billboard designs: presentation header"},{"src":"images1/img-7cb9a410a6.webp","cap":"Billboard mock-up: 10 acres park area"},{"src":"images1/img-0324e7d4db.webp","cap":"24 hours water"},{"src":"images2/img-cfac74ac3a.webp","cap":"Gym"},{"src":"images1/img-776f75d5ed.webp","cap":"24x7 primary health care clinic"},{"src":"images1/img-28632612f8.webp","cap":"50 feet roads"},{"src":"images2/img-fbdbf965a1.webp","cap":"24x7 security"},{"src":"images2/img-c96d362da4.webp","cap":"24x7 CCTV surveillance"},{"src":"images1/img-2546dc5f3d.webp","cap":"Infinity swimming pool"},{"src":"images2/img-84ff4db319.webp","cap":"Super market at your doorstep"},{"src":"images2/img-c6b09380b4.webp","cap":"World class clubhouse"},{"src":"images1/img-3d5c39796b.webp","cap":"Full presentation board"}];
+var ING=[{"src":"images1/img-3e8bfc1a27.webp","cap":"Innoviti social media posters: presentation header"},{"src":"images1/img-2ab62e2e57.webp","cap":"Genie posts: instant settlement, merchant offers and incentives"},{"src":"images1/img-7e2d39d342.webp","cap":"Genie Plus posts: T+1 settlement and 24-hour onboarding, shown in an Instagram feed"},{"src":"images1/img-051d025cf0.webp","cap":"UnipayNext posts: terminal performance and accepting payments"},{"src":"images1/img-0afca3e877.webp","cap":"Link posts: transaction history, Link 2.0 and 3-in-1 convenience"},{"src":"images2/img-8944e26633.webp","cap":"Link post series"},{"src":"images2/img-a9a329afaa.webp","cap":"Link campaign: post series layout"},{"src":"images2/img-ec7a1bba14.webp","cap":"Full presentation board"}];
+var ELG=[{"src":"images1/img-32156797c9.webp","cap":"Elevate 2.0 logo: presentation header"},{"src":"images1/img-576a08ed18.webp","cap":"Logo construction: circle for enlightenment and triangle for growth and progress form an upward arrow"},{"src":"images2/img-dfeb97023a.webp","cap":"Colour palette: warm orange and deep maroon"},{"src":"images1/img-7360c262ef.webp","cap":"Logo marks and upward-arrow pattern"},{"src":"images1/img-7c1d57df52.webp","cap":"Final logo with colour variations"},{"src":"images1/img-1d7f2c69f8.webp","cap":"Mock-up: polo shirts"},{"src":"images2/img-b9d5ec74e4.webp","cap":"Mock-up: Celebrating 40 Years billboard"},{"src":"images1/img-61b495df50.webp","cap":"Full presentation board"}];
+var SBG=[{"src":"images2/img-e653bf5d70.webp","cap":"Sai Benaka's: brand header with vegetable line-art pattern"},{"src":"images2/img-ed3d582212.webp","cap":"Nine ready-to-cook recipes"},{"src":"images2/img-9c85c2ea51.webp","cap":"Pouch design system for all nine recipes"},{"src":"images2/img-a3132bed01.webp","cap":"Semiya Bath ready-to-cook pouch"},{"src":"images2/img-a28f00ce6e.webp","cap":"Design variants: colour and layout explorations"},{"src":"images1/img-3039580b6a.webp","cap":"Design variants: Pulav pouches in four colourways"},{"src":"images1/img-624c84401d.webp","cap":"Final Pulav pouch design"},{"src":"images2/img-cfcfe7855c.webp","cap":"Full presentation board"}];
+var RVG=[{"src":"images2/img-e8911f5834.webp","cap":"Moringa organic pure moringa powder: brand header"},{"src":"images1/img-13fe20df94.webp","cap":"About the product"},{"src":"images1/img-5578bf9e18.webp","cap":"Label artwork: front and back"},{"src":"images1/img-39a085b839.webp","cap":"Package style: stand-up pouches"},{"src":"images2/img-cfe8026804.webp","cap":"Package labelling process: label + pouch = final pack"},{"src":"images2/img-9f861cea56.webp","cap":"Product shots"},{"src":"images2/img-c87f9374ba.webp","cap":"Final pouch: front and back"},{"src":"images1/img-2115f0b87d.webp","cap":"Full presentation board"}];
+var PKG=[{"src":"images2/img-ebaf77dc54.webp","cap":"Prakruthi Premium Sorted Rice: brand header"},{"src":"images2/img-d01f1e78bc.webp","cap":"Rice bag packaging and red rice"},{"src":"images1/img-4257b42bc2.webp","cap":"Brochure mock-up: cover, back and inside spread"},{"src":"images1/img-2d1f19a936.webp","cap":"Brochure pages: cover, health benefits, nutritional values and firm details"},{"src":"images1/img-273df0d618.webp","cap":"Full presentation board"}];
+var CAT=[{"src":"images1/img-6ef3065b25.webp","cap":"SN City catalog: entrance gate and logo"},{"src":"images2/img-a74d165a2e.webp","cap":"Landscape catalog covers"},{"src":"images1/img-12a9824309.webp","cap":"Opening spread: an experience of a lifetime"},{"src":"images1/img-4c1b59ed65.webp","cap":"Introduction spread"},{"src":"images2/img-c033acb181.webp","cap":"What makes your home perfect?"},{"src":"images1/img-49ae9627da.webp","cap":"Sunrise and sunset"},{"src":"images2/img-fbe40415bf.webp","cap":"SN Signature Resort"},{"src":"images2/img-eb103d2caf.webp","cap":"Roads and landscape spread"},{"src":"images1/img-49071986c1.webp","cap":"Location map"},{"src":"images2/img-b0ef387ba8.webp","cap":"Amenities and layout plan"},{"src":"images1/img-64602b8bb4.webp","cap":"Sports and play area spread"},{"src":"images2/img-bc0c692284.webp","cap":"About the developer and disclaimer"},{"src":"images2/img-8b3d0263de.webp","cap":"Hardcover back covers"},{"src":"images1/img-6ef3e50290.webp","cap":"All spreads at a glance"}];
+var LGG=[{"src":"images2/img-aca0c3f7c7.webp","cap":"SN City logo: cover, Kolar - Bangarpet"},{"src":"images2/img-842f07f7bb.webp","cap":"About SN City"},{"src":"images1/img-1fdde62c6c.webp","cap":"Idea and construction: S + N + house form the monogram"},{"src":"images2/img-f0794cc172.webp","cap":"Colour palette: gold and brown"},{"src":"images1/img-102665af48.webp","cap":"Logo combinations with the tagline Serene. Seamless. Secure."},{"src":"images2/img-e0208bc45e.webp","cap":"Safe area around the logo"},{"src":"images1/img-55b373e2de.webp","cap":"Mock-up: ID card and lanyard"},{"src":"images1/img-1ef0200ed5.webp","cap":"Typography: Mirai"},{"src":"images2/img-9f2e9ac79c.webp","cap":"Mock-up: safety helmet"},{"src":"images1/img-3c30efdf1d.webp","cap":"Mock-up: mugs"},{"src":"images2/img-9e0f5a503f.webp","cap":"Full presentation board"}];
+var SMG=[{"src":"images2/img-e1f62603b3.webp","cap":"Logo on dark with construction imagery"},{"src":"images1/img-1087f98f2b.webp","cap":"Primary logo on white with the SANMARGA wordmark"},{"src":"images2/img-8d99f4b58f.webp","cap":"Logo versions: black, white and gradient colour with values"},{"src":"images2/img-fc7d882f6e.webp","cap":"About Sanmarga Shelters"},{"src":"images2/img-de42a2a57b.webp","cap":"Stationery set: letterhead, folder, business cards, envelopes and more"},{"src":"images2/img-8a601c1257.webp","cap":"Mock-up: safety helmet"},{"src":"images2/img-9a143c20aa.webp","cap":"Mock-up: paper cups"},{"src":"images2/img-f5586f60f0.webp","cap":"Brand photography: engineers and blueprints"},{"src":"images1/img-6da4f550db.webp","cap":"Brand graphic: gradient line pattern"}];
+var KVG=[{"src":"images1/img-05ea50e67d.webp","cap":"KVK logo on dark"},{"src":"images2/img-b4e4c8d10b.webp","cap":"KVK logo on cocoa gradient"},{"src":"images2/img-d015a72a5c.webp","cap":"Brand applications: lit signage, stage, stationery, packaging and vehicle"},{"src":"images2/img-8aefcb2ffb.webp","cap":"Brand applications: entrance arch, tags, cards, van, uniform and ribbon"},{"src":"images2/img-90fceb1d5d.webp","cap":"Brand applications: arches, stage, easel sign, bouquets, uniform and gift bag"}];
+var ACG=[{"src":"images2/img-cae9c12448.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (1/7) \u2014 Every TPRM platform says \u201cAgentic AI\u201d"},{"src":"images2/img-926c76c60e.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (2/7) \u2014 The promise: the pitch"},{"src":"images2/img-ee5316fd53.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (3/7) \u2014 The reality: AI isn\u2019t replacing your TPRM team"},{"src":"images1/img-2163fcefc8.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (4/7) \u2014 The blind spot: your vendor has vendors too"},{"src":"images2/img-ba194951c7.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (5/7) \u2014 AI adds new risk: the tool managing risk needs governance too"},{"src":"images1/img-43f54dadac.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (6/7) \u2014 So what should AI do? Not replace accountability, remove friction"},{"src":"images2/img-ff234e74bb.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (7/7) \u2014 Move from AI promise to governed intelligence"},{"src":"images1/img-7fa5224f8a.webp","cap":"Carousel 2: Revealing Insider Threat Risks (1/9) \u2014 Revealing insider threat risks before they become incidents"},{"src":"images2/img-e6870d6287.webp","cap":"Carousel 2: Revealing Insider Threat Risks (2/9) \u2014 The risk was already inside the environment"},{"src":"images1/img-16d7074d02.webp","cap":"Carousel 2: Revealing Insider Threat Risks (3/9) \u2014 The core challenge was visibility"},{"src":"images2/img-ea704cf573.webp","cap":"Carousel 2: Revealing Insider Threat Risks (4/9) \u2014 Ampcus Cyber connected the signals"},{"src":"images2/img-85eb462dc7.webp","cap":"Carousel 2: Revealing Insider Threat Risks (5/9) \u2014 Legitimate access was not always low risk"},{"src":"images1/img-11c7abfe66.webp","cap":"Carousel 2: Revealing Insider Threat Risks (6/9) \u2014 Context changes the meaning of an activity"},{"src":"images2/img-9039271921.webp","cap":"Carousel 2: Revealing Insider Threat Risks (7/9) \u2014 Insider threat defense requires multiple layers"},{"src":"images2/img-cdd293b15e.webp","cap":"Carousel 2: Revealing Insider Threat Risks (8/9) \u2014 From hidden exposure to actionable visibility"},{"src":"images1/img-6cfaf76a9e.webp","cap":"Carousel 2: Revealing Insider Threat Risks (9/9) \u2014 You cannot protect what you cannot see"},{"src":"images1/img-2bdeb00eb1.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (1/8) \u2014 When cybercrime moves faster than the law"},{"src":"images1/img-6e8f372be3.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (2/8) \u2014 Cybercrime has changed the meaning of \u201cstolen\u201d"},{"src":"images2/img-b6d6f6d545.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (3/8) \u2014 By the time investigation begins, the trail may already be cold"},{"src":"images1/img-2bf6b3e473.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (4/8) \u2014 Cybercrime is exposing an enforcement gap"},{"src":"images1/img-120b02534a.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (5/8) \u2014 Cybercrime needs cyber-native enforcement"},{"src":"images1/img-2ae784bf89.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (6/8) \u2014 Prevention becomes the first line of defence"},{"src":"images1/img-57bcc8a3f7.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (7/8) \u2014 Good cybersecurity creates good evidence"},{"src":"images2/img-b2b15ea647.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (8/8) \u2014 Build for prevention, preserve for proof, respond at cyber speed"},{"src":"images1/img-092c65c799.webp","cap":"Carousel 4: Your Vendor Was Low Risk (1/7) \u2014 Your vendor was low risk. Is that still true today?"},{"src":"images1/img-8192068052.webp","cap":"Carousel 4: Your Vendor Was Low Risk (2/7) \u2014 Because risk doesn\u2019t stay still"},{"src":"images2/img-9bc9a4d516.webp","cap":"Carousel 4: Your Vendor Was Low Risk (3/7) \u2014 Move beyond the annual snapshot"},{"src":"images1/img-59bd77f93e.webp","cap":"Carousel 4: Your Vendor Was Low Risk (4/7) \u2014 Turn signals into action"},{"src":"images1/img-6ec3265290.webp","cap":"Carousel 4: Your Vendor Was Low Risk (5/7) \u2014 Focus where risk matters most"},{"src":"images1/img-00831e7b7f.webp","cap":"Carousel 4: Your Vendor Was Low Risk (6/7) \u2014 But don\u2019t stop at the vendor"},{"src":"images2/img-ce71e990e2.webp","cap":"Carousel 4: Your Vendor Was Low Risk (7/7) \u2014 Assess once. Monitor continuously."}];
+var GRG=[{"src": "images2/img-fea0dfcf32.webp", "cap": "GRACE \u2014 Signage & Identity"}, {"src": "images2/img-c09fb3cad3.webp", "cap": "GRACE \u2014 Logo Construction"}, {"src": "images1/img-74dfd313f2.webp", "cap": "GRACE \u2014 Web & App"}, {"src": "images1/img-749f9eec09.webp", "cap": "GRACE \u2014 Stationery"}];
+var MIG=[{"src": "images1/img-5a0a6a2333.webp", "cap": "MIRROR \u2014 Signage & Identity"}, {"src": "images1/img-2a04329982.webp", "cap": "MIRROR \u2014 Logo Construction"}, {"src": "images1/img-0e63de863c.webp", "cap": "MIRROR \u2014 Web & App"}, {"src": "images1/img-4fc566424f.webp", "cap": "MIRROR \u2014 Stationery"}];
+var WZG=[{"src": "images1/img-7429f42ab9.webp", "cap": "WIZARD \u2014 Signage & Identity"}, {"src": "images1/img-6e4af5322b.webp", "cap": "WIZARD \u2014 Logo Construction"}, {"src": "images2/img-fb29bb9f70.webp", "cap": "WIZARD \u2014 Web & App"}, {"src": "images1/img-65f8b72a1e.webp", "cap": "WIZARD \u2014 Stationery"}];
+var CXG=[{"src": "images1/img-7e73291bc2.webp", "cap": "COMPLYX \u2014 Logo on Dark"}, {"src": "images2/img-bdfedd4846.webp", "cap": "COMPLYX \u2014 Logo Construction"}, {"src": "images2/img-c65e6eeb53.webp", "cap": "COMPLYX \u2014 Full-Colour Logo"}];
+var PROJECTS=[
+ {title:"Ampcus Cyber — Social Media Carousels (AI-Generated)",cat:"AI Design",type:"image",src:ACG[0].src,pos:"50% 50%",year:2026,g:ACG,c:["#0b0b0d","#e01b24"]},
+  {"title": "Ampcus Cyber — AI Explainer Videos (Google Flow)", "cat": "Videos", "type": "image", "src": "images2/video-cover.webp", "pos": "50% 50%", "wide": true, "year": 2026, "pl": "https://www.youtube.com/playlist?list=PLVY7TO47cU7A", "c": ["#7a0f12", "#1a1a22"]},
+ {title:"ComplyX — Platform Logo & Brand Identity",cat:"Branding",type:"image",src:CXG[0].src,pos:"50% 50%",g:CXG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
+  {title:"GRACE (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:GRG[0].src,pos:"50% 50%",g:GRG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
+  {title:"Mirror (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:MIG[0].src,pos:"50% 50%",g:MIG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
+  {title:"Wizard (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:WZG[0].src,pos:"50% 50%",g:WZG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
+ {title:"Clip & Clean — Brand Identity",cat:"Branding",type:"image",src:CLIP[0].src,pos:"50% 40%",g:CLIP,wide:true,c:["#0b4768","#93bfd6"]},
+ {title:"Sai Benaka's — Package Design",cat:"Print",type:"image",src:SBG[3].src,pos:"50% 50%",g:SBG,c:["#9b1412","#f0b429"]},
+ {title:"Reviwell — Moringa Powder Package Design",cat:"Print",type:"image",src:RVG[6].src,pos:"50% 45%",g:RVG,c:["#4f9a2b","#a6d06b"]},
+ {title:"Prakruthi — Brochure Design",cat:"Print",type:"image",src:PKG[2].src,pos:"50% 50%",g:PKG,c:["#8cc63f","#b3282d"]},
+ {title:"Elevate 2.0 — Logo Design",cat:"Branding",type:"image",src:ELG[0].src,pos:"50% 50%",g:ELG,c:["#6c130f","#e86025"]},
+ {title:"SN City — Logo Design",cat:"Branding",type:"image",src:LGG[2].src,pos:"50% 50%",year:2020,g:LGG,c:["#1c1c1c","#bc8327"]},
+ {title:"Sanmarga Shelters — Logo Design",cat:"Branding",type:"image",src:SMG[0].src,pos:"50% 50%",g:SMG,c:["#0291c2","#bfc578"]},
+ {title:"KVK Flower Decorations — Logo Design",cat:"Branding",type:"image",src:KVG[0].src,pos:"50% 50%",g:KVG,c:["#4a2c20","#fdf3dc"]},
+ {title:"SN City — Street Billboard Designs",cat:"Print",type:"image",src:SNG[0].src,pos:"50% 50%",g:SNG,c:["#0b4fa8","#7fd0ee"]},
+ {title:"SN City — Catalog Design",cat:"Print",type:"image",src:CAT[1].src,pos:"50% 50%",g:CAT,c:["#4a3426","#d9b27c"]},
+ {title:"Innoviti — Social Media Posters",cat:"Campaigns",type:"image",src:ING[0].src,pos:"50% 40%",g:ING,c:["#5b1a8c","#ff9a1f"]},
+];
+var D={
+"Ampcus Cyber — Social Media Carousels (AI-Generated)":{d:"A series of four social media carousels for Ampcus Cyber, 31 slides in total, created with ChatGPT AI. The topics are agentic AI in third-party risk management, insider threat visibility, cybercrime and the law, and continuous vendor risk monitoring. The core of the design is a dark black and red cyber look with glowing 3D icons for the security stories, and a clean light version for vendor risk. Each slide carries one message with a bold headline, a red highlight on the key phrase, short supporting points, numbered slides, and a closing call to action."},
+"KVK Flower Decorations — Logo Design":{d:"Logo and brand identity for KVK Flower Decorations, a wedding and event floral styling business. The core of the design is an oval badge with a symmetrical monogram of mirrored, flowing strokes that read as petals or wings, with a lotus below. A warm cocoa brown and cream palette feels elegant and sits naturally with flowers, and the mark was applied to entrance arches, stage backdrops, signage, bouquet wrapping, stationery, uniforms and vehicles."},
+"Sanmarga Shelters — Logo Design":{d:"Logo and brand identity for Sanmarga Shelters Pvt. Ltd., a construction and real estate developer. The core of the design is a bird in flight built from flowing, flame-like strokes inside a circular arc, symbolising a rise towards new standards in modern, eco-friendly living. The mark works in black, white and a blue-to-green gradient, and was applied across stationery, a safety helmet and paper cups."},
+"SN City — Logo Design":{d:"Logo and brand guidelines for SN City, a township in Kolar - Bangarpet created for a healthy and hassle-free lifestyle. The core of the design is a monogram that combines the letters S and N with a house inside a strong hexagon, so the mark feels secure and homely. Rich gold and brown add a premium warmth, supported by the tagline Serene. Seamless. Secure., colour and safe-area rules, Mirai typography and mock-ups on an ID card, helmet and mugs."},
+"SN City — Catalog Design":{d:"A landscape hardcover catalog for SN City. The core of the design is a premium warm brown and gold palette with large visualization images and generous white space, so the project feels aspirational. Each spread has one clear message, from lifestyle and the signature resort to the location map, amenity icons and site layout, with clean typography that makes the details easy to find."},
+"Prakruthi — Brochure Design":{d:"Brochure for Prakruthi Premium Sorted Rice, a red rice brand by Nagesh Enterprises, shown with its rice bag packaging. The core of the design is fresh green accents and natural grain photography that make the health story easy to follow: a paddy-field cover, an inside spread on health benefits and nutritional values, and a back page with firm details. Clear headings, short lists and a friendly portrait keep the information simple to read."},
+"Reviwell — Moringa Powder Package Design":{d:"Package design for Reviwell's Organic Pure Moringa Powder, a green superfood sourced from sustainably grown moringa leaves in South India. The core of the design is a single fresh green with white line art and clean typography on a stand-up pouch, so the product feels natural and trustworthy. The front label keeps the message simple, while the back label organises supplement facts, benefits and usage instructions into a clear hierarchy."},
+"Sai Benaka's — Package Design":{d:"Package design for Sai Benaka's, a range of nine ready-to-cook instant powder mixes. The core of the design is a warm red and gold pouch with a ribbon label for the dish name, a real food photo and hand-drawn vegetable line art that signals fresh, home-style food. One system lets all nine recipes look like a single family, and I explored colour and layout variants before the final Pulav pouch."},
+"Elevate 2.0 — Logo Design":{d:"Logo for Elevate 2.0, the 40-year celebration of Ratna Sagar Private Limited, an educational publisher. The core of the design is simple learning shapes: a circle for enlightenment and a triangle for growth and progress combine into an upward arrow that signifies elevation. Warm orange and deep maroon convey energy, optimism and a strong foundation, and the mark was tested on a pattern, polo shirts and a billboard."},
+"SN City — Street Billboard Designs":{d:"A series of street billboard designs for SN City, with one poster for each amenity: park, water, gym, healthcare, roads, security, CCTV, swimming pool, supermarket and clubhouse. The core idea is a floating 3D scene in the sky for every amenity, with its own bold colour, one big headline, the SN City logo with its Kannada wordmark and a single phone number, so each board reads clearly from the street."},
+"Clip & Clean — Brand Identity":{d:"Brand identity for Clip & Clean, built around a friendly dog mascot and a rounded, playful wordmark. I explored two directions: a calm sky-blue and navy mark with a bow-tie dog and sparkle details, and a bold navy and red mark with a happy bandana dog. Each was tested on logo backgrounds, mugs, caps and a van livery to keep it clear and consistent across applications."},
+"Innoviti — Social Media Posters":{d:"Social media posters for Innoviti's flagship fintech products: Genie, Genie Plus, UnipayNext and Link. The core of the design is one consistent brand system across every product, using the purple and orange palette, a clear headline, real product screens and friendly people, and a tagline strip, so complex payment features like instant settlement, lower MDR and payment history are understood at a glance in the feed."},
+"GRACE (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for GRACE, the compliance platform from Ampcus Cyber's ComplyX product family, which brings multiple frameworks, audits and evidence into one interface. The core idea is a continuous cycle: chevron segments turn around a single ring, a red check mark shows a verified control and the outlined chevron is the next in line. Calm, wide geometric lettering keeps it precise. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
+"Mirror (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for Mirror, the AI penetration testing platform from Ampcus Cyber's ComplyX product family, which proves which vulnerabilities can really be exploited. The core idea is protect and reflect: a shield whose split interior is a mirror line, with a magnifier on that line looking into both halves to find and prove weaknesses. The rounded lowercase wordmark has a double r that is a mirrored pair, so the name reflects itself. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
+"Wizard (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for Wizard, the AI-powered third-party risk management platform from Ampcus Cyber's ComplyX product family, which continuously monitors vendor cyber, financial and ESG risk. The core idea is intelligence beyond the perimeter: a red shield wrapped in orbiting rings, with circuit traces reaching six nodes that stand for vendors kept under continuous watch, and a four-point spark with a smaller twin to mark the AI at work. Bold, rounded lettering keeps a complex topic easy to read, and the dot of the i echoes the symbol's nodes. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
+"Ampcus Cyber — AI Explainer Videos (Google Flow)":{d:"AI-generated explainer videos for Ampcus Cyber on compliance and security topics (PCI P2PE). Tap the button to watch the full playlist on my YouTube channel. The concepts and prompts were written with ChatGPT, the shots were generated in Google Flow, and everything was edited, timed and sound-designed in Adobe Premiere Pro. The core idea is turning dense compliance topics into clear, cinematic motion that security and payments teams can follow quickly."},
+"ComplyX — Platform Logo & Brand Identity":{d:"Logo and brand identity for ComplyX, the product platform of Ampcus Cyber that brings compliance, third-party risk and security intelligence tools under one name, with GRACE, Wizard, Mirror and DPDPA Navigator as its products. The core idea is signal and forward momentum: concentric arcs with red nodes stand for continuous monitoring and real-time visibility, and the red chevron that forms the X conveys progress and action. A bold, clean wordmark signals confidence and reliability, and the second chevron in the name repeats the symbol. This is the parent look that the product logos build on."},
+"Brand Identity & Logos":{d:"Logos, custom illustrations and brand assets for campaigns and social media. The core of the design is a simple, memorable mark backed by clear guidelines, so the brand looks consistent across every channel."},
+};
+PROJECTS.forEach(function(p){var x=D[p.title]||{};p.d=x.d||"";p.l=x.l||[]});
+var lb=document.getElementById('lb'),bx=document.getElementById('bx');
+function ytFrame(id){var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+id+'?rel=0&autoplay=1';f.title='Video player';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';return f}
+function grad(p){return 'linear-gradient(135deg,'+p.c[0]+','+p.c[1]+')'}
+function media(p,full){
+  if(p.yt&&full){return ytFrame(p.yt)}
+  if(p.v&&full){var w=document.createElement('video');w.src=p.v;w.poster=p.src;w.controls=true;w.autoplay=true;w.playsInline=true;w.preload='metadata';return w}
+  if(p.src){
+    if(p.type==='video'){var v=document.createElement('video');v.src=p.src;v.muted=!full;v.loop=!full;v.playsInline=true;
+      if(full){v.controls=true;v.autoplay=true}else{v.className='m';v.autoplay=true}
+      return v}
+    var i=document.createElement('img');i.src=p.src;i.alt=p.title;i.loading='lazy';if(!full)i.className='m';if(p.pos&&!full)i.style.objectPosition=p.pos;return i}
+  var d=document.createElement('div');d.className=full?'empty':'ph';d.style.background=grad(p);return d}
+var cur=null,gi=0;
+function show(k){var L=cur.g;gi=(k+L.length)%L.length;
+  var it=L[gi],m;if(it.yt){m=ytFrame(it.yt)}else if(it.v){m=document.createElement('video');m.src=it.v;m.poster=it.src;m.controls=true;m.autoplay=true;m.playsInline=true;m.preload='metadata'}else{m=document.createElement('img');m.src=it.src;m.alt=it.cap}bx.replaceChild(m,bx.firstChild);
+  document.getElementById('gc').textContent=L[gi].cap+'  ('+(gi+1)+'/'+L.length+')';
+  [].forEach.call(document.querySelectorAll('.th img'),function(t,n){t.className=n===gi?'on':''})}
+function open(p){cur=p.g&&p.g.length>1?p:null;bx.innerHTML='';
+  if(!cur){bx.appendChild(media(p,true))}
+  else{var im=document.createElement('img');bx.appendChild(im)}
+  var h=document.createElement('h3');h.textContent=p.title;bx.appendChild(h);
+  if(cur){var gc=document.createElement('p');gc.id='gc';gc.style.fontWeight='600';bx.appendChild(gc);
+    var th=document.createElement('div');th.className='th';
+    p.g.forEach(function(x,n){var t=document.createElement('img');t.src=x.src;t.alt=x.cap;t.onclick=function(){show(n)};th.appendChild(t)});
+    ['‹','›'].forEach(function(ch,n){var bt=document.createElement('button');bt.className='nv'+(n?' r':'');bt.textContent=ch;bt.setAttribute('aria-label',n?'Next':'Previous');
+      bt.onclick=function(e){e.stopPropagation();show(gi+(n?1:-1))};bx.appendChild(bt)});
+    bx.appendChild(th)}
+  var d=document.createElement('p');d.textContent=p.d;bx.appendChild(d);if(p.pl){var a=document.createElement('a');a.href=p.pl;a.target='_blank';a.rel='noopener';a.className='plb';a.textContent='\u25B6  Watch the full playlist on YouTube';bx.appendChild(a)}
+  lb.classList.add('on');if(cur)show(0)}
+function close(){lb.classList.remove('on');bx.innerHTML='';cur=null}
+document.getElementById('x').onclick=close;
+lb.onclick=function(e){if(e.target===lb)close()};
+document.onkeydown=function(e){if(e.key==='Escape')close();if(cur&&e.key==='ArrowRight')show(gi+1);if(cur&&e.key==='ArrowLeft')show(gi-1)};
+
+/* ===== helpers ===== */
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ===== category blurbs ===== */
+var CD={
+"All":"10+ years of senior graphic design across fintech, luxury interiors, e-learning and entertainment, from brand identity and campaigns to UI/UX, motion and AI-generated video.",
+"Campaigns":"Campaign and product visuals for Genie, LINK and Unipay: one consistent brand language with bold hierarchy and direct messaging across ads, landing pages, GIFs and investor decks.",
+"UI/UX":"App and learning interfaces designed for speed and clarity, from the innoviti link payments app to Moodle LMS navigation for Reliance Petroleum e-learning.",
+"Motion":"Launch, promo and explainer videos, logo animation and Lottie: one message per scene, tight pacing and motion in sync with the brand.",
+"Print":"Catalogs, lookbooks, packaging, banners and brochures with premium typography, generous white space and consistent, production-ready artwork.",
+"Branding":"Logos, illustrations and brand assets built as a simple, memorable mark with clear guidelines for consistency across every channel.",
+"Videos":"Explainer and product videos for compliance and security topics. Concepts and prompts are planned with ChatGPT, shots are generated in Google Flow, then edited, timed and sound-designed in Adobe Premiere Pro so each video tells one clear story.",
+"AI Design":"AI video, graphics and illustrations created with ChatGPT, Claude and Google Flow, then refined by hand in Adobe tools for craft and brand fit."
+};
+function setCd(c){document.getElementById('cd').textContent=CD[c]||CD.All}
+
+/* ===== brands marquee ===== */
+(function(){
+  var B=['Ampcus Cyber','Innoviti','Christian Horta','Ikthara Technocraft','Cornea Entertainment','Sai Benaka’s','SN City','Sanmarga Shelters','Reviwell','Prakruthi','KVK Flower Decorations','Clip & Clean','Elevate 2.0'];
+  var h='';for(var k=0;k<2;k++)B.forEach(function(b){h+='<span>'+b.replace(/&/g,'&amp;')+'</span><i>✦</i>'});
+  document.getElementById('cl').innerHTML=h+h;
+})();
+
+/* ===== image strip (two rows, opposite directions) ===== */
+(function(){
+  var items=PROJECTS.filter(function(p){return p.src});
+  var th=[],done=0;
+  function thumb(src,w,cb){var im=new Image();im.onload=function(){var c=document.createElement('canvas');c.width=w;c.height=Math.round(im.naturalHeight*w/im.naturalWidth);c.getContext('2d').drawImage(im,0,0,c.width,c.height);var u;try{u=c.toDataURL('image/jpeg',.74)}catch(e){u=src}cb(u)};im.onerror=function(){cb(src)};im.src=src}
+  function build(){
+    var st=document.getElementById('strip');
+    [0,1].forEach(function(r){
+      var tk=el('div','tk'+(r?' r':''));
+      var order=r?items.slice().reverse():items.slice();
+      if(r){order=order.slice(3).concat(order.slice(0,3))}
+      for(var k=0;k<2;k++)order.forEach(function(p){var i=items.indexOf(p);var im=new Image();im.src=th[i];im.alt=p.title;im.loading='lazy';im.onclick=function(){open(p)};tk.appendChild(im)});
+      st.appendChild(tk);
+    });
+  }
+  items.forEach(function(p,i){thumb(p.src,520,function(u){th[i]=u;if(++done===items.length)build()})});
+})();
+
+/* ===== floating glossy shapes ===== */
+var gid=0;
+function glossy(kind){
+  var i=++gid,d='';
+  if(kind==='heart')d='<defs><radialGradient id="g'+i+'" cx=".34" cy=".3" r=".85"><stop offset="0" stop-color="#ff9a9a"/><stop offset=".45" stop-color="#e11d2e"/><stop offset="1" stop-color="#6b040e"/></radialGradient></defs><path d="M50 90C8 60 4 30 26 19c13-6 21 1 24 10 3-9 11-16 24-10 22 11 18 41-24 71z" fill="url(#g'+i+')"/><ellipse cx="33" cy="30" rx="11" ry="6" fill="#fff" opacity=".5" transform="rotate(-30 33 30)"/>';
+  else if(kind==='flower'){var p='';for(var a=0;a<6;a++){var r=a*60*Math.PI/180;p+='<circle cx="'+(50+26*Math.cos(r)).toFixed(1)+'" cy="'+(50+26*Math.sin(r)).toFixed(1)+'" r="19" fill="url(#g'+i+')"/>'}
+    d='<defs><radialGradient id="g'+i+'" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#d9c2ff"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b0f8c"/></radialGradient><radialGradient id="c'+i+'" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#f59e0b"/></radialGradient></defs>'+p+'<circle cx="50" cy="50" r="12" fill="url(#c'+i+')"/>'}
+  else if(kind==='cube')d='<defs><linearGradient id="g'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset=".5" stop-color="#3b82f6"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient></defs><g transform="rotate(14 50 50)"><rect x="14" y="14" width="72" height="72" rx="18" fill="url(#g'+i+')"/><path d="M30 30h40M30 50h40M30 70h40M30 30v40M50 30v40M70 30v40" stroke="#fff" stroke-opacity=".35" stroke-width="2.5"/><ellipse cx="34" cy="24" rx="14" ry="5" fill="#fff" opacity=".45"/></g>';
+  else if(kind==='star')d='<defs><radialGradient id="g'+i+'" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fef9c3"/><stop offset=".5" stop-color="#a3e635"/><stop offset="1" stop-color="#3f6212"/></radialGradient></defs><path d="M50 4C54 34 66 46 96 50 66 54 54 66 50 96 46 66 34 54 4 50 34 46 46 34 50 4z" fill="url(#g'+i+')"/>';
+  else d='<defs><linearGradient id="g'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset=".5" stop-color="#6d28d9"/><stop offset="1" stop-color="#2e1065"/></linearGradient></defs><g transform="rotate(-35 50 50)"><rect x="6" y="30" width="88" height="40" rx="20" fill="url(#g'+i+')"/><ellipse cx="32" cy="40" rx="16" ry="5" fill="#fff" opacity=".45"/></g>';
+  return '<svg viewBox="0 0 100 100" aria-hidden="true">'+d+'</svg>';
+}
+[['f1','flower'],['f2','cube'],['f3','heart'],['f4','star'],['f5','capsule'],['f6','star']].forEach(function(a){var e=document.getElementById(a[0]);if(e)e.innerHTML=glossy(a[1])});
+
+/* ===== footer geometric shapes ===== */
+(function(){
+  var S=[
+   '<svg viewBox="0 0 100 100"><g fill="#8b5cf6"><circle cx="30" cy="30" r="22"/><circle cx="70" cy="30" r="22"/><circle cx="30" cy="70" r="22"/><circle cx="70" cy="70" r="22"/><rect x="30" y="30" width="40" height="40"/></g></svg>',
+   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#a3e635"/><g fill="#06060a"><circle cx="34" cy="34" r="10"/><circle cx="66" cy="34" r="10"/><circle cx="34" cy="66" r="10"/><circle cx="66" cy="66" r="10"/></g></svg>',
+   '<svg viewBox="0 0 100 100"><path d="M12 8h34a42 42 0 0 1 0 84H12z" fill="#f4f4f6"/><circle cx="40" cy="50" r="14" fill="#06060a"/></svg>',
+   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#7c3aed"/></svg>',
+   '<svg viewBox="0 0 100 100"><path d="M6 18l40 32L6 82zM40 18l40 32-40 32z" fill="#f4f4f6"/></svg>',
+   '<svg viewBox="0 0 100 100"><path d="M6 18l44 32L6 82zM94 18L50 50l44 32z" fill="#fb923c"/></svg>',
+   '<svg viewBox="0 0 100 100"><path d="M50 6l44 88-44-26L6 94z" fill="#f4f4f6"/></svg>',
+   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#ec4899" stroke-width="22"/></svg>'];
+  document.getElementById('shp').innerHTML=S.join('');
+})();
+
+/* ===== tools strip ===== */
+(function(){
+  var T=[['Figma','UI/UX, flows & design systems'],['Illustrator','Logos, vectors & illustration'],['Photoshop','Retouching & composites'],['InDesign','Catalogs, brochures & layouts'],['After Effects','Motion graphics & animation'],['Premiere Pro','Video editing'],['ChatGPT','AI concepts, graphics & video'],['Google Flow','AI video generation'],['Claude','AI ideas & copy'],['Captivate','E-learning'],['Lottie','Lightweight UI animation'],['Miro','Workshops & journey maps'],['Adobe XD','Prototyping'],['PowerPoint','Decks & presentations']];
+  function row(id,arr){var h='';for(var k=0;k<2;k++)arr.forEach(function(t){h+='<div class="tc"><b>'+t[0]+'</b><span>'+t[1].replace(/&/g,'&amp;')+'</span></div>'});document.getElementById(id).innerHTML=h}
+  row('t1',T);row('t2',T.slice(7).concat(T.slice(0,7)));
+})();
+
+/* ===== projects: sticky stacked cards ===== */
+var stack=document.getElementById('stack'),chipsEl=document.getElementById('chips');
+function phBlock(p,k,label){var d=el('div','ph');d.style.background='linear-gradient(135deg,'+p.c[k%2]+','+p.c[(k+1)%2]+')';if(label)d.textContent=label;return d}
+function imgBlock(src,alt,pos,p){var im=new Image();im.src=src;im.alt=alt;im.loading='lazy';im.decoding='async';if(pos)im.style.objectPosition=pos;im.onclick=function(){open(p)};return im}
+function render(cat){
+  stack.innerHTML='';
+  var list=PROJECTS.filter(function(p){return cat==='All'||p.cat===cat});
+  list.forEach(function(p,i){
+    var c=el('article','card rv');c.style.setProperty('--o',(Math.min(i,6)*12)+'px');
+    var hd=el('div','hd');
+    hd.appendChild(el('div','no',(i<9?'0':'')+(i+1)));
+    var mt=el('div','mt');mt.appendChild(el('small','',p.cat+(p.year?' · '+p.year:'')));mt.appendChild(el('h3','',p.title));hd.appendChild(mt);
+    var lk=el('div','lk');
+    if(p.l&&p.l.length){p.l.forEach(function(x){var a=el('a','pill sm',x[0]);a.href=x[1];a.target='_blank';a.rel='noopener';lk.appendChild(a)})}
+    if(p.g&&p.g.length>1){var b=el('button','pill sm','View gallery');b.type='button';b.onclick=function(){open(p)};lk.appendChild(b)}
+    else if(p.v||p.yt||p.pl){var pb=el('button','pill sm',p.pl?'Watch playlist':'Watch video');pb.type='button';pb.onclick=function(){open(p)};lk.appendChild(pb)}
+    else if(!p.src&&!(p.l&&p.l.length)){lk.appendChild(el('span','pill sm dim','Coming soon'))}
+    hd.appendChild(lk);c.appendChild(hd);
+    var cm=el('div','cm');
+    if((p.v||p.yt||p.pl)&&!(p.g&&p.g.length>2)){
+      var va=el('div','a');va.appendChild(imgBlock(p.src,p.title,'50% 50%',p));va.appendChild(el('div','pl','▶'));
+      var vb=el('div');vb.appendChild(imgBlock(p.src,p.title,'15% 50%',p));var vc=el('div');vc.appendChild(imgBlock(p.src,p.title,'85% 50%',p));
+      cm.style.gridTemplateColumns='1fr';cm.style.gridTemplateRows='1fr';va.style.gridColumn='1';va.style.gridRow='1';cm.appendChild(va);
+    }else if(p.src&&p.g&&p.g.length>2){
+      var rest=p.g.filter(function(x){return x.src!==p.src});
+      var s2=rest[Math.min(1,rest.length-1)],s3=rest[Math.min(Math.ceil(rest.length/2),rest.length-1)];
+      var a=el('div','a');a.appendChild(imgBlock(p.src,p.title,p.pos,p));
+      var b2=el('div');b2.appendChild(imgBlock(s2.src,s2.cap,'50% 50%',p));
+      var b3=el('div');b3.appendChild(imgBlock(s3.src,s3.cap,'50% 50%',p));
+      cm.appendChild(a);cm.appendChild(b2);cm.appendChild(b3);
+    }else{
+      var a2=el('div','a');a2.appendChild(phBlock(p,0,'Work in progress — uploading soon'));
+      if(p.type==='video')a2.appendChild(el('div','pl','▶'));
+      var x2=el('div');x2.appendChild(phBlock(p,1));var x3=el('div');x3.appendChild(phBlock(p,0));
+      cm.appendChild(a2);cm.appendChild(x2);cm.appendChild(x3);
+    }
+    c.appendChild(cm);stack.appendChild(c);watch(c);
+  });
+}
+var cats=['All'].concat(PROJECTS.map(function(p){return p.cat}).filter(function(v,i,a){return a.indexOf(v)===i}));
+cats.forEach(function(c,i){var b=el('button',i?'':'on',c);b.type='button';b.onclick=function(){[].forEach.call(chipsEl.children,function(x){x.className=''});b.className='on';render(c);setCd(c)};chipsEl.appendChild(b)});
+
+/* ===== reveal on scroll ===== */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+function watch(e){if(io)io.observe(e);else e.classList.add('in')}
+[].forEach.call(document.querySelectorAll('.rv'),watch);
+
+/* ===== scroll effects: outline fill + floating shapes ===== */
+var fills=[].slice.call(document.querySelectorAll('[data-fill]')),fls=[].slice.call(document.querySelectorAll('.fl')),tick=false;
+function onScroll(){
+  tick=false;var vh=innerHeight;
+  fills.forEach(function(e){var r=e.getBoundingClientRect();var p=rm?1:Math.max(0,Math.min(1,(vh*.88-r.top)/(vh*.5)));e.style.setProperty('--p',p.toFixed(3))});
+  if(!rm)fls.forEach(function(e){var r=e.parentElement.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;var off=(r.top+r.height/2-vh/2)*parseFloat(e.dataset.s);e.style.transform='translate3d(0,'+off.toFixed(1)+'px,0) rotate('+(off*.12).toFixed(1)+'deg)'})
+}
+function req(){if(!tick){tick=true;requestAnimationFrame(onScroll)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);
+req();
+
+/* ===== hero emblem tilt ===== */
+(function(){
+  var h=document.getElementById('top'),e=document.getElementById('emb').firstElementChild;if(rm)return;
+  h.addEventListener('mousemove',function(ev){var r=h.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;e.style.setProperty('--ry',(x*26).toFixed(1)+'deg');e.style.setProperty('--rx',(-y*20).toFixed(1)+'deg')});
+  h.addEventListener('mouseleave',function(){e.style.setProperty('--ry','0deg');e.style.setProperty('--rx','0deg')});
+})();
+
+/* ===== contact form -> opens the visitor's email app ===== */
+document.getElementById('cf').addEventListener('submit',function(ev){
+  ev.preventDefault();var f=ev.target.elements;
+  var sub='Portfolio enquiry from '+f.n.value.trim();
+  var body=f.m.value.trim()+'\n\n'+f.n.value.trim()+' ('+f.e.value.trim()+')';
+  location.href='mailto:praveenm18011994@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+});
+
+document.getElementById('x').onclick=close;
+lb.onclick=function(e){if(e.target===lb)close()};
+document.getElementById('yr').textContent=new Date().getFullYear();
+render('All');setCd('All');
+
+</script>
+</body>
+</html>
