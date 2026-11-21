@@ -291,7 +291,8 @@ section{position:relative}
 .row{display:flex;justify-content:center;gap:14px;margin-top:30px;flex-wrap:wrap}
 .confetti{position:fixed;width:10px;height:14px;z-index:120;pointer-events:none;top:0;left:0}
 .credits{position:relative;height:300px;overflow:hidden;margin-top:90px;-webkit-mask:linear-gradient(transparent,#000 25%,#000 75%,transparent);mask:linear-gradient(transparent,#000 25%,#000 75%,transparent)}
-.roll{position:absolute;left:0;right:0;top:100%;animation:roll 11s linear infinite}
+.roll{position:absolute;left:0;right:0;top:100%}
+.credits.run .roll{animation:roll 11s linear infinite}
 .credits:hover .roll{animation-play-state:paused}
 @keyframes roll{to{transform:translateY(calc(-100% - 300px))}}
 .roll div{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:7px 0}
@@ -994,6 +995,12 @@ html.no-gsap .monologue .w{opacity:1}
     var done = function(){ toast.classList.add('show'); setTimeout(function(){ toast.classList.remove('show'); }, 2200); confetti($('#copy').getBoundingClientRect()); say('Talk soon!'); };
     try { navigator.clipboard.writeText('praveenm18011994@gmail.com').then(done, done); } catch (e) { done(); }
   });
+
+  /* ---------- credits start only when visible ---------- */
+  var credits = document.querySelector('.credits');
+  if (credits && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ credits.classList.toggle('run', e.isIntersecting); }); }, { threshold: .35 }).observe(credits);
+  } else if (credits) credits.classList.add('run');
 
   /* ---------- buddy ---------- */
   var buddy = $('#buddy'), bsay = $('#bsay'), bt, idle;
