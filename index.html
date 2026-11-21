@@ -2,554 +2,1047 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Praveen M — Senior Graphic Designer | AI Video &amp; Design | UI/UX | Motion Graphics</title>
-<meta name="description" content="Praveen M, Senior Graphic Designer with 10+ years of experience in branding, campaigns, UI/UX, motion graphics, video editing and AI-generated video and graphics using ChatGPT, Claude and Google Flow.">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Praveen M — The Director's Cut</title>
+<meta name="description" content="Praveen M — Senior Graphic Designer and storyteller. Branding, UI/UX, campaigns, motion and AI video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
- --ink:#06060a;--ink-2:#0e0e14;--ink-3:#171720;--on-ink:#f4f4f6;--mut-ink:#a0a0ad;--line-ink:#2a2a36;
- --paper:#f0efea;--on-paper:#101014;--mut-paper:#585862;--line-paper:#d2d1ca;
- --g1:#7c3aed;--g2:#ec4899;--g3:#fb923c;
- --head:"Archivo Black","Arial Black",Impact,sans-serif;--body:"Space Grotesk",system-ui,-apple-system,sans-serif;
- color-scheme:dark;
-}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#ebeae4}}
-:root[data-theme="dark"]{--paper:#ebeae4}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--on-ink);font:16px/1.65 var(--body);overflow-x:hidden}
-a{color:inherit}
-h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:.98;text-transform:uppercase}
-img{max-width:100%}
-.metal{background:linear-gradient(180deg,#ffffff 0%,#cfd2d9 42%,#7e828e 68%,#e8eaee 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-.out{color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.92);background-image:linear-gradient(90deg,#fff,#fff);background-repeat:no-repeat;background-size:calc(var(--p,0)*100%) 100%;-webkit-background-clip:text;background-clip:text}
-.light .out{-webkit-text-stroke-color:#101014;background-image:linear-gradient(90deg,#101014,#101014)}
-.pill{display:inline-block;border:2px solid transparent;border-radius:99px;padding:.8em 1.7em;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff;cursor:pointer;font-family:var(--body);background:linear-gradient(#0a0a10,#0a0a10) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box;transition:transform .25s,box-shadow .25s}
-.pill:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(236,72,153,.35)}
-.pill.sm{padding:.55em 1.2em;font-size:.7rem;border-width:1.5px;background:linear-gradient(var(--ink-2),var(--ink-2)) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box}
-.pill.dim{background:none;border:1.5px solid var(--line-ink);color:var(--mut-ink);cursor:default}
-.pill.dim:hover{transform:none;box-shadow:none}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
-.rv.in{opacity:1;transform:none}
-.logo{font-family:var(--head);letter-spacing:-.02em}
-.logo i{font-style:normal;color:var(--g2)}
+:root{--bg:#170d08;--bg2:#21140c;--cream:#f4e6d0;--muted:#bba68b;--dim:#8a7560;--accent:#f08a35;--red:#d9483b;--line:rgba(244,230,208,.14);
+--slab:'Roboto Slab',Georgia,serif;--mono:'Space Mono',ui-monospace,monospace;--hand:'Caveat',cursive;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;overflow-x:clip}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.loading{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;user-select:none;-webkit-user-drag:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.hand{font-family:var(--hand);color:var(--muted);font-size:26px;line-height:1}
+h1,h2,h3{font-family:var(--slab);font-weight:900;letter-spacing:-.015em}
+h2{font-size:clamp(42px,6vw,92px);line-height:.95}
+p{color:var(--muted);line-height:1.7;font-size:16.5px}
+
+/* film grain + vignette */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.08;animation:grain .9s steps(6) infinite;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}}
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:89;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(0,0,0,.6))}
+#dust{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+
+/* intro countdown */
+#intro{position:fixed;inset:0;z-index:200;background:#0f0805;display:grid;place-items:center;animation:introOut .6s 3.6s forwards}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+.leader{position:relative;width:min(56vmin,380px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(244,230,208,.35);display:grid;place-items:center}
+.leader::before,.leader::after{content:"";position:absolute;background:rgba(244,230,208,.35)}
+.leader::before{width:2px;height:140%;left:50%;top:-20%}.leader::after{height:2px;width:140%;top:50%;left:-20%}
+.sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(rgba(240,138,53,.55) 0deg,transparent 0deg);animation:sweep 1s linear 3}
+@keyframes sweep{from{background:conic-gradient(rgba(240,138,53,.5) 0deg,transparent 0deg)}to{background:conic-gradient(rgba(240,138,53,.5) 360deg,transparent 360deg)}}
+.leader .num{position:absolute;inset:0;font-family:var(--slab);font-weight:900;font-size:min(30vmin,200px);line-height:1;color:var(--cream)}
+.leader .num span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;padding-bottom:.06em}
+.leader .num span:nth-child(1){animation:num 1s 0s}.leader .num span:nth-child(2){animation:num 1s 1s}.leader .num span:nth-child(3){animation:num 1s 2s}
+@keyframes num{0%,92%{opacity:1}100%{opacity:0}}
+.presents{position:absolute;bottom:12vh;left:0;right:0;text-align:center;opacity:0;animation:pres .9s 2.9s forwards}
+@keyframes pres{to{opacity:1}}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:150;pointer-events:none;mix-blend-mode:normal}
+.cur .dot{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--accent)}
+.cur .ring{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:1px solid rgba(244,230,208,.5);display:grid;place-items:center;transition:width .3s,height .3s,margin .3s,background .3s,border-color .3s}
+.cur .ring b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:#1b100a;opacity:0;transition:opacity .2s}
+.cur.big .ring{width:92px;height:92px;margin:-46px 0 0 -46px;background:var(--accent);border-color:var(--accent)}
+.cur.big .ring b{opacity:1}
+@media (hover:none){.cur{display:none}}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;background:rgba(6,6,10,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-nav .logo{font-size:1.35rem;text-decoration:none}
-nav .links{display:flex;gap:clamp(14px,4vw,56px);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-nav .links a{text-decoration:none;color:var(--on-ink)}
-nav .links a:hover{color:var(--g2)}
+nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;transition:background .3s,padding .3s}
+nav.solid{background:rgba(23,13,8,.8);backdrop-filter:blur(12px);padding:12px 5vw;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--slab);font-weight:900;font-size:22px}.logo span{color:var(--accent)}
+.rec{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{position:relative;padding:4px 0}
+nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:85}
 
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:118px 5vw 56px;overflow:hidden}
-.hero h1{font-size:clamp(2.4rem,9vw,8.4rem);letter-spacing:-.025em;text-align:center;position:relative;z-index:1}
-.hero .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2vw;margin-top:-3.2vw;position:relative;z-index:2}
-.hero .tag{max-width:260px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:#e7e7ec}
-.hero .tag b{display:block;color:#fff;margin-bottom:6px}
-.hero .cta{justify-self:end}
-.emb{width:clamp(210px,32vw,400px);perspective:900px}
-.emb svg{display:block;width:100%;height:auto;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s;animation:flt 6s ease-in-out infinite}
-.emb .orb{transform-origin:200px 200px;animation:spin 22s linear infinite}
-@keyframes flt{50%{translate:0 -12px}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:760px){.hero .row{grid-template-columns:1fr;justify-items:center;text-align:center;margin-top:2vh}.hero .cta{justify-self:center}.hero .tag{max-width:340px}}
+main{position:relative;z-index:2}
+section{position:relative}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
 
-/* marquees */
-.clients{border-block:1px solid var(--line-ink);padding:18px 0;overflow:hidden;white-space:nowrap}
-.clients .tr{display:inline-block;animation:mv 55s linear infinite;font-family:var(--head);font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:.08em;text-transform:uppercase;color:var(--mut-ink)}
-.clients .tr span{margin:0 1.4em}
-.clients .tr i{font-style:normal;color:var(--g2)}
-@keyframes mv{to{transform:translateX(-50%)}}
-.strip{padding:6vh 0;overflow:hidden;display:grid;gap:14px}
-.strip .tk{display:flex;gap:14px;width:max-content;animation:mv 70s linear infinite}
-.strip .tk.r{animation-direction:reverse;animation-duration:85s}
-.strip:hover .tk{animation-play-state:paused}
-.strip img{height:clamp(110px,16vw,205px);aspect-ratio:4/3;border-radius:18px;object-fit:cover;cursor:pointer;background:var(--ink-3)}
+.btn{display:inline-flex;align-items:center;gap:16px;padding:16px 24px;border:1px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s;will-change:transform}
+.btn .arw{width:28px;height:28px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;transition:transform .3s}
+.btn:hover{background:var(--accent);color:#1b100a}.btn:hover .arw{transform:rotate(-45deg)}
+.btn.solid{background:var(--accent);color:#1b100a}
 
-/* about */
-.about{position:relative;padding:15vh 5vw;text-align:center;overflow:hidden}
-.about h2,.proj h2{font-size:clamp(3rem,13vw,11rem);letter-spacing:-.02em}
-.about .in{max-width:800px;margin:4vh auto 0;position:relative;z-index:1}
-.about .lead{font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.5;color:#fff}
-.about p{color:#d6d6de;margin:18px 0 0}
-.about p b{color:#fff}
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
-.chips span{border:1px solid var(--line-ink);border-radius:99px;padding:5px 14px;font-size:.8rem;color:#d6d6de;background:var(--ink-2)}
-.about .pill{margin-top:34px}
-.fl{position:absolute;pointer-events:none;will-change:transform;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
-.fl svg{display:block;width:100%;height:auto}
+/* ===== HERO ===== */
+#home{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr .75fr;align-items:center;gap:2vw;padding:110px 5vw 70px;overflow:hidden}
+.bigword{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--slab);font-weight:900;font-size:24vw;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(244,230,208,.07);pointer-events:none;z-index:0}
+.bigword span{display:inline-block;padding-right:4vw}
+.spot{position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle 420px at var(--sx,60%) var(--sy,45%),rgba(240,138,53,.13),rgba(23,13,8,0) 60%),radial-gradient(circle 520px at var(--sx,60%) var(--sy,45%),transparent 0,rgba(10,5,3,.55) 100%)}
+.hero-left,.hero-right{position:relative;z-index:3}.hero-stage{position:relative;z-index:1}
+#wrap>h2,#wrap>p,#wrap>.eyebrow,#wrap>.mail,#wrap>.row,#story .monologue,#story .stats{position:relative;z-index:2}
+.wrap-stage{z-index:1}
+.hero-title{font-size:clamp(56px,7.6vw,124px);line-height:.92}
+.hero-title .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero-title .ln>span{display:inline-block}
+.hero-title em{font-style:normal;color:var(--accent)}
+.hero-copy{max-width:390px;margin-top:26px}
+.hero-cta{display:flex;align-items:center;gap:24px;margin-top:34px;flex-wrap:wrap}
 
-/* light sections */
-.light{background:var(--paper);color:var(--on-paper);position:relative;overflow:hidden}
-.light .wrap{max-width:1180px;margin:0 auto;padding:11vh 5vw 4vh}
-.light h2{font-size:clamp(2.6rem,9vw,7rem);letter-spacing:-.02em;margin-bottom:5vh}
-.svc{display:grid;grid-template-columns:clamp(64px,11vw,150px) 1fr;gap:clamp(12px,3vw,40px);align-items:start;padding:clamp(18px,3vw,34px) 0;border-bottom:1px solid var(--line-paper);transition:padding .3s}
-.svc:hover{padding-left:12px}
-.svc .n{font-family:var(--head);font-size:clamp(2.2rem,6vw,4.6rem);line-height:.9}
-.svc h3{font-size:clamp(1rem,1.8vw,1.35rem);letter-spacing:.02em;margin:6px 0 8px;line-height:1.15}
-.svc p{margin:0;color:var(--mut-paper);max-width:640px}
-.xp{display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:20px 0;border-bottom:1px solid var(--line-paper);align-items:baseline}
-.xp b{font-size:1.05rem}
-.xp span{color:var(--mut-paper)}
-.xp .yr{font-family:var(--head);font-size:.85rem;white-space:nowrap;color:var(--on-paper)}
+.hero-stage{height:min(78vh,700px);display:flex;align-items:flex-end;justify-content:center;perspective:1200px}
+.halo{position:absolute;pointer-events:none;z-index:0;left:50%;bottom:4%;width:120%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(240,138,53,.32),rgba(240,138,53,.08) 42%,transparent 66%)}
+.ring3d{position:absolute;pointer-events:none;z-index:0;left:50%;bottom:2%;width:86%;aspect-ratio:1;transform:translateX(-50%) rotateX(76deg);border-radius:50%;border:1px dashed rgba(240,138,53,.5);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:translateX(-50%) rotateX(76deg) rotateZ(360deg)}}
+.rig{position:relative;height:100%;display:flex;align-items:flex-end;transform-style:preserve-3d;will-change:transform}
+.char{height:94%;width:auto;cursor:default;filter:drop-shadow(0 40px 40px rgba(0,0,0,.5))}
+.shadow{position:absolute;left:50%;bottom:-8px;width:60%;height:34px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(0,0,0,.7),transparent 70%)}
+.flash{position:absolute;inset:-10%;background:#fff;opacity:0;pointer-events:none;border-radius:40%;mix-blend-mode:overlay}
+.speech{position:absolute;top:8%;left:62%;z-index:4;background:var(--cream);color:#2a1a10;font-family:var(--hand);font-weight:700;font-size:26px;line-height:1.05;padding:12px 18px;border-radius:18px 18px 18px 4px;box-shadow:0 14px 34px rgba(0,0,0,.4);white-space:nowrap;transform-origin:0 100%;pointer-events:none}
+/* clapperboard */
+.clap{position:absolute;left:-4%;bottom:10%;z-index:4;width:150px;cursor:default;pointer-events:none;transform:rotate(-8deg)}
+.clap .top{height:24px;border-radius:4px 4px 0 0;background:repeating-linear-gradient(-55deg,#111 0 16px,#f4e6d0 16px 32px);transform-origin:4% 100%;transform:rotate(-22deg);transition:transform .15s}
+.clap.snap .top{transform:rotate(0)}
+.clap .board{background:#141414;color:#f4e6d0;border-radius:0 0 6px 6px;padding:10px 10px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.clap .board b{display:block;font-family:var(--hand);font-size:22px;letter-spacing:0;color:var(--accent);margin-top:2px;text-transform:none}
+.clap .row{display:flex;justify-content:space-between;border-top:1px solid #444;padding-top:5px;margin-top:5px}
+.hint{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;color:var(--dim);font-size:22px}
 
-/* projects */
-.proj{padding:14vh 5vw 10vh;position:relative}
-.proj h2{text-align:center}
-.pc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:5vh 0 14px}
-.pc button{font:inherit;font-size:.82rem;font-weight:600;padding:9px 20px;border-radius:99px;border:1px solid var(--line-ink);background:var(--ink-2);color:#fff;cursor:pointer}
-.pc button.on,.pc button:hover{background:#fff;color:var(--ink);border-color:#fff}
-.cd{max-width:680px;margin:0 auto 6vh;text-align:center;color:var(--mut-ink)}
-.stack{display:grid;gap:30px;max-width:1180px;margin:0 auto}
-.card{position:sticky;top:calc(78px + var(--o,0px));border:1px solid var(--line-ink);border-radius:28px;background:var(--ink-2);padding:clamp(14px,2.2vw,26px);box-shadow:0 -26px 60px rgba(0,0,0,.6)}
-.card .hd{display:flex;align-items:center;gap:clamp(12px,2vw,24px);margin-bottom:clamp(12px,1.8vw,20px);flex-wrap:wrap}
-.card .no{font-family:var(--head);font-size:clamp(1.7rem,3.4vw,3rem);line-height:1}
-.card .mt{flex:1;min-width:160px}
-.card .mt small{display:block;color:var(--g2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
-.card .mt h3{font-size:clamp(1rem,1.9vw,1.5rem);margin-top:4px;line-height:1.15}
-.card .lk{display:flex;gap:8px;flex-wrap:wrap}
-.cm{display:grid;grid-template-columns:1.7fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(230px,40vw,440px)}
-.cm>*{border-radius:18px;overflow:hidden;background:var(--ink-3);position:relative;min-height:0}
-.cm .a{grid-row:1/3}
-.cm img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;transition:transform .6s}
-.cm>*:hover img{transform:scale(1.04)}
-.cm .ph{width:100%;height:100%;display:grid;place-items:center;color:rgba(255,255,255,.85);font-weight:700;letter-spacing:.14em;font-size:.72rem;text-transform:uppercase;text-align:center;padding:10px}
-.cm .pl{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;display:grid;place-items:center;font-size:.9rem;pointer-events:none}
-@media(max-width:700px){.card{position:relative;top:auto}.cm{grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr;height:clamp(300px,100vw,480px)}.cm .a{grid-column:1/3;grid-row:1}}
+.ticket{position:relative;background:var(--cream);color:#2a1a10;border-radius:10px;padding:22px 22px 18px;transform:rotate(3deg);box-shadow:0 26px 50px rgba(0,0,0,.45)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+.ticket::before{left:-11px}.ticket::after{right:-11px}
+.ticket .mono{color:#a0522d;font-size:10.5px}
+.ticket h3{font-size:24px;margin:8px 0 12px;line-height:1.1}
+.ticket ul{list-style:none;border-top:1px dashed #b49a7c;padding-top:12px;display:flex;flex-direction:column;gap:9px}
+.ticket li{display:flex;justify-content:space-between;font-size:13.5px;font-weight:500;cursor:default;transition:color .2s}
+.ticket li:hover{color:#c1561f}
+.ticket li span:last-child{font-family:var(--mono);font-size:11px;color:#8a6243}
+.ticket .stub{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #b49a7c;margin-top:14px;padding-top:12px}
+.barcode{height:26px;width:96px;background:repeating-linear-gradient(90deg,#2a1a10 0 2px,transparent 2px 4px,#2a1a10 4px 5px,transparent 5px 8px)}
+.scroll-cue{position:absolute;left:5vw;bottom:24px;z-index:3;display:flex;align-items:center;gap:10px;color:var(--dim)}
+.scroll-cue i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.4s infinite}
 
-/* tools */
-.tools{padding:8vh 0 12vh;overflow:hidden}
-.tools h2{text-align:center;font-size:clamp(2rem,6vw,4.6rem);padding:0 5vw;margin-bottom:6vh}
-.tools .tk{display:flex;gap:16px;width:max-content;animation:mv 60s linear infinite;margin-bottom:16px}
-.tools .tk.r{animation-direction:reverse;animation-duration:75s}
-.tools:hover .tk{animation-play-state:paused}
-.tc{flex:none;min-width:260px;border:1px solid var(--line-ink);border-radius:26px;padding:20px 26px;background:var(--ink-2)}
-.tc b{display:block;font-family:var(--head);font-weight:400;font-size:1.1rem;text-transform:uppercase}
-.tc span{color:var(--mut-ink);font-size:.9rem}
+/* ===== STORY ===== */
+#story{padding:150px 6vw;display:grid;grid-template-columns:.9fr 1.1fr;gap:6vw;align-items:center}
+.story-stage{position:relative;display:flex;justify-content:center;perspective:1000px}
+.story-stage .halo{bottom:0;width:100%}
+.story-stage img.char{height:auto;width:100%;max-width:min(440px,calc(70vh*.7));cursor:default}
+.thought{position:absolute;top:2%;right:4%;display:flex;flex-direction:column;align-items:flex-end;gap:6px;z-index:3}
+.thought .cloud{background:var(--cream);color:#2a1a10;font-family:var(--hand);font-weight:700;font-size:24px;padding:10px 18px;border-radius:30px;box-shadow:0 14px 30px rgba(0,0,0,.4);min-width:180px;text-align:center}
+.thought i{display:block;border-radius:50%;background:var(--cream)}
+.monologue{font-family:var(--slab);font-weight:700;font-size:clamp(24px,2.6vw,40px);line-height:1.28;color:var(--cream)}
+.monologue .w{opacity:.14;display:inline}
+.monologue em{font-style:normal;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px;border-top:1px solid var(--line);padding-top:26px}
+.stats b{display:block;font-family:var(--slab);font-size:44px;font-weight:900}
+.stats small{color:var(--dim);font-size:13px;line-height:1.4;display:block;margin-top:4px}
 
-/* contact */
-.contact .wrap{padding-bottom:14vh}
-.contact h2{margin-bottom:3vh}
-.contact .em{font-family:var(--head);font-size:clamp(1.2rem,3.4vw,2.4rem);text-decoration:none;word-break:break-all;display:inline-block;border-bottom:3px solid var(--g2);margin-bottom:5vh}
-.contact form{display:grid;gap:14px;max-width:640px}
-.contact label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mut-paper)}
-.contact input,.contact textarea{width:100%;font:inherit;padding:14px 18px;border-radius:16px;border:1.5px solid var(--line-paper);background:#fff;color:var(--on-paper)}
-.contact input:focus,.contact textarea:focus{outline:none;border-color:var(--g1)}
-.contact textarea{min-height:130px;resize:vertical}
-.contact .pill{justify-self:start;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,var(--g1),var(--g2),var(--g3)) border-box;color:var(--on-paper)}
-.contact .soc{margin-top:26px;color:var(--mut-paper)}
+/* ===== SCENES (horizontal film strip) ===== */
+#scenes{overflow:hidden;background:#0f0805}
+.scenes-head{position:absolute;top:96px;left:6vw;z-index:3}
+.strip{display:flex;height:100vh;width:max-content;align-items:center;padding:0 6vw;gap:5vw;will-change:transform}
+.perfs{position:absolute;left:0;right:0;height:26px;z-index:2;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(244,230,208,.16) 18px 34px,transparent 34px 52px);-webkit-mask:linear-gradient(transparent 6px,#000 6px 20px,transparent 20px);mask:linear-gradient(transparent 6px,#000 6px 20px,transparent 20px)}
+.perfs.t{top:18px}.perfs.b{bottom:18px}
+.intro-panel{width:38vw;min-width:320px;flex:none}
+.intro-panel .hand{margin-top:20px}
+.scene{position:relative;flex:none;width:min(78vw,1080px);height:68vh;min-height:460px;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:var(--sc,#3a2112);box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.06)}
+.scene .copy{position:relative;z-index:2;padding:48px 0 44px 48px;display:flex;flex-direction:column}
+.scene .no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:rgba(255,240,220,.75)}
+.scene h3{font-size:clamp(36px,4.2vw,64px);line-height:.95;margin:16px 0 18px;color:#fff6ea}
+.scene p{color:rgba(255,240,220,.8);max-width:400px;font-size:15.5px}
+.scene .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.scene .tags span{padding:7px 12px;border-radius:999px;border:1px solid rgba(255,240,220,.3);font-size:12.5px;color:#fff6ea}
+.scene .art{position:relative;display:flex;align-items:flex-end;justify-content:center}
+.scene .art::before{content:"";position:absolute;left:50%;bottom:-30%;width:120%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,220,170,.35),transparent 62%)}
+.scene .art img{position:relative;max-height:94%;max-width:96%;width:auto;filter:drop-shadow(0 30px 30px rgba(0,0,0,.4))}
+.scene .bignum{position:absolute;left:28px;bottom:-5vw;z-index:0;font-family:var(--slab);font-weight:900;font-size:22vw;line-height:1;color:rgba(255,255,255,.06);pointer-events:none}
+.scene .view{position:absolute;right:26px;top:26px;z-index:3}
+.scene .view a{display:inline-block;padding:9px 14px;border-radius:999px;background:rgba(0,0,0,.25);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff6ea;backdrop-filter:blur(6px)}
+.end-panel{flex:none;width:40vw;min-width:320px;text-align:center}
 
-/* footer */
-.ft{background:var(--paper);padding:0 2.5vw 2.5vw}
-.ftp{background:var(--ink);color:var(--on-ink);border-radius:30px;padding:clamp(24px,4vw,56px) clamp(20px,4vw,56px) clamp(20px,3vw,40px);overflow:hidden}
-.ftp .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.ftp .nm{font-family:var(--head);font-size:clamp(2.4rem,8vw,6.4rem);line-height:.95;text-transform:uppercase;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.88)}
-.ftp .cols{display:flex;gap:clamp(24px,5vw,70px);font-size:.85rem}
-.ftp .cols b{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
-.ftp .cols a,.ftp .cols span{display:block;color:var(--mut-ink);text-decoration:none;margin-bottom:2px}
-.ftp .cols a:hover{color:#fff}
-.shp{display:flex;justify-content:space-between;gap:1.5%;margin-top:clamp(24px,5vw,60px)}
-.shp svg{width:10%;height:auto;flex:none}
-.cp{text-align:center;color:var(--mut-ink);font-size:.8rem;margin-top:20px}
+/* ===== SCENE THUMBS ===== */
+.scene .art .thumb{position:absolute;left:0;top:14%;width:44%;max-width:280px;z-index:1;background:#f4e6d0;padding:8px 8px 30px;border-radius:4px;box-shadow:0 24px 40px rgba(0,0,0,.45);transform:rotate(-7deg);transition:transform .4s}
+.scene .art .thumb img{width:100%;aspect-ratio:4/3;object-fit:cover;max-height:none;max-width:none;filter:none;border-radius:2px}
+.scene .art .thumb span{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--hand);font-size:19px;color:#5a3a22}
+.scene:hover .art .thumb{transform:rotate(-2deg) scale(1.05)}
+.scene .art>img.pchar{z-index:2;max-width:52%;margin-left:auto;margin-right:4%}
+.scene .art:has(.thumb){justify-content:flex-end}
+.scene .view button{display:inline-block;padding:9px 14px;border-radius:999px;background:var(--cream);color:#1b100a;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-left:6px}
+
+/* ===== SCREENING ROOM ===== */
+#projects{padding:150px 6vw 130px}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.filters button{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:.25s}
+.filters button:hover{color:var(--cream);border-color:var(--cream)}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:#1b100a}
+.filters button sup{font-size:9px;margin-left:3px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:46px;perspective:1400px}
+.pcard{position:relative;border-radius:18px;overflow:hidden;background:#24150c;border:1px solid var(--line);cursor:pointer;transform-style:preserve-3d;text-align:left;width:100%;display:block}
+.pcard .cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:#efe6d8}
+.pcard .cover img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s}
+.pcard .cover.contain img{object-fit:contain;padding:12%}
+.pcard .cover.fit{background:#120a06}.pcard .cover.fit img{object-fit:contain;object-position:50% 30%}
+.pcard:hover .cover img{transform:scale(1.07)}
+.pcard .cover::after{content:none}
+.pcard .play{position:absolute;left:50%;top:38%;z-index:2;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:var(--accent);color:#1b100a;display:grid;place-items:center;font-size:22px;transform:scale(0);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pcard:hover .play{transform:scale(1)}
+.pcard .meta{position:relative;padding:18px 20px 20px;background:#24150c;border-top:1px solid var(--line)}
+.pcard .genre{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(244,230,208,.14);backdrop-filter:blur(6px);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
+.pcard h3{font-size:22px;line-height:1.1;margin-top:12px;color:#fff6ea}
+.pcard .frames{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.pcard .sprocket{position:absolute;top:0;bottom:0;width:14px;z-index:2;background:repeating-linear-gradient(180deg,transparent 0 10px,rgba(23,13,8,.85) 10px 18px);opacity:0;transition:opacity .4s}
+.pcard .sprocket.l{left:6px}.pcard .sprocket.r{right:6px}
+.pcard:hover .sprocket{opacity:1}
+.pcard.wide{grid-column:span 2}.pcard.wide .cover{aspect-ratio:2/1}
+.director{position:absolute;right:2vw;bottom:-10px;z-index:3;height:260px;pointer-events:none}
+.director img{height:100%;width:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.5))}
+.director .dsay{position:absolute;z-index:2;right:58%;top:-6px;background:var(--cream);color:#2a1a10;font-family:var(--hand);font-weight:700;font-size:22px;padding:8px 14px;border-radius:14px 14px 4px 14px;white-space:nowrap;box-shadow:0 12px 26px rgba(0,0,0,.4)}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:60;background:rgba(5,5,8,.95);display:none;align-items:center;justify-content:center;padding:5vw;overflow:auto}
-.lb.on{display:flex}
-.lb .box{max-width:1100px;width:100%;color:#fff;text-align:center;position:relative;margin:auto}
-.lb .box>img:first-child,.lb .box>video:first-child,.lb .box>.empty{max-width:100%;max-height:62vh;border-radius:12px;margin:auto;display:block;object-fit:contain;background:#fff}
-.lb .box>video:first-child{background:#000}
-.lb .box>iframe:first-child{width:min(100%,900px);aspect-ratio:16/9;height:auto;border:0;border-radius:12px;display:block;margin:auto;background:#000}
+.lb{position:fixed;inset:0;z-index:140;background:#0d0704;display:grid;grid-template-rows:auto 1fr auto;visibility:hidden;opacity:0;transition:opacity .35s,visibility .35s}
+.lb.open{visibility:visible;opacity:1}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;padding:18px 4vw;color:var(--muted);border-bottom:1px solid var(--line)}
+.lb .bar .rec{color:var(--cream)}
+.lb .x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--cream)}
+.lb .x:hover{background:var(--accent);color:#1b100a}
+.lb .body{display:grid;grid-template-columns:1fr 340px;gap:3vw;padding:2.5vh 4vw;min-height:0}
+.lb .screen{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#000;overflow:hidden}
+.lb .screen img,.lb .screen video{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(244,230,208,.12);backdrop-filter:blur(8px);color:var(--cream);font-size:20px;z-index:2}
+.lb .nav:hover{background:var(--accent);color:#1b100a}
+.lb .nav.p{left:14px}.lb .nav.n{right:14px}
+.lb .info{overflow:auto;display:flex;flex-direction:column}
+.lb .info h3{font-size:clamp(26px,2.4vw,38px);line-height:1.05;margin:12px 0 14px}
+.lb .info p{font-size:15px}
+.lb .info .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.lb .info .tags span{padding:6px 11px;border:1px solid var(--line);border-radius:999px;font-size:12.5px}
+.lb .info .role{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:13.5px}
+.lb .info .role dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-top:2px}
+.lb .info .role dd{color:var(--cream)}
+.lb .info .jump{display:flex;gap:10px;margin-top:auto;padding-top:20px}
+.lb .info .jump button{flex:1;padding:12px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.lb .info .jump button:hover{border-color:var(--accent);color:var(--accent)}
+.lb .strip2{display:flex;gap:10px;padding:14px 4vw 22px;overflow-x:auto;justify-content:safe center}
+.lb .strip2 button{flex:none;width:96px;height:64px;border-radius:8px;overflow:hidden;border:2px solid transparent;opacity:.5;transition:.25s;position:relative;background:#efe6d8}
+.lb .strip2 button img{width:100%;height:100%;object-fit:cover}
+.lb .strip2 button.on{border-color:var(--accent);opacity:1}
+.lb .strip2 button .vb{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:18px;background:rgba(0,0,0,.35)}
 
-.lb .empty{height:50vh;width:100%}
-.lb a.plb{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:40px;background:#e01b24;color:#fff;font-weight:700;text-decoration:none}.lb h3{margin:16px 0 4px;font-size:1.4rem;line-height:1.15}
-.lb p{max-width:720px;margin:8px auto 0;opacity:.85;font-size:.95rem}
-.lb button#x{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;width:44px;height:44px;border-radius:50%;font-size:1.9rem;line-height:1;padding:0 0 3px;display:flex;align-items:center;justify-content:center;background:rgba(10,10,14,.72);border:1px solid rgba(255,255,255,.45);color:#fff;cursor:pointer;z-index:5}
-.lb .stg{position:relative;width:fit-content;max-width:100%;margin:auto}
-.lb .stg>img,.lb .stg>video{max-width:100%;max-height:62vh;border-radius:12px;margin:auto;display:block;object-fit:contain;background:#fff}
-.lb .stg>video{background:#000}
-.lb .stg>iframe{width:min(88vw,900px);aspect-ratio:16/9;height:auto;border:0;border-radius:12px;display:block;margin:auto;background:#000}
-.lb button.nv{position:absolute;top:50%;left:-64px;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(10,10,14,.72);border:1px solid rgba(255,255,255,.45);box-shadow:0 4px 18px rgba(0,0,0,.45);color:#fff;font-size:1.9rem;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;padding:0 0 4px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s,transform .2s}
-.lb button.nv.r{left:auto;right:-64px}
-.lb button.nv:hover{background:#ec4899;border-color:#ec4899}
-@media (max-width:1320px){.lb button.nv{left:10px}.lb button.nv.r{left:auto;right:10px}}
-@media (max-width:700px){.lb button.nv{width:40px;height:40px;font-size:1.6rem;left:6px}.lb button.nv.r{left:auto;right:6px}}
-.th{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
-.th img{width:64px;height:48px;object-fit:cover;border-radius:6px;opacity:.5;cursor:pointer;border:2px solid transparent;background:#fff}
-.th img.on{opacity:1;border-color:var(--g2)}
+/* ===== CHAPTERS ===== */
+#chapters{padding:150px 6vw;display:grid;grid-template-columns:1.15fr .85fr;gap:5vw}
+.reel{position:relative;margin-top:50px}
+.chap{position:relative;display:grid;grid-template-columns:110px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line);cursor:default}
+.chap:last-child{border-bottom:1px solid var(--line)}
+.chap .yr{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em;padding-top:6px}
+.chap h3{font-size:clamp(22px,2.2vw,32px);transition:transform .4s}
+.chap p{font-size:15px;margin-top:4px}
+.chap:hover h3{transform:translateX(12px);color:var(--accent)}
+.chap .fill{position:absolute;left:0;top:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.chap-stage{position:relative;align-self:center;display:flex;justify-content:center;align-items:center}
+.chap-stage .frame{display:flex;justify-content:center;align-items:center;width:100%}
+.chap-stage .frame img{height:min(72vh,600px);width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.chap-stage .cap{margin-top:16px;color:var(--muted);text-align:center}
+.toolbelt{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.toolbelt span{padding:8px 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;transition:background .2s,color .2s,transform .2s}
+.toolbelt span:hover{background:var(--accent);color:#1b100a;transform:translateY(-3px)}
 
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+/* ===== OFF SET (game) ===== */
+#offset{padding:140px 6vw;text-align:center}
+.arena{position:relative;margin:50px auto 0;max-width:1100px;height:560px;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 50% 100%,#5b2f17,#1f120a 65%);border:1px solid var(--line);touch-action:manipulation}
+.arena .gamer{position:absolute;left:50%;bottom:0;height:78%;transform:translateX(-50%);pointer-events:none;transition:filter .3s;z-index:2;filter:drop-shadow(0 0 40px rgba(127,119,221,.35))}
+.arena .room{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.arena .led{position:absolute;left:0;right:0;top:0;height:5px;z-index:1;background:linear-gradient(90deg,#ff5fa2,#f08a35,#ffd36a,#5ce1e6,#7f77dd,#ff5fa2);background-size:200% 100%;box-shadow:0 0 24px 6px rgba(255,95,162,.35);animation:led 6s linear infinite}
+@keyframes led{to{background-position:200% 0}}
+.arena.playing .led{animation-duration:1.4s}
+.arena .neon{position:absolute;right:7%;top:72px;z-index:1;font-family:var(--hand);font-weight:700;font-size:clamp(34px,4vw,54px);line-height:1;color:#ffe3f0;transform:rotate(-4deg);
+  text-shadow:0 0 4px #fff,0 0 12px #ff5fa2,0 0 26px #ff5fa2,0 0 48px #ff2d87;animation:flick 5s infinite}
+@keyframes flick{0%,18%,22%,60%,100%{opacity:1}20%,61%{opacity:.35}}
+.arena .neon small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#d6f9ff;text-shadow:0 0 6px #5ce1e6,0 0 18px #5ce1e6;margin-top:8px;text-align:right}
+.arena .glow{position:absolute;left:50%;bottom:6%;width:62%;height:70%;transform:translateX(-50%);z-index:1;border-radius:50%;background:radial-gradient(closest-side,rgba(92,225,230,.28),rgba(127,119,221,.14) 55%,transparent);animation:glowp 3s ease-in-out infinite}
+@keyframes glowp{50%{opacity:.65}}
+.arena .mote{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:#ffd36a;opacity:0;z-index:1;box-shadow:0 0 10px #ffd36a;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-560px);opacity:0}}
+.arena .hud span{background:rgba(15,8,5,.62);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.arena .led,.arena .neon,.arena .glow,.arena .mote{animation:none}.arena .mote{display:none}}
+.arena .hud{position:absolute;top:20px;left:24px;right:24px;display:flex;justify-content:space-between;z-index:4;color:var(--cream)}
+.arena .hud b{color:var(--accent)}
+.bulb{position:absolute;width:62px;z-index:3;cursor:pointer;filter:drop-shadow(0 0 18px rgba(255,200,60,.65))}
+.pop{position:absolute;z-index:4;font-family:var(--hand);font-weight:700;font-size:28px;color:#ffd36a;pointer-events:none}
+.arena .start{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:radial-gradient(circle at 50% 50%,rgba(15,8,5,.72),rgba(15,8,5,.35) 70%);backdrop-filter:blur(2px)}
+.arena .start h3{font-size:clamp(28px,3.4vw,46px)}
+.arena .win{display:none}
+.beanbag{position:absolute;right:3%;bottom:0;height:42%;opacity:.95;pointer-events:none;z-index:2}
+
+/* ===== WRAP ===== */
+#wrap{padding:140px 6vw 60px;text-align:center;overflow:hidden}
+.wrap-stage{position:relative;height:min(62vh,520px);display:flex;justify-content:center;align-items:flex-end;margin:10px auto 0;perspective:1000px}
+.wrap-stage .halo{width:min(70vmin,560px);bottom:0}
+.wrap-stage img{height:100%;width:auto;cursor:pointer;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
+.mail{font-family:var(--slab);font-weight:900;font-size:clamp(22px,3.6vw,52px);display:inline-flex;align-items:center;gap:14px;margin-top:34px;border-bottom:2px solid var(--accent);padding-bottom:6px;word-break:break-all}
+.mail small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--accent)}
+.row{display:flex;justify-content:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+.confetti{position:fixed;width:10px;height:14px;z-index:120;pointer-events:none;top:0;left:0}
+.credits{position:relative;height:300px;overflow:hidden;margin-top:90px;-webkit-mask:linear-gradient(transparent,#000 25%,#000 75%,transparent);mask:linear-gradient(transparent,#000 25%,#000 75%,transparent)}
+.roll{position:absolute;left:0;right:0;top:100%;animation:roll 11s linear infinite}
+.credits:hover .roll{animation-play-state:paused}
+@keyframes roll{to{transform:translateY(calc(-100% - 300px))}}
+.roll div{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:7px 0}
+.roll div span:first-child{text-align:right;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;padding-top:4px}
+.roll div span:last-child{text-align:left;font-family:var(--slab);font-weight:700;font-size:18px}
+.roll .tt{display:block;text-align:center;font-family:var(--slab);font-weight:900;font-size:30px;padding:24px 0}
+footer{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px 6vw;border-top:1px solid var(--line);color:var(--dim);flex-wrap:wrap;gap:10px}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,140px);background:var(--cream);color:#2a1a10;padding:12px 20px;border-radius:10px;font-weight:600;z-index:130;transition:transform .4s}
+.toast.show{transform:translate(-50%,0)}
+
+/* buddy */
+.buddy{position:fixed;right:22px;bottom:22px;z-index:95;width:70px;height:70px;border-radius:50%;overflow:hidden;border:3px solid var(--cream);background:radial-gradient(circle at 50% 65%,#f0a160,#8b4520 75%);box-shadow:0 12px 30px rgba(0,0,0,.5);transform:scale(0);transition:transform .45s cubic-bezier(.3,1.7,.5,1)}
+.buddy.show{transform:scale(1)}
+.buddy img{width:100%;height:100%;object-fit:cover}
+.bsay{position:fixed;right:102px;bottom:40px;z-index:95;background:var(--cream);color:#2a1a10;font-family:var(--hand);font-weight:700;font-size:22px;padding:8px 14px;border-radius:14px 14px 4px 14px;opacity:0;transform:translateY(8px);transition:.3s;pointer-events:none;white-space:nowrap}
+.bsay.show{opacity:1;transform:none}
+
+.reveal{opacity:0;transform:translateY(40px)}
+html.no-gsap .reveal{opacity:1;transform:none}
+html.no-gsap #scenes{overflow-x:auto}
+html.no-gsap .monologue .w{opacity:1}
+
+@media (max-width:1080px){
+  .grid{grid-template-columns:1fr 1fr}.pcard.wide{grid-column:span 2}
+  .director{display:none}
+  .lb .body{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
+  .lb .info{max-height:30vh}
+  nav ul{display:none}
+  #home{grid-template-columns:1fr;gap:20px;padding-top:100px}
+  .hero-right{display:none}
+  .hero-stage{height:62vh;margin-top:96px}
+  .clap{left:0;width:120px}
+  #story,#chapters{grid-template-columns:1fr}
+  .chap-stage{position:relative;top:0;margin-top:30px}
+  .chap-stage .frame img{height:min(60vh,460px)}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .grid{grid-template-columns:1fr}.pcard.wide{grid-column:auto}.pcard.wide .cover{aspect-ratio:4/5}
+  .scene .art .thumb{width:40%;top:4%}
+  .scene .bignum{display:none}
+  .scene .art .thumb{width:42%;top:8%;left:4%}
+  .scene .art{min-height:0;height:100%}
+  .scene .art>img.pchar{max-width:50%;max-height:100%;margin-right:2%;object-fit:contain;object-position:bottom}
+  .scene .view{top:auto;bottom:16px;right:16px}
+  .lb .info .role,.lb .info .jump{display:none}
+  .scene{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);width:86vw;height:76vh}
+  .scene .copy{padding:30px 24px 0}
+  .scene .tags{display:none}
+  .intro-panel,.end-panel{width:80vw}
+  .speech{font-size:20px;white-space:nowrap}
+  .arena{height:480px}
+  .arena .neon{top:66px;right:5%;font-size:30px}
+  .arena .room .posters{display:none}
+  .arena .neon{top:70px;right:50%;transform:translateX(50%) rotate(-4deg)}
+  .beanbag{display:none}
+}
+@media (prefers-reduced-motion:reduce){.grain,.ring3d,.roll{animation:none}#intro{display:none}}
 </style>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050509'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial Black' text-anchor='middle' fill='%23ec4899'%3EPr.M%3C/text%3E%3C/svg%3E"><meta property="og:title" content="Praveen M — Senior Graphic Designer"><meta property="og:description" content="Senior Graphic Designer portfolio: brand identity, UI/UX, motion graphics, AI video and AI-generated design."><meta property="og:type" content="website"></head>
-<body>
-<nav><a class="logo" href="#top" aria-label="Pr.M home">Pr<i>.</i>M</a><div class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
+</head>
+<body class="loading">
+<div id="intro" aria-hidden="true">
+  <div class="leader"><div class="sweep"></div><div class="num"><span>3</span><span>2</span><span>1</span></div></div>
+  <div class="presents mono">Praveen M presents — a story told in design</div>
+</div>
+<canvas id="dust" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"><div class="ring"><b id="curLabel">VIEW</b></div><div class="dot"></div></div>
+<div class="progress" id="progress"></div>
 
-<header class="hero" id="top">
-  <h1 class="metal">Hi, I'm Praveen</h1>
+<nav id="nav">
+  <a href="#home" class="logo" data-say="From the top!">Pr<span>.</span>M</a>
+  <div class="rec mono"><i></i><span id="scene">Scene 01</span></div>
+  <ul class="mono">
+    <li><a href="#story" data-say="My story.">Story</a></li>
+    <li><a href="#scenes" data-say="The good stuff!">Scenes</a></li>
+    <li><a href="#projects" data-say="Grab popcorn!">Projects</a></li>
+    <li><a href="#chapters" data-say="10+ years.">Chapters</a></li>
+    <li><a href="#offset" data-say="Wanna play?">Off-set</a></li>
+    <li><a href="#wrap" data-say="Let's talk!">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+<!-- ================= HERO ================= -->
+<section id="home" data-scene="01">
+  <div class="bigword" aria-hidden="true"><span>STORYTELLER</span><span>STORYTELLER</span><span>STORYTELLER</span></div>
+  <div class="spot" id="spot"></div>
+
+  <div class="hero-left">
+    <div class="eyebrow mono">Senior graphic designer · 10+ years</div>
+    <h1 class="hero-title"><span class="ln"><span>Every</span></span><span class="ln"><span>design is</span></span><span class="ln"><span>a <em>story.</em></span></span></h1>
+    <p class="hero-copy">I'm Praveen. I direct brands, campaigns, UI/UX, motion and now AI video, crafting each one like a scene that people remember.</p>
+    <div class="hero-cta">
+      <a href="#scenes" class="btn solid mag" data-cur="PLAY">Watch the scenes <span class="arw">→</span></a>
+      <a href="#wrap" class="btn mag" data-cur="HI!">Say hello</a>
+    </div>
+  </div>
+
+  <div class="hero-stage" id="heroStage">
+    <div class="halo"></div><div class="ring3d"></div>
+    <div class="rig" id="heroRig">
+      <img class="char" id="heroChar" src="img/crossed.webp" alt="3D character of Praveen">
+      <div class="shadow"></div>
+    </div>
+    <div class="speech" id="speech">Quiet on set…</div>
+    <div class="clap" id="clap" aria-hidden="true">
+      <div class="top"></div>
+      <div class="board"><span>SCENE</span><b id="clapTitle">Scene 1</b><div class="row"><span>TAKE <span id="take">01</span></span><span>DIR. P.M</span></div></div>
+    </div>
+    
+  </div>
+
+  <div class="hero-right">
+    <div class="ticket">
+      <div class="mono">Now showing · Admit one</div>
+      <h3>Praveen M:<br>The Director's Cut</h3>
+      <ul>
+        <li data-pose="s_idea" data-line="Logos with a soul."><span>Brand identity</span><span>Act I</span></li>
+        <li data-pose="s_desk" data-line="Pixels with purpose."><span>UI / UX design</span><span>Act II</span></li>
+        <li data-pose="s_present" data-line="Campaigns that stop thumbs."><span>Campaigns</span><span>Act III</span></li>
+        <li data-pose="vlog" data-line="Lights, camera, motion!"><span>Motion &amp; AI video</span><span>Act IV</span></li>
+      </ul>
+      <div class="stub"><div class="barcode"></div><span class="mono" style="font-size:10px">Kolar · KA · IN</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue mono"><i></i>Scroll to roll film</div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section id="story" data-scene="02">
+  <div class="story-stage" id="storyStage">
+    <div class="halo"></div>
+    <div class="rig" id="storyRig"><img class="char" src="img/think.webp" alt="Praveen sitting, thinking"></div>
+    <div class="thought" aria-hidden="true"><div class="cloud" id="thought">What's the story here?</div><i style="width:22px;height:22px;margin-right:60px"></i><i style="width:12px;height:12px;margin-right:90px"></i></div>
+  </div>
+  <div>
+    <div class="eyebrow mono">Scene 02 · The story so far</div>
+    <p class="monologue" id="mono">For over <em>10 years</em> I've worked across brand identity, marketing campaigns, UI/UX, print, video editing and motion graphics, for <em>fintech, F&amp;B, lifestyle, luxury interiors and e-learning.</em> I work hand in hand with product, marketing and engineering teams. Today I start ideas with ChatGPT, Claude and Google Flow, then <em>finish every frame by hand</em> in Illustrator, Photoshop, After Effects and Premiere Pro.</p>
+    <div class="stats reveal">
+      <div><b data-count="10" data-suffix="+">0</b><small>years of design</small></div>
+      <div><b data-count="5">0</b><small>companies &amp; studios</small></div>
+      <div><b data-count="3">0</b><small>fintech products</small></div>
+      <div><b data-count="5">0</b><small>core services</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCENES ================= -->
+<section id="scenes" data-scene="03">
+  <div class="perfs t"></div><div class="perfs b"></div>
+  <div class="strip" id="strip">
+    <div class="intro-panel">
+      <div class="eyebrow mono">Scene 03 · What I make</div>
+      <h2>Five scenes.<br>One <span style="color:var(--accent)">director.</span></h2>
+      <p class="hand">keep scrolling, the film moves sideways →</p>
+    </div>
+
+    <article class="scene" style="--sc:linear-gradient(135deg,#b8541f,#6e2b10)">
+      <span class="bignum">01</span>
+      <div class="copy"><span class="no">SCENE 01 · BRANDING</span><h3>Brand identity &amp; logos</h3><p>Logos, colour and typography systems, brand guidelines, and applications across stationery, signage, vehicles and merchandise.</p><div class="tags"><span>Logo</span><span>Guidelines</span><span>Merch</span></div></div>
+      <div class="art"><figure class="thumb"><img src="images2/img-6306cc8995.webp" alt=""><span>The Green Bean</span></figure><img class="pchar" src="img/s_idea.webp" alt="Praveen with a lightbulb idea"></div>
+      <div class="view"><button data-open="p0" data-cur="PLAY">▶ Watch project</button></div>
+    </article>
+
+    <article class="scene" style="--sc:linear-gradient(135deg,#2f5b52,#15302b)">
+      <span class="bignum">02</span>
+      <div class="copy"><span class="no">SCENE 02 · UI / UX</span><h3>Interfaces people enjoy</h3><p>App and web interfaces, user flows and design systems in Figma, including the innoviti link payments app and e-learning platforms.</p><div class="tags"><span>Figma</span><span>Design systems</span><span>Fintech</span></div></div>
+      <div class="art"><figure class="thumb"><img src="images1/img-74dfd313f2.webp" alt=""><span>GRACE web &amp; app</span></figure><img class="pchar" src="img/studio.webp" alt="Praveen designing on a tablet with laptop and camera"></div>
+      <div class="view"><button data-open="p6" data-cur="PLAY">▶ Watch project</button></div>
+    </article>
+
+    <article class="scene" style="--sc:linear-gradient(135deg,#8e2f2a,#43130f)">
+      <span class="bignum">03</span>
+      <div class="copy"><span class="no">SCENE 03 · CAMPAIGNS</span><h3>Campaigns &amp; social</h3><p>Campaign visuals, posters and carousels for fintech, cybersecurity and consumer brands.</p><div class="tags"><span>Social</span><span>Posters</span><span>Carousels</span></div></div>
+      <div class="art"><figure class="thumb"><img src="images1/img-3e8bfc1a27.webp" alt=""><span>Innoviti posters</span></figure><img class="pchar" src="img/s_present.webp" alt="Praveen presenting"></div>
+      <div class="view"><button data-open="p19" data-cur="PLAY">▶ Watch project</button></div>
+    </article>
+
+    <article class="scene" style="--sc:linear-gradient(135deg,#3d3566,#1a1631)">
+      <span class="bignum">04</span>
+      <div class="copy"><span class="no">SCENE 04 · MOTION</span><h3>Motion &amp; AI video</h3><p>Explainer and product-launch videos, logo animation and Lottie, plus AI video and AI-generated graphics.</p><div class="tags"><span>After Effects</span><span>Lottie</span><span>AI video</span></div></div>
+      <div class="art"><figure class="thumb"><img src="images2/green-bean-ad-poster.webp" alt=""><span>Green Bean ad</span></figure><img class="pchar" src="img/vlog.webp" alt="Praveen holding a camera gimbal"></div>
+      <div class="view"><button data-open="p1" data-cur="PLAY">▶ Watch project</button></div>
+    </article>
+
+    <article class="scene" style="--sc:linear-gradient(135deg,#a77a2e,#4f3410)">
+      <span class="bignum">05</span>
+      <div class="copy"><span class="no">SCENE 05 · PRINT</span><h3>Print, packaging &amp; catalogs</h3><p>Brochures, catalogs, packaging pouches, banners and billboards, delivered as production-ready artwork.</p><div class="tags"><span>Packaging</span><span>Catalogs</span><span>Billboards</span></div></div>
+      <div class="art"><figure class="thumb"><img src="images2/img-a3132bed01.webp" alt=""><span>Sai Benaka's</span></figure><img class="pchar" src="img/s_desk.webp" alt="Praveen at his design desk"></div>
+      <div class="view"><button data-open="p10" data-cur="PLAY">▶ Watch project</button></div>
+    </article>
+
+    <div class="end-panel">
+      <p class="hand" style="font-size:34px">and that's a wrap on scenes…</p>
+      <a href="https://www.behance.net/PraveenM-Designer" target="_blank" rel="noopener" class="btn solid mag" style="margin-top:24px" data-cur="OPEN">Full case studies ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" data-scene="04">
+  <div class="proj-head">
+    <div><div class="eyebrow mono">Scene 04 · The screening room</div><h2 class="reveal">Now showing:<br>selected work.</h2></div>
+    <p class="hand" style="max-width:300px">20 projects from my portfolio. Pick a genre, then click any poster ↓</p>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+  <div class="director" id="director"><div class="dsay" id="dsay">Pick a film!</div><img id="dimg" src="img/s_present.webp" alt=""></div>
+</section>
+
+<!-- ================= CHAPTERS ================= -->
+<section id="chapters" data-scene="05">
+  <div>
+    <div class="eyebrow mono">Scene 05 · Chapters</div>
+    <h2 class="reveal">Every role,<br>a new chapter.</h2>
+    <div class="reel">
+      <div class="chap reveal" data-pose="s_present" data-cap="Senior Graphic Designer at Ampcus Cyber"><span class="fill"></span><span class="yr">Oct 2025 — present</span><div><h3>Ampcus Cyber Pvt Ltd</h3><p>Senior Graphic Designer</p></div></div>
+      <div class="chap reveal" data-pose="studio" data-cap="Shipping Genie, LINK &amp; Unipay"><span class="fill"></span><span class="yr">2022 — 25</span><div><h3>Innoviti Technologies</h3><p>Senior Graphic Designer &amp; Assistant Product Designer · Genie, LINK, Unipay</p></div></div>
+      <div class="chap reveal" data-pose="s_idea" data-cap="Designing for luxury interiors"><span class="fill"></span><span class="yr">2019 — 22</span><div><h3>Christian Horta Design &amp; Mfg.</h3><p>Senior Graphic Designer</p></div></div>
+      <div class="chap reveal" data-pose="vlog" data-cap="Building brands"><span class="fill"></span><span class="yr">2017 — 18</span><div><h3>Ikthara Technocraft</h3><p>Senior Graphic Designer</p></div></div>
+      <div class="chap reveal" data-pose="s_gamer" data-cap="Where the story began"><span class="fill"></span><span class="yr">2016 — 17</span><div><h3>Cornea Entertainment</h3><p>Senior Graphic Designer</p></div></div>
+    </div>
+    <div class="toolbelt reveal">
+      <span>Figma</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span><span>After Effects</span><span>Premiere Pro</span><span>Captivate</span><span>Adobe XD</span><span>Miro</span><span>PowerPoint</span><span>ChatGPT</span><span>Claude</span><span>Google Flow</span>
+    </div>
+  </div>
+  <div class="chap-stage">
+    <div class="frame"><img id="chapImg" src="img/crossed.webp" alt="Praveen with arms crossed"></div>
+  </div>
+</section>
+
+<!-- ================= OFF SET ================= -->
+<section id="offset" data-scene="06">
+  <div class="eyebrow mono" style="justify-content:center">Scene 06 · Off-set</div>
+  <h2 class="reveal">Even directors<br>take a break.</h2>
+  <p class="reveal" style="max-width:520px;margin:18px auto 0">Help me catch ideas before they float away. Catch 8 lightbulbs in 20 seconds.</p>
+  <div class="arena" id="arena">
+    <svg class="room" viewBox="0 0 1100 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24122e"/><stop offset=".75" stop-color="#3a1c18"/></linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1330"/><stop offset="1" stop-color="#4a2a5e"/></linearGradient>
+        <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a130c"/><stop offset="1" stop-color="#120804"/></linearGradient>
+        <radialGradient id="lamp" cx=".5" cy="0" r="1"><stop offset="0" stop-color="rgba(255,200,120,.35)"/><stop offset="1" stop-color="rgba(255,200,120,0)"/></radialGradient>
+        <clipPath id="win"><rect x="70" y="86" width="250" height="210" rx="6"/></clipPath>
+      </defs>
+      <rect width="1100" height="560" fill="url(#wall)"/>
+      <g opacity=".07" stroke="#fff"><path d="M0 120H1100M0 240H1100M0 360H1100"/></g>
+      <!-- window with night city -->
+      <g clip-path="url(#win)">
+        <rect x="70" y="86" width="250" height="210" fill="url(#sky)"/>
+        <circle cx="262" cy="128" r="20" fill="#fff4d6"/><circle cx="270" cy="122" r="17" fill="#0e1736" opacity=".9"/>
+        <g fill="#fff"><circle cx="100" cy="110" r="1.4"/><circle cx="140" cy="132" r="1"/><circle cx="190" cy="104" r="1.3"/><circle cx="215" cy="150" r="1"/><circle cx="120" cy="160" r="1.2"/><circle cx="300" cy="170" r="1"/></g>
+        <path d="M70 296V230h26v-28h22v40h18v-60h30v74h16v-46h24v30h20v-58h28v50h20v-24h26v88z" fill="#140b24"/>
+        <g fill="#ffd36a" opacity=".85"><rect x="142" y="196" width="4" height="5"/><rect x="152" y="210" width="4" height="5"/><rect x="232" y="196" width="4" height="5"/><rect x="242" y="214" width="4" height="5"/><rect x="104" y="214" width="4" height="5"/><rect x="190" y="248" width="4" height="5"/><rect x="286" y="250" width="4" height="5"/></g>
+      </g>
+      <rect x="64" y="80" width="262" height="222" rx="8" fill="none" stroke="#6b4426" stroke-width="12"/>
+      <path d="M195 86V296M70 190H320" stroke="#6b4426" stroke-width="7"/>
+      <rect x="54" y="300" width="282" height="12" rx="3" fill="#7a4e2c"/>
+      <!-- posters -->
+      <g class="posters"><g transform="rotate(-3 420 150)"><rect x="380" y="96" width="92" height="120" rx="3" fill="#f4e6d0"/><rect x="388" y="104" width="76" height="80" fill="#d9483b"/><circle cx="426" cy="144" r="22" fill="#ffd36a"/><rect x="392" y="192" width="50" height="5" fill="#2a1a10"/><rect x="392" y="202" width="34" height="4" fill="#8a6243"/></g>
+      <g transform="rotate(4 690 140)"><rect x="652" y="92" width="84" height="104" rx="3" fill="#f4e6d0"/><rect x="660" y="100" width="68" height="64" fill="#2f5b52"/><path d="M668 156l18-30 14 18 10-12 16 24z" fill="#9fe1cb"/><rect x="664" y="174" width="44" height="5" fill="#2a1a10"/></g></g>
+      <!-- shelf with bits -->
+      <rect x="800" y="232" width="230" height="10" rx="3" fill="#7a4e2c"/>
+      <rect x="812" y="186" width="14" height="46" fill="#d9483b"/><rect x="828" y="194" width="12" height="38" fill="#ffd36a"/><rect x="842" y="182" width="16" height="50" fill="#5ce1e6" opacity=".8"/><rect x="860" y="198" width="11" height="34" fill="#f4e6d0"/>
+      <path d="M948 232h34l-5-26h-24z" fill="#b8541f"/><circle cx="958" cy="196" r="12" fill="#3b6d11"/><circle cx="972" cy="190" r="13" fill="#639922"/>
+      <rect x="1000" y="210" width="20" height="22" rx="3" fill="#7f77dd"/>
+      <!-- lamp light -->
+      <path d="M560 0l-130 420h260z" fill="url(#lamp)"/>
+      <!-- synthwave floor -->
+      <rect y="420" width="1100" height="140" fill="url(#floor)"/>
+      <g stroke="rgba(240,138,53,.45)" stroke-width="1.2" fill="none">
+        <path d="M0 420H1100M0 434H1100M0 452H1100M0 476H1100M0 508H1100M0 548H1100"/>
+        <path d="M550 420L-250 560M550 420L-20 560M550 420L200 560M550 420L420 560M550 420L680 560M550 420L900 560M550 420L1120 560M550 420L1350 560"/>
+      </g>
+      <rect y="417" width="1100" height="3" fill="#ff5fa2" opacity=".6"/>
+    </svg>
+    <div class="led"></div>
+    <div class="glow"></div>
+    <div class="neon">game on<small>ideas · arcade</small></div>
+    <span class="mote" style="left:12%;animation-duration:7s;animation-delay:0s"></span>
+    <span class="mote" style="left:28%;animation-duration:9s;animation-delay:2s"></span>
+    <span class="mote" style="left:44%;animation-duration:8s;animation-delay:4s"></span>
+    <span class="mote" style="left:63%;animation-duration:10s;animation-delay:1s"></span>
+    <span class="mote" style="left:81%;animation-duration:7.5s;animation-delay:3s"></span>
+    <span class="mote" style="left:92%;animation-duration:9.5s;animation-delay:5s"></span>
+    <div class="hud mono"><span>Ideas <b id="score">0</b>/8</span><span>Time <b id="time">20</b>s</span></div>
+    <img class="beanbag" src="img/s_beanbag.webp" alt="">
+    <img class="gamer" id="gamer" src="img/gamer.webp" alt="Praveen in a gaming chair with a controller">
+    <div class="start" id="start">
+      <h3>Idea catcher</h3>
+      <p class="hand" style="font-size:28px">click the bulbs · they're fast</p>
+      <button class="btn solid" id="play" data-cur="PLAY">Start game ▶</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WRAP ================= -->
+<section id="wrap" data-scene="07">
+  <div class="eyebrow mono" style="justify-content:center">Final scene · That's a wrap</div>
+  <h2 class="reveal">Let's make your<br>story <span style="color:var(--accent)">next.</span></h2>
+  <p class="reveal" style="max-width:540px;margin:18px auto 0">Open to Senior Graphic Designer and Brand / Creative Designer roles in Bangalore or remote. Freelance projects welcome too.</p>
+  <div class="wrap-stage" id="wrapStage">
+    <div class="halo"></div>
+    <div class="rig" id="wrapRig"><img id="wrapChar" src="img/celebrate.webp" alt="Praveen celebrating" data-cur="YAY!"></div>
+  </div>
+  <button class="mail" id="copy" data-cur="COPY">praveenm18011994@gmail.com <small>copy</small></button>
   <div class="row">
-    <p class="tag"><b>Senior Graphic Designer</b>10+ years crafting bold, memorable brands, campaigns, UI/UX and motion, now also creating AI video &amp; AI-generated graphics ✨</p>
-    <div class="emb" id="emb" aria-hidden="true">
-      <svg viewBox="0 0 400 400">
-        <defs>
-          <radialGradient id="ch" cx=".34" cy=".28" r=".85"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#c3c7d2"/><stop offset=".68" stop-color="#5a5e6d"/><stop offset="1" stop-color="#16171f"/></radialGradient>
-          <linearGradient id="dk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1c27"/><stop offset="1" stop-color="#07070b"/></linearGradient>
-          <linearGradient id="tx" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset=".55" stop-color="#ec4899"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
-          <radialGradient id="b1" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e9d5ff"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b0f8c"/></radialGradient>
-          <radialGradient id="b2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fbcfe8"/><stop offset=".5" stop-color="#ec4899"/><stop offset="1" stop-color="#7f1245"/></radialGradient>
-          <radialGradient id="b3" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fed7aa"/><stop offset=".5" stop-color="#fb923c"/><stop offset="1" stop-color="#9a3a07"/></radialGradient>
-        </defs>
-        <g class="orb">
-          <circle cx="200" cy="18" r="22" fill="url(#b1)"/>
-          <circle cx="372" cy="250" r="17" fill="url(#b2)"/>
-          <circle cx="60" cy="300" r="26" fill="url(#b3)"/>
-        </g>
-        <circle cx="200" cy="200" r="168" fill="url(#ch)"/>
-        <circle cx="200" cy="200" r="138" fill="url(#dk)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
-        <text x="200" y="236" text-anchor="middle" font-family="Archivo Black,Arial Black,sans-serif" font-size="104" fill="url(#tx)" letter-spacing="-4">Pr.M</text>
-        <ellipse cx="146" cy="104" rx="70" ry="26" fill="#fff" opacity=".28" transform="rotate(-28 146 104)"/>
-      </svg>
+    <a class="btn mag" href="https://www.linkedin.com/in/praveen-m-3a0a9a251/" target="_blank" rel="noopener" data-cur="OPEN">LinkedIn <span class="arw">↗</span></a>
+    <a class="btn mag" href="https://www.behance.net/PraveenM-Designer" target="_blank" rel="noopener" data-cur="OPEN">Behance <span class="arw">↗</span></a>
+  </div>
+  <p class="mono" style="margin-top:30px;color:var(--dim)">Based in Kolar, Karnataka, India</p>
+
+  <div class="credits" aria-label="End credits">
+    <div class="roll">
+      <span class="tt">Praveen M</span>
+      <div><span>Directed by</span><span>Praveen M</span></div>
+      <div><span>Brand identity</span><span>Praveen M</span></div>
+      <div><span>UI / UX design</span><span>Praveen M</span></div>
+      <div><span>Motion &amp; AI video</span><span>Praveen M</span></div>
+      <div><span>Print &amp; packaging</span><span>Praveen M</span></div>
+      <div><span>Filmed at</span><span>Cornea · Ikthara · Christian Horta · Innoviti · Ampcus</span></div>
+      <div><span>Tools</span><span>Figma · Adobe CC · ChatGPT · Claude · Google Flow</span></div>
+      <div><span>Catering</span><span>Too much coffee</span></div>
+      <div><span>Special thanks</span><span>You, for watching</span></div>
+      <span class="tt" style="color:var(--accent)">The end?</span>
     </div>
-    <div class="cta"><a class="pill" href="#contact">Contact me ✦</a></div>
-  </div>
-</header>
-
-<div class="clients" aria-label="Companies and brands I have designed for"><div class="tr" id="cl"></div></div>
-<div class="strip" id="strip" aria-label="Selected work"></div>
-
-<section class="about" id="about">
-  <div class="fl" data-s=".10" style="top:10%;left:3%;width:clamp(70px,11vw,150px)" id="f1"></div>
-  <div class="fl" data-s="-.08" style="top:6%;right:3%;width:clamp(60px,9vw,130px)" id="f2"></div>
-  <div class="fl" data-s=".12" style="bottom:12%;left:5%;width:clamp(60px,10vw,140px)" id="f3"></div>
-  <div class="fl" data-s="-.10" style="bottom:10%;right:5%;width:clamp(70px,11vw,150px)" id="f4"></div>
-  <h2 class="out" data-fill>About me</h2>
-  <div class="in">
-    <p class="lead"><b>Senior Graphic Designer with 10+ years of experience</b> in brand identity, marketing campaigns, UI/UX design, digital and print design, video editing and motion graphics. I have delivered work across fintech, F&amp;B, lifestyle, luxury interiors and e-learning, partnering with product, marketing and engineering teams from concept to production-ready artwork.</p>
-    <p><b>AI video generation and AI-powered design:</b> I use ChatGPT, Claude and Google Flow to create visual concepts, custom illustrations, AI-generated graphics and AI-generated videos, then refine them in Adobe Illustrator, Photoshop, After Effects and Premiere Pro. This speeds up concept-to-delivery while keeping professional craft and brand consistency.</p>
-    <p><b>Core skills:</b> Brand Identity, Campaign Design, Graphic Design, UI/UX, Landing Pages, Packaging, Catalog and Print Design, Design Systems, Motion Graphics, Video Editing, Explainer and Product Launch Videos, Lottie Animation, AI Video Generation, AI Image and Illustration Generation.</p>
-    <p><b>Tools:</b> Figma, Adobe Illustrator, Photoshop, InDesign, After Effects, Premiere Pro, Captivate, Adobe XD, Miro, PowerPoint, ChatGPT, Claude, Google Flow.</p>
-    <a class="pill" href="#contact">Contact me ✦</a>
   </div>
 </section>
+</main>
 
-<section class="light" id="services">
-  <div class="wrap">
-    <h2 class="out" data-fill>Services</h2>
-    <div class="svc rv"><div class="n">01</div><div><h3>Brand Identity &amp; Logo Design</h3><p>Logos, colour and typography systems, brand guidelines and applications across stationery, signage, vehicles and merchandise.</p></div></div>
-    <div class="svc rv"><div class="n">02</div><div><h3>Print, Packaging &amp; Catalogs</h3><p>Brochures, catalogs, packaging pouches, banners and billboards, delivered as production-ready artwork.</p></div></div>
-    <div class="svc rv"><div class="n">03</div><div><h3>Campaign &amp; Social Media Design</h3><p>Campaign visuals, posters and carousels with one consistent brand look, for fintech, cybersecurity and consumer brands.</p></div></div>
-    <div class="svc rv"><div class="n">04</div><div><h3>UI/UX Design</h3><p>App and web interfaces, flows and design systems in Figma, from the innoviti link payments app to e-learning platforms.</p></div></div>
-    <div class="svc rv"><div class="n">05</div><div><h3>Motion Graphics &amp; AI Video</h3><p>Explainer and launch videos, logo animation and Lottie, plus AI video and AI-generated graphics made with ChatGPT, Claude and Google Flow.</p></div></div>
-  </div>
-  <div class="wrap" style="padding-top:2vh;padding-bottom:12vh">
-    <h2 class="out" data-fill>Experience</h2>
-    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Ampcus Cyber Pvt Ltd</span></div><div class="yr">Oct 2025 — Now</div></div>
-    <div class="xp rv"><div><b>Senior Graphic Designer &amp; Asst. Product Designer</b><br><span>Innoviti Technologies — Genie, LINK, Unipay</span></div><div class="yr">2022 — 2025</div></div>
-    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Christian Horta Design &amp; Mfg.</span></div><div class="yr">2019 — 2022</div></div>
-    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Ikthara Technocraft</span></div><div class="yr">2017 — 2018</div></div>
-    <div class="xp rv"><div><b>Senior Graphic Designer</b><br><span>Cornea Entertainment</span></div><div class="yr">2016 — 2017</div></div>
-  </div>
-</section>
+<footer class="mono"><span class="logo" style="font-size:18px;letter-spacing:0;text-transform:none">Pr<span>.</span>M</span><span>© Praveen M · Senior Graphic Designer</span><a href="#home">Rewind ↺</a></footer>
 
-<section class="proj" id="work">
-  <h2 class="out" data-fill>Projects</h2>
-  <div class="pc" id="chips"></div>
-  <p class="cd" id="cd"></p>
-  <div class="stack" id="stack"></div>
-</section>
-
-<section class="tools" aria-label="Tools and skills">
-  <h2>What I work with ✨</h2>
-  <div class="tk" id="t1"></div>
-  <div class="tk r" id="t2"></div>
-</section>
-
-<section class="light contact" id="contact">
-  <div class="fl" data-s="-.10" style="top:8%;right:4%;width:clamp(70px,10vw,140px)" id="f5"></div>
-  <div class="fl" data-s=".09" style="bottom:10%;left:3%;width:clamp(60px,9vw,120px)" id="f6"></div>
-  <div class="wrap">
-    <h2>Let's get<br>in touch</h2>
-    <a class="em" href="mailto:praveenm18011994@gmail.com">praveenm18011994@gmail.com</a>
-    <form id="cf" autocomplete="on">
-      <div><label for="fn">Name</label><input id="fn" name="n" required placeholder="Your name"></div>
-      <div><label for="fe">Email</label><input id="fe" name="e" type="email" required placeholder="you@company.com"></div>
-      <div><label for="fm">Message</label><textarea id="fm" name="m" required placeholder="Tell me about the role or project"></textarea></div>
-      <button class="pill" type="submit">Send</button>
-    </form>
-    <p class="soc">Also on <a href="https://behance.net/PraveenM-Designer" target="_blank" rel="noopener">Behance</a></p>
-  </div>
-</section>
-
-<footer class="ft">
-  <div class="ftp">
-    <div class="top">
-      <div class="nm">Praveen<br>M</div>
-      <div class="cols">
-        <div><b>Social</b><a href="https://behance.net/PraveenM-Designer" target="_blank" rel="noopener">Behance</a></div>
-        <div><b>Contact</b><a href="mailto:praveenm18011994@gmail.com">praveenm18011994@gmail.com</a><span>Kolar, Karnataka, India</span></div>
-      </div>
+<div class="buddy" id="buddy"><img src="img/face.webp" alt="Praveen"></div>
+<div class="bsay" id="bsay"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project viewer">
+  <div class="bar mono"><span class="rec"><i></i>Now screening · <span id="lbCount">01/06</span></span><button class="x" id="lbX" aria-label="Close" data-cur="CLOSE">✕</button></div>
+  <div class="body">
+    <div class="screen" id="lbScreen"><button class="nav p" id="lbP" aria-label="Previous frame">←</button><button class="nav n" id="lbN" aria-label="Next frame">→</button></div>
+    <div class="info">
+      <span class="eyebrow mono" id="lbGenre" style="margin:0"></span>
+      <h3 id="lbTitle"></h3><p id="lbDesc"></p><p class="mono" id="lbCap" style="margin-top:16px;color:var(--accent);font-size:11.5px;line-height:1.6"></p>
+      <div class="tags" id="lbTags"></div>
+      <dl class="role" id="lbRole"></dl>
+      <a class="btn solid" id="lbYT" href="#" target="_blank" rel="noopener" style="margin-top:20px;display:none;align-self:flex-start" data-cur="OPEN">Watch playlist on YouTube ↗</a>
+      <div class="jump"><button id="lbPrevP">← Prev film</button><button id="lbNextP">Next film →</button></div>
     </div>
-    <div class="shp" id="shp" aria-hidden="true"></div>
-    <div class="cp"><span class="logo">Pr<i>.</i>M</span> &nbsp;© <span id="yr"></span> Praveen M · Senior Graphic Designer</div>
   </div>
-</footer>
+  <div class="strip2" id="lbStrip"></div>
+</div>
+<div class="toast" id="toast">Email copied. Talk soon!</div>
 
-<div class="lb" id="lb"><button id="x" aria-label="Close">×</button><div class="box" id="bx"></div></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
-/* ===== PROJECT DATA (images, titles, descriptions) ===== */
-var CLIP=[{"src":"images1/img-1cea96cf1b.webp","cap":"Logo on sky blue"},{"src":"images2/img-a301f07e98.webp","cap":"Logo on white"},{"src":"images2/img-c192016229.webp","cap":"Logo reversed on navy"},{"src":"images2/img-820b3453be.webp","cap":"Cap with sparkle pattern"},{"src":"images2/img-9f8ba0c967.webp","cap":"Mug set"},{"src":"images2/img-b6014d4510.webp","cap":"Van livery"},{"src":"images1/img-7c45d2730c.webp","cap":"Alternate logo direction: mug set"},{"src":"images2/img-8dee219365.webp","cap":"Alternate logo direction: cap"},{"src":"images2/img-abd2ef165f.webp","cap":"Alternate logo direction: van"}];
-var SNG=[{"src":"images1/img-74363817d3.webp","cap":"Street billboard mock-up: 24x7 primary health care clinic"},{"src":"images2/img-ab6cd282b8.webp","cap":"Street billboard designs: presentation header"},{"src":"images1/img-7cb9a410a6.webp","cap":"Billboard mock-up: 10 acres park area"},{"src":"images1/img-0324e7d4db.webp","cap":"24 hours water"},{"src":"images2/img-cfac74ac3a.webp","cap":"Gym"},{"src":"images1/img-776f75d5ed.webp","cap":"24x7 primary health care clinic"},{"src":"images1/img-28632612f8.webp","cap":"50 feet roads"},{"src":"images2/img-fbdbf965a1.webp","cap":"24x7 security"},{"src":"images2/img-c96d362da4.webp","cap":"24x7 CCTV surveillance"},{"src":"images1/img-2546dc5f3d.webp","cap":"Infinity swimming pool"},{"src":"images2/img-84ff4db319.webp","cap":"Super market at your doorstep"},{"src":"images2/img-c6b09380b4.webp","cap":"World class clubhouse"},{"src":"images1/img-3d5c39796b.webp","cap":"Full presentation board"}];
-var ING=[{"src":"images1/img-3e8bfc1a27.webp","cap":"Innoviti social media posters: presentation header"},{"src":"images1/img-2ab62e2e57.webp","cap":"Genie posts: instant settlement, merchant offers and incentives"},{"src":"images1/img-7e2d39d342.webp","cap":"Genie Plus posts: T+1 settlement and 24-hour onboarding, shown in an Instagram feed"},{"src":"images1/img-051d025cf0.webp","cap":"UnipayNext posts: terminal performance and accepting payments"},{"src":"images1/img-0afca3e877.webp","cap":"Link posts: transaction history, Link 2.0 and 3-in-1 convenience"},{"src":"images2/img-8944e26633.webp","cap":"Link post series"},{"src":"images2/img-a9a329afaa.webp","cap":"Link campaign: post series layout"},{"src":"images2/img-ec7a1bba14.webp","cap":"Full presentation board"}];
-var ELG=[{"src":"images1/img-32156797c9.webp","cap":"Elevate 2.0 logo: presentation header"},{"src":"images1/img-576a08ed18.webp","cap":"Logo construction: circle for enlightenment and triangle for growth and progress form an upward arrow"},{"src":"images2/img-dfeb97023a.webp","cap":"Colour palette: warm orange and deep maroon"},{"src":"images1/img-7360c262ef.webp","cap":"Logo marks and upward-arrow pattern"},{"src":"images1/img-7c1d57df52.webp","cap":"Final logo with colour variations"},{"src":"images1/img-1d7f2c69f8.webp","cap":"Mock-up: polo shirts"},{"src":"images2/img-b9d5ec74e4.webp","cap":"Mock-up: Celebrating 40 Years billboard"},{"src":"images1/img-61b495df50.webp","cap":"Full presentation board"}];
-var SBG=[{"src":"images2/img-e653bf5d70.webp","cap":"Sai Benaka's: brand header with vegetable line-art pattern"},{"src":"images2/img-ed3d582212.webp","cap":"Nine ready-to-cook recipes"},{"src":"images2/img-9c85c2ea51.webp","cap":"Pouch design system for all nine recipes"},{"src":"images2/img-a3132bed01.webp","cap":"Semiya Bath ready-to-cook pouch"},{"src":"images2/img-a28f00ce6e.webp","cap":"Design variants: colour and layout explorations"},{"src":"images1/img-3039580b6a.webp","cap":"Design variants: Pulav pouches in four colourways"},{"src":"images1/img-624c84401d.webp","cap":"Final Pulav pouch design"},{"src":"images2/img-cfcfe7855c.webp","cap":"Full presentation board"}];
-var RVG=[{"src":"images2/img-e8911f5834.webp","cap":"Moringa organic pure moringa powder: brand header"},{"src":"images1/img-13fe20df94.webp","cap":"About the product"},{"src":"images1/img-5578bf9e18.webp","cap":"Label artwork: front and back"},{"src":"images1/img-39a085b839.webp","cap":"Package style: stand-up pouches"},{"src":"images2/img-cfe8026804.webp","cap":"Package labelling process: label + pouch = final pack"},{"src":"images2/img-9f861cea56.webp","cap":"Product shots"},{"src":"images2/img-c87f9374ba.webp","cap":"Final pouch: front and back"},{"src":"images1/img-2115f0b87d.webp","cap":"Full presentation board"}];
-var PKG=[{"src":"images2/img-ebaf77dc54.webp","cap":"Prakruthi Premium Sorted Rice: brand header"},{"src":"images2/img-d01f1e78bc.webp","cap":"Rice bag packaging and red rice"},{"src":"images1/img-4257b42bc2.webp","cap":"Brochure mock-up: cover, back and inside spread"},{"src":"images1/img-2d1f19a936.webp","cap":"Brochure pages: cover, health benefits, nutritional values and firm details"},{"src":"images1/img-273df0d618.webp","cap":"Full presentation board"}];
-var CAT=[{"src":"images1/img-6ef3065b25.webp","cap":"SN City catalog: entrance gate and logo"},{"src":"images2/img-a74d165a2e.webp","cap":"Landscape catalog covers"},{"src":"images1/img-12a9824309.webp","cap":"Opening spread: an experience of a lifetime"},{"src":"images1/img-4c1b59ed65.webp","cap":"Introduction spread"},{"src":"images2/img-c033acb181.webp","cap":"What makes your home perfect?"},{"src":"images1/img-49ae9627da.webp","cap":"Sunrise and sunset"},{"src":"images2/img-fbe40415bf.webp","cap":"SN Signature Resort"},{"src":"images2/img-eb103d2caf.webp","cap":"Roads and landscape spread"},{"src":"images1/img-49071986c1.webp","cap":"Location map"},{"src":"images2/img-b0ef387ba8.webp","cap":"Amenities and layout plan"},{"src":"images1/img-64602b8bb4.webp","cap":"Sports and play area spread"},{"src":"images2/img-bc0c692284.webp","cap":"About the developer and disclaimer"},{"src":"images2/img-8b3d0263de.webp","cap":"Hardcover back covers"},{"src":"images1/img-6ef3e50290.webp","cap":"All spreads at a glance"}];
-var LGG=[{"src":"images2/img-aca0c3f7c7.webp","cap":"SN City logo: cover, Kolar - Bangarpet"},{"src":"images2/img-842f07f7bb.webp","cap":"About SN City"},{"src":"images1/img-1fdde62c6c.webp","cap":"Idea and construction: S + N + house form the monogram"},{"src":"images2/img-f0794cc172.webp","cap":"Colour palette: gold and brown"},{"src":"images1/img-102665af48.webp","cap":"Logo combinations with the tagline Serene. Seamless. Secure."},{"src":"images2/img-e0208bc45e.webp","cap":"Safe area around the logo"},{"src":"images1/img-55b373e2de.webp","cap":"Mock-up: ID card and lanyard"},{"src":"images1/img-1ef0200ed5.webp","cap":"Typography: Mirai"},{"src":"images2/img-9f2e9ac79c.webp","cap":"Mock-up: safety helmet"},{"src":"images1/img-3c30efdf1d.webp","cap":"Mock-up: mugs"},{"src":"images2/img-9e0f5a503f.webp","cap":"Full presentation board"}];
-var SMG=[{"src":"images2/img-e1f62603b3.webp","cap":"Logo on dark with construction imagery"},{"src":"images1/img-1087f98f2b.webp","cap":"Primary logo on white with the SANMARGA wordmark"},{"src":"images2/img-8d99f4b58f.webp","cap":"Logo versions: black, white and gradient colour with values"},{"src":"images2/img-fc7d882f6e.webp","cap":"About Sanmarga Shelters"},{"src":"images2/img-de42a2a57b.webp","cap":"Stationery set: letterhead, folder, business cards, envelopes and more"},{"src":"images2/img-8a601c1257.webp","cap":"Mock-up: safety helmet"},{"src":"images2/img-9a143c20aa.webp","cap":"Mock-up: paper cups"},{"src":"images2/img-f5586f60f0.webp","cap":"Brand photography: engineers and blueprints"},{"src":"images1/img-6da4f550db.webp","cap":"Brand graphic: gradient line pattern"}];
-var KVG=[{"src":"images1/img-05ea50e67d.webp","cap":"KVK logo on dark"},{"src":"images2/img-b4e4c8d10b.webp","cap":"KVK logo on cocoa gradient"},{"src":"images2/img-d015a72a5c.webp","cap":"Brand applications: lit signage, stage, stationery, packaging and vehicle"},{"src":"images2/img-8aefcb2ffb.webp","cap":"Brand applications: entrance arch, tags, cards, van, uniform and ribbon"},{"src":"images2/img-90fceb1d5d.webp","cap":"Brand applications: arches, stage, easel sign, bouquets, uniform and gift bag"}];
-var ACG=[{"src":"images2/img-cae9c12448.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (1/7) \u2014 Every TPRM platform says \u201cAgentic AI\u201d"},{"src":"images2/img-926c76c60e.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (2/7) \u2014 The promise: the pitch"},{"src":"images2/img-ee5316fd53.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (3/7) \u2014 The reality: AI isn\u2019t replacing your TPRM team"},{"src":"images1/img-2163fcefc8.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (4/7) \u2014 The blind spot: your vendor has vendors too"},{"src":"images2/img-ba194951c7.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (5/7) \u2014 AI adds new risk: the tool managing risk needs governance too"},{"src":"images1/img-43f54dadac.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (6/7) \u2014 So what should AI do? Not replace accountability, remove friction"},{"src":"images2/img-ff234e74bb.webp","cap":"Carousel 1: Every TPRM Platform Says \u201cAgentic AI\u201d (7/7) \u2014 Move from AI promise to governed intelligence"},{"src":"images1/img-7fa5224f8a.webp","cap":"Carousel 2: Revealing Insider Threat Risks (1/9) \u2014 Revealing insider threat risks before they become incidents"},{"src":"images2/img-e6870d6287.webp","cap":"Carousel 2: Revealing Insider Threat Risks (2/9) \u2014 The risk was already inside the environment"},{"src":"images1/img-16d7074d02.webp","cap":"Carousel 2: Revealing Insider Threat Risks (3/9) \u2014 The core challenge was visibility"},{"src":"images2/img-ea704cf573.webp","cap":"Carousel 2: Revealing Insider Threat Risks (4/9) \u2014 Ampcus Cyber connected the signals"},{"src":"images2/img-85eb462dc7.webp","cap":"Carousel 2: Revealing Insider Threat Risks (5/9) \u2014 Legitimate access was not always low risk"},{"src":"images1/img-11c7abfe66.webp","cap":"Carousel 2: Revealing Insider Threat Risks (6/9) \u2014 Context changes the meaning of an activity"},{"src":"images2/img-9039271921.webp","cap":"Carousel 2: Revealing Insider Threat Risks (7/9) \u2014 Insider threat defense requires multiple layers"},{"src":"images2/img-cdd293b15e.webp","cap":"Carousel 2: Revealing Insider Threat Risks (8/9) \u2014 From hidden exposure to actionable visibility"},{"src":"images1/img-6cfaf76a9e.webp","cap":"Carousel 2: Revealing Insider Threat Risks (9/9) \u2014 You cannot protect what you cannot see"},{"src":"images1/img-2bdeb00eb1.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (1/8) \u2014 When cybercrime moves faster than the law"},{"src":"images1/img-6e8f372be3.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (2/8) \u2014 Cybercrime has changed the meaning of \u201cstolen\u201d"},{"src":"images2/img-b6d6f6d545.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (3/8) \u2014 By the time investigation begins, the trail may already be cold"},{"src":"images1/img-2bf6b3e473.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (4/8) \u2014 Cybercrime is exposing an enforcement gap"},{"src":"images1/img-120b02534a.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (5/8) \u2014 Cybercrime needs cyber-native enforcement"},{"src":"images1/img-2ae784bf89.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (6/8) \u2014 Prevention becomes the first line of defence"},{"src":"images1/img-57bcc8a3f7.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (7/8) \u2014 Good cybersecurity creates good evidence"},{"src":"images2/img-b2b15ea647.webp","cap":"Carousel 3: When Data Exfiltration Outruns the Law (8/8) \u2014 Build for prevention, preserve for proof, respond at cyber speed"},{"src":"images1/img-092c65c799.webp","cap":"Carousel 4: Your Vendor Was Low Risk (1/7) \u2014 Your vendor was low risk. Is that still true today?"},{"src":"images1/img-8192068052.webp","cap":"Carousel 4: Your Vendor Was Low Risk (2/7) \u2014 Because risk doesn\u2019t stay still"},{"src":"images2/img-9bc9a4d516.webp","cap":"Carousel 4: Your Vendor Was Low Risk (3/7) \u2014 Move beyond the annual snapshot"},{"src":"images1/img-59bd77f93e.webp","cap":"Carousel 4: Your Vendor Was Low Risk (4/7) \u2014 Turn signals into action"},{"src":"images1/img-6ec3265290.webp","cap":"Carousel 4: Your Vendor Was Low Risk (5/7) \u2014 Focus where risk matters most"},{"src":"images1/img-00831e7b7f.webp","cap":"Carousel 4: Your Vendor Was Low Risk (6/7) \u2014 But don\u2019t stop at the vendor"},{"src":"images2/img-ce71e990e2.webp","cap":"Carousel 4: Your Vendor Was Low Risk (7/7) \u2014 Assess once. Monitor continuously."}];
-var GRG=[{"src": "images2/img-fea0dfcf32.webp", "cap": "GRACE \u2014 Signage & Identity"}, {"src": "images2/img-c09fb3cad3.webp", "cap": "GRACE \u2014 Logo Construction"}, {"src": "images1/img-74dfd313f2.webp", "cap": "GRACE \u2014 Web & App"}, {"src": "images1/img-749f9eec09.webp", "cap": "GRACE \u2014 Stationery"}];
-var MIG=[{"src": "images1/img-5a0a6a2333.webp", "cap": "MIRROR \u2014 Signage & Identity"}, {"src": "images1/img-2a04329982.webp", "cap": "MIRROR \u2014 Logo Construction"}, {"src": "images1/img-0e63de863c.webp", "cap": "MIRROR \u2014 Web & App"}, {"src": "images1/img-4fc566424f.webp", "cap": "MIRROR \u2014 Stationery"}];
-var WZG=[{"src": "images1/img-7429f42ab9.webp", "cap": "WIZARD \u2014 Signage & Identity"}, {"src": "images1/img-6e4af5322b.webp", "cap": "WIZARD \u2014 Logo Construction"}, {"src": "images2/img-fb29bb9f70.webp", "cap": "WIZARD \u2014 Web & App"}, {"src": "images1/img-65f8b72a1e.webp", "cap": "WIZARD \u2014 Stationery"}];
-var CXG=[{"src": "images1/img-7e73291bc2.webp", "cap": "COMPLYX \u2014 Logo on Dark"}, {"src": "images2/img-bdfedd4846.webp", "cap": "COMPLYX \u2014 Logo Construction"}, {"src": "images2/img-c65e6eeb53.webp", "cap": "COMPLYX \u2014 Full-Colour Logo"}];
-var GBG=[{"src": "images2/img-e86c7bc4e2.webp", "cap": "The Green Bean Coffee Co.: primary logo"}, {"src": "images2/img-806afd1058.webp", "cap": "Concept: sunrise for energy and new beginnings, leaves for nature and sustainability, coffee bean for passion"}, {"src": "images2/img-ec0a977e59.webp", "cap": "Logo construction grid and core shapes"}, {"src": "images2/img-d99329e08f.webp", "cap": "Clear space based on the height of the coffee bean"}, {"src": "images2/img-f487279dfc.webp", "cap": "Colour palette: forest green, leaf green, terracotta, coffee brown and warm cream"}, {"src": "images2/img-564c542bab.webp", "cap": "Logo variations: full colour, single colour and reversed"}, {"src": "images2/img-945935ecdc.webp", "cap": "Brand pattern: coffee beans, leaves, sunrise and coffee cherries"}, {"src": "images2/img-610cc103c8.webp", "cap": "Brand identity sheet: primary logo, palette and typography"}, {"src": "images2/img-bf2dc3a7f3.webp", "cap": "Stationery: letterhead, business cards and envelope"}, {"src": "images2/img-6306cc8995.webp", "cap": "Caf\u00e9 applications: hanging sign, tote bag, cup and barista apron"}, {"src": "images2/img-0fdc13dedf.webp", "cap": "Takeaway cup with patterned sleeve"}, {"src": "images2/img-a4a560d018.webp", "cap": "Packaging: coffee bag and pastry box"}, {"src": "images2/img-49705a5263.webp", "cap": "Coffee botanical harvest pattern"}];
-var PROJECTS=[
- {title:"The Green Bean Coffee Co. — Logo & Brand Identity",cat:"Branding",type:"image",src:GBG[9].src,pos:"50% 50%",g:GBG,wide:true,year:2026,c:["#1e4a24","#c0562b"]},
- {title:"The Green Bean Coffee Co. — AI Video Ad",cat:"Videos",type:"image",src:"images2/green-bean-ad-poster.webp",v:"videos/green-bean-coffee-ad.mp4",pos:"50% 50%",wide:true,year:2026,c:["#1e4a24","#c0562b"]},
- {title:"Scoop Haven Ice Cream — AI Video Ad",cat:"Videos",type:"image",src:"images2/scoop-haven-ad-poster.webp",v:"videos/scoop-haven-ice-cream-ad.mp4",pos:"50% 50%",wide:true,year:2026,c:["#f2b8c6","#5a3a2e"]},
- {title:"Ampcus Cyber — Social Media Carousels (AI-Generated)",cat:"AI Design",type:"image",src:ACG[0].src,pos:"50% 50%",year:2026,g:ACG,c:["#0b0b0d","#e01b24"]},
-  {"title": "Ampcus Cyber — AI Explainer Videos (Google Flow)", "cat": "Videos", "type": "image", "src": "images2/video-cover.webp", "pos": "50% 50%", "wide": true, "year": 2026, "pl": "https://www.youtube.com/playlist?list=PLVY7TO47cU7A", "c": ["#7a0f12", "#1a1a22"]},
- {title:"ComplyX — Platform Logo & Brand Identity",cat:"Branding",type:"image",src:CXG[0].src,pos:"50% 50%",g:CXG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
-  {title:"GRACE (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:GRG[0].src,pos:"50% 50%",g:GRG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
-  {title:"Mirror (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:MIG[0].src,pos:"50% 50%",g:MIG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
-  {title:"Wizard (ComplyX) — Logo & Brand Identity",cat:"Branding",type:"image",src:WZG[0].src,pos:"50% 50%",g:WZG,wide:true,year:2026,c:["#7a0f12","#0b0b10"]},
- {title:"Clip & Clean — Brand Identity",cat:"Branding",type:"image",src:CLIP[0].src,pos:"50% 40%",g:CLIP,wide:true,c:["#0b4768","#93bfd6"]},
- {title:"Sai Benaka's — Package Design",cat:"Print",type:"image",src:SBG[3].src,pos:"50% 50%",g:SBG,c:["#9b1412","#f0b429"]},
- {title:"Reviwell — Moringa Powder Package Design",cat:"Print",type:"image",src:RVG[6].src,pos:"50% 45%",g:RVG,c:["#4f9a2b","#a6d06b"]},
- {title:"Prakruthi — Brochure Design",cat:"Print",type:"image",src:PKG[2].src,pos:"50% 50%",g:PKG,c:["#8cc63f","#b3282d"]},
- {title:"Elevate 2.0 — Logo Design",cat:"Branding",type:"image",src:ELG[0].src,pos:"50% 50%",g:ELG,c:["#6c130f","#e86025"]},
- {title:"SN City — Logo Design",cat:"Branding",type:"image",src:LGG[2].src,pos:"50% 50%",year:2020,g:LGG,c:["#1c1c1c","#bc8327"]},
- {title:"Sanmarga Shelters — Logo Design",cat:"Branding",type:"image",src:SMG[0].src,pos:"50% 50%",g:SMG,c:["#0291c2","#bfc578"]},
- {title:"KVK Flower Decorations — Logo Design",cat:"Branding",type:"image",src:KVG[0].src,pos:"50% 50%",g:KVG,c:["#4a2c20","#fdf3dc"]},
- {title:"SN City — Street Billboard Designs",cat:"Print",type:"image",src:SNG[0].src,pos:"50% 50%",g:SNG,c:["#0b4fa8","#7fd0ee"]},
- {title:"SN City — Catalog Design",cat:"Print",type:"image",src:CAT[1].src,pos:"50% 50%",g:CAT,c:["#4a3426","#d9b27c"]},
- {title:"Innoviti — Social Media Posters",cat:"Campaigns",type:"image",src:ING[0].src,pos:"50% 40%",g:ING,c:["#5b1a8c","#ff9a1f"]},
-];
-var D={
-"The Green Bean Coffee Co. — AI Video Ad":{d:"A 15-second AI-generated ad for The Green Bean Coffee Co., built from a storyboard in a warm, user-generated style. A creator introduces the Signature Blend pack straight to camera, then the coffee goes from pack to cup: beans poured from the branded pouch, a slow pour-over brew, a relaxed first sip in an outdoor café, and an end card with the logo, the Signature Blend pack and the line \"Brew Fresh. Live Green.\" Natural light, earthy tones and close-up textures keep it true to the brand's fresh, nature-inspired identity."},
-"Scoop Haven Ice Cream — AI Video Ad":{d:"A 10-second AI-generated ad for Scoop Haven Ice Cream, made with Google Gemini. A customer walks into a cosy parlour, scoops of strawberry, chocolate and vanilla are piled into a sundae glass and finished with chocolate sauce, and her first bite says it all. It closes on the Scoop Haven logo with the line \"Scoop • Indulge • Repeat\", using soft neon, pastel colours and a playful, feel-good pace."},
-"The Green Bean Coffee Co. — Logo & Brand Identity":{d:"Logo and brand identity for The Green Bean Coffee Co., a nature-inspired café brand that blends coffee, freshness and a better tomorrow. The mark brings together a rising sun for energy and new beginnings, two leaves for nature and sustainability, and a roasted coffee bean for passion, all framed by a café-window arch. A warm palette of forest green, leaf green, terracotta, coffee brown and cream, with Montserrat and Poppins type, carries the brand across a logo construction sheet, clear-space rules, logo variations, a botanical pattern, stationery, signage, takeaway cups, tote bag, barista apron and coffee packaging."},
-"Ampcus Cyber — Social Media Carousels (AI-Generated)":{d:"A series of four social media carousels for Ampcus Cyber, 31 slides in total, created with ChatGPT AI. The topics are agentic AI in third-party risk management, insider threat visibility, cybercrime and the law, and continuous vendor risk monitoring. The core of the design is a dark black and red cyber look with glowing 3D icons for the security stories, and a clean light version for vendor risk. Each slide carries one message with a bold headline, a red highlight on the key phrase, short supporting points, numbered slides, and a closing call to action."},
-"KVK Flower Decorations — Logo Design":{d:"Logo and brand identity for KVK Flower Decorations, a wedding and event floral styling business. The core of the design is an oval badge with a symmetrical monogram of mirrored, flowing strokes that read as petals or wings, with a lotus below. A warm cocoa brown and cream palette feels elegant and sits naturally with flowers, and the mark was applied to entrance arches, stage backdrops, signage, bouquet wrapping, stationery, uniforms and vehicles."},
-"Sanmarga Shelters — Logo Design":{d:"Logo and brand identity for Sanmarga Shelters Pvt. Ltd., a construction and real estate developer. The core of the design is a bird in flight built from flowing, flame-like strokes inside a circular arc, symbolising a rise towards new standards in modern, eco-friendly living. The mark works in black, white and a blue-to-green gradient, and was applied across stationery, a safety helmet and paper cups."},
-"SN City — Logo Design":{d:"Logo and brand guidelines for SN City, a township in Kolar - Bangarpet created for a healthy and hassle-free lifestyle. The core of the design is a monogram that combines the letters S and N with a house inside a strong hexagon, so the mark feels secure and homely. Rich gold and brown add a premium warmth, supported by the tagline Serene. Seamless. Secure., colour and safe-area rules, Mirai typography and mock-ups on an ID card, helmet and mugs."},
-"SN City — Catalog Design":{d:"A landscape hardcover catalog for SN City. The core of the design is a premium warm brown and gold palette with large visualization images and generous white space, so the project feels aspirational. Each spread has one clear message, from lifestyle and the signature resort to the location map, amenity icons and site layout, with clean typography that makes the details easy to find."},
-"Prakruthi — Brochure Design":{d:"Brochure for Prakruthi Premium Sorted Rice, a red rice brand by Nagesh Enterprises, shown with its rice bag packaging. The core of the design is fresh green accents and natural grain photography that make the health story easy to follow: a paddy-field cover, an inside spread on health benefits and nutritional values, and a back page with firm details. Clear headings, short lists and a friendly portrait keep the information simple to read."},
-"Reviwell — Moringa Powder Package Design":{d:"Package design for Reviwell's Organic Pure Moringa Powder, a green superfood sourced from sustainably grown moringa leaves in South India. The core of the design is a single fresh green with white line art and clean typography on a stand-up pouch, so the product feels natural and trustworthy. The front label keeps the message simple, while the back label organises supplement facts, benefits and usage instructions into a clear hierarchy."},
-"Sai Benaka's — Package Design":{d:"Package design for Sai Benaka's, a range of nine ready-to-cook instant powder mixes. The core of the design is a warm red and gold pouch with a ribbon label for the dish name, a real food photo and hand-drawn vegetable line art that signals fresh, home-style food. One system lets all nine recipes look like a single family, and I explored colour and layout variants before the final Pulav pouch."},
-"Elevate 2.0 — Logo Design":{d:"Logo for Elevate 2.0, the 40-year celebration of Ratna Sagar Private Limited, an educational publisher. The core of the design is simple learning shapes: a circle for enlightenment and a triangle for growth and progress combine into an upward arrow that signifies elevation. Warm orange and deep maroon convey energy, optimism and a strong foundation, and the mark was tested on a pattern, polo shirts and a billboard."},
-"SN City — Street Billboard Designs":{d:"A series of street billboard designs for SN City, with one poster for each amenity: park, water, gym, healthcare, roads, security, CCTV, swimming pool, supermarket and clubhouse. The core idea is a floating 3D scene in the sky for every amenity, with its own bold colour, one big headline, the SN City logo with its Kannada wordmark and a single phone number, so each board reads clearly from the street."},
-"Clip & Clean — Brand Identity":{d:"Brand identity for Clip & Clean, built around a friendly dog mascot and a rounded, playful wordmark. I explored two directions: a calm sky-blue and navy mark with a bow-tie dog and sparkle details, and a bold navy and red mark with a happy bandana dog. Each was tested on logo backgrounds, mugs, caps and a van livery to keep it clear and consistent across applications."},
-"Innoviti — Social Media Posters":{d:"Social media posters for Innoviti's flagship fintech products: Genie, Genie Plus, UnipayNext and Link. The core of the design is one consistent brand system across every product, using the purple and orange palette, a clear headline, real product screens and friendly people, and a tagline strip, so complex payment features like instant settlement, lower MDR and payment history are understood at a glance in the feed."},
-"GRACE (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for GRACE, the compliance platform from Ampcus Cyber's ComplyX product family, which brings multiple frameworks, audits and evidence into one interface. The core idea is a continuous cycle: chevron segments turn around a single ring, a red check mark shows a verified control and the outlined chevron is the next in line. Calm, wide geometric lettering keeps it precise. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
-"Mirror (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for Mirror, the AI penetration testing platform from Ampcus Cyber's ComplyX product family, which proves which vulnerabilities can really be exploited. The core idea is protect and reflect: a shield whose split interior is a mirror line, with a magnifier on that line looking into both halves to find and prove weaknesses. The rounded lowercase wordmark has a double r that is a mirrored pair, so the name reflects itself. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
-"Wizard (ComplyX) — Logo & Brand Identity":{d:"Logo and brand identity for Wizard, the AI-powered third-party risk management platform from Ampcus Cyber's ComplyX product family, which continuously monitors vendor cyber, financial and ESG risk. The core idea is intelligence beyond the perimeter: a red shield wrapped in orbiting rings, with circuit traces reaching six nodes that stand for vendors kept under continuous watch, and a four-point spark with a smaller twin to mark the AI at work. Bold, rounded lettering keeps a complex topic easy to read, and the dot of the i echoes the symbol's nodes. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage."},
-"Ampcus Cyber — AI Explainer Videos (Google Flow)":{d:"AI-generated explainer videos for Ampcus Cyber on compliance and security topics (PCI P2PE). Tap the button to watch the full playlist on my YouTube channel. The concepts and prompts were written with ChatGPT, the shots were generated in Google Flow, and everything was edited, timed and sound-designed in Adobe Premiere Pro. The core idea is turning dense compliance topics into clear, cinematic motion that security and payments teams can follow quickly."},
-"ComplyX — Platform Logo & Brand Identity":{d:"Logo and brand identity for ComplyX, the product platform of Ampcus Cyber that brings compliance, third-party risk and security intelligence tools under one name, with GRACE, Wizard, Mirror and DPDPA Navigator as its products. The core idea is signal and forward momentum: concentric arcs with red nodes stand for continuous monitoring and real-time visibility, and the red chevron that forms the X conveys progress and action. A bold, clean wordmark signals confidence and reliability, and the second chevron in the name repeats the symbol. This is the parent look that the product logos build on."},
-"Brand Identity & Logos":{d:"Logos, custom illustrations and brand assets for campaigns and social media. The core of the design is a simple, memorable mark backed by clear guidelines, so the brand looks consistent across every channel."},
-};
-PROJECTS.forEach(function(p){var x=D[p.title]||{};p.d=x.d||"";p.l=x.l||[]});
-var lb=document.getElementById('lb'),bx=document.getElementById('bx');
-function ytFrame(id){var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+id+'?rel=0&autoplay=1';f.title='Video player';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';return f}
-function grad(p){return 'linear-gradient(135deg,'+p.c[0]+','+p.c[1]+')'}
-function media(p,full){
-  if(p.yt&&full){return ytFrame(p.yt)}
-  if(p.v&&full){var w=document.createElement('video');w.src=p.v;w.poster=p.src;w.controls=true;w.autoplay=true;w.playsInline=true;w.preload='metadata';return w}
-  if(p.src){
-    if(p.type==='video'){var v=document.createElement('video');v.src=p.src;v.muted=!full;v.loop=!full;v.playsInline=true;
-      if(full){v.controls=true;v.autoplay=true}else{v.className='m';v.autoplay=true}
-      return v}
-    var i=document.createElement('img');i.src=p.src;i.alt=p.title;i.loading='lazy';if(!full)i.className='m';if(p.pos&&!full)i.style.objectPosition=p.pos;return i}
-  var d=document.createElement('div');d.className=full?'empty':'ph';d.style.background=grad(p);return d}
-var cur=null,gi=0;
-function show(k){var L=cur.g;gi=(k+L.length)%L.length;
-  var it=L[gi],m;if(it.yt){m=ytFrame(it.yt)}else if(it.v){m=document.createElement('video');m.src=it.v;m.poster=it.src;m.controls=true;m.autoplay=true;m.playsInline=true;m.preload='metadata'}else{m=document.createElement('img');m.src=it.src;m.alt=it.cap}var st=bx.querySelector('.stg');st.replaceChild(m,st.firstChild);
-  document.getElementById('gc').textContent=L[gi].cap+'  ('+(gi+1)+'/'+L.length+')';
-  [].forEach.call(document.querySelectorAll('.th img'),function(t,n){t.className=n===gi?'on':''})}
-function open(p){cur=p.g&&p.g.length>1?p:null;bx.innerHTML='';
-  if(!cur){bx.appendChild(media(p,true))}
-  else{var stg=document.createElement('div');stg.className='stg';stg.appendChild(document.createElement('img'));bx.appendChild(stg)}
-  var h=document.createElement('h3');h.textContent=p.title;bx.appendChild(h);
-  if(cur){var gc=document.createElement('p');gc.id='gc';gc.style.fontWeight='600';bx.appendChild(gc);
-    var th=document.createElement('div');th.className='th';
-    p.g.forEach(function(x,n){var t=document.createElement('img');t.src=x.src;t.alt=x.cap;t.onclick=function(){show(n)};th.appendChild(t)});
-    ['‹','›'].forEach(function(ch,n){var bt=document.createElement('button');bt.className='nv'+(n?' r':'');bt.textContent=ch;bt.setAttribute('aria-label',n?'Next':'Previous');
-      bt.onclick=function(e){e.stopPropagation();show(gi+(n?1:-1))};stg.appendChild(bt)});
-    bx.appendChild(th)}
-  var d=document.createElement('p');d.textContent=p.d;bx.appendChild(d);if(p.pl){var a=document.createElement('a');a.href=p.pl;a.target='_blank';a.rel='noopener';a.className='plb';a.textContent='\u25B6  Watch the full playlist on YouTube';bx.appendChild(a)}
-  lb.classList.add('on');if(cur)show(0)}
-function close(){lb.classList.remove('on');bx.innerHTML='';cur=null}
-document.getElementById('x').onclick=close;
-lb.onclick=function(e){if(e.target===lb)close()};
-document.onkeydown=function(e){if(e.key==='Escape')close();if(cur&&e.key==='ArrowRight')show(gi+1);if(cur&&e.key==='ArrowLeft')show(gi-1)};
-
-/* ===== helpers ===== */
-function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-/* ===== category blurbs ===== */
-var CD={
-"All":"10+ years of senior graphic design across fintech, luxury interiors, e-learning and entertainment, from brand identity and campaigns to UI/UX, motion and AI-generated video.",
-"Campaigns":"Campaign and product visuals for Genie, LINK and Unipay: one consistent brand language with bold hierarchy and direct messaging across ads, landing pages, GIFs and investor decks.",
-"UI/UX":"App and learning interfaces designed for speed and clarity, from the innoviti link payments app to Moodle LMS navigation for Reliance Petroleum e-learning.",
-"Motion":"Launch, promo and explainer videos, logo animation and Lottie: one message per scene, tight pacing and motion in sync with the brand.",
-"Print":"Catalogs, lookbooks, packaging, banners and brochures with premium typography, generous white space and consistent, production-ready artwork.",
-"Branding":"Logos, illustrations and brand assets built as a simple, memorable mark with clear guidelines for consistency across every channel.",
-"Videos":"AI-generated brand ads and explainer videos, from café and food brands to compliance and security topics. Concepts and storyboards are planned with ChatGPT and Claude, shots are generated with tools like Google Flow and Gemini, then edited, timed and sound-designed in Adobe Premiere Pro so each video tells one clear story.",
-"AI Design":"AI video, graphics and illustrations created with ChatGPT, Claude and Google Flow, then refined by hand in Adobe tools for craft and brand fit."
-};
-function setCd(c){document.getElementById('cd').textContent=CD[c]||CD.All}
-
-/* ===== brands marquee ===== */
 (function(){
-  var B=['Ampcus Cyber','Innoviti','Christian Horta','Ikthara Technocraft','Cornea Entertainment','Sai Benaka’s','SN City','Sanmarga Shelters','Reviwell','Prakruthi','KVK Flower Decorations','Clip & Clean','Elevate 2.0'];
-  var h='';for(var k=0;k<2;k++)B.forEach(function(b){h+='<span>'+b.replace(/&/g,'&amp;')+'</span><i>✦</i>'});
-  document.getElementById('cl').innerHTML=h+h;
-})();
+  var doc = document.documentElement;
+  setTimeout(function(){ document.body.classList.remove('loading'); }, 3700);
+  if (!window.gsap || !window.ScrollTrigger){ doc.classList.add('no-gsap'); document.body.classList.remove('loading'); return; }
+  gsap.registerPlugin(ScrollTrigger);
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch = matchMedia('(hover: none)').matches;
+  var IMG = function(n){ return 'img/' + n + '.webp'; };
+  ['crossed','vlog','celebrate','think','gamer','studio','s_present','s_idea','s_desk','s_beanbag','s_gamer','s_crossed','s_celebrate'].forEach(function(n){ var i = new Image(); i.src = IMG(n); });
+  var $ = function(s){ return document.querySelector(s); }, $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  var introDelay = reduced ? 0 : 3.4;
 
-/* ===== image strip (two rows, opposite directions) ===== */
-(function(){
-  var items=PROJECTS.filter(function(p){return p.src});
-  var th=[],done=0;
-  function thumb(src,w,cb){var im=new Image();im.onload=function(){var c=document.createElement('canvas');c.width=w;c.height=Math.round(im.naturalHeight*w/im.naturalWidth);c.getContext('2d').drawImage(im,0,0,c.width,c.height);var u;try{u=c.toDataURL('image/jpeg',.74)}catch(e){u=src}cb(u)};im.onerror=function(){cb(src)};im.src=src}
-  function build(){
-    var st=document.getElementById('strip');
-    [0,1].forEach(function(r){
-      var tk=el('div','tk'+(r?' r':''));
-      var order=r?items.slice().reverse():items.slice();
-      if(r){order=order.slice(3).concat(order.slice(0,3))}
-      for(var k=0;k<2;k++)order.forEach(function(p){var i=items.indexOf(p);var im=new Image();im.src=th[i];im.alt=p.title;im.loading='lazy';im.onclick=function(){open(p)};tk.appendChild(im)});
-      st.appendChild(tk);
+  /* ---------- custom cursor ---------- */
+  var cur = $('#cur'), curLabel = $('#curLabel');
+  if (!touch){
+    var cx = gsap.quickTo(cur, 'x', { duration: .25, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: .25, ease: 'power3' });
+    addEventListener('pointermove', function(e){ cx(e.clientX); cy(e.clientY); });
+    document.addEventListener('mouseover', function(e){
+      var el = e.target.closest && e.target.closest('[data-cur]');
+      if (el){ curLabel.textContent = el.dataset.cur; cur.classList.add('big'); } else cur.classList.remove('big');
+    });
+    // magnetic buttons
+    $$('.mag').forEach(function(b){
+      var mx = gsap.quickTo(b, 'x', { duration: .4, ease: 'power3' }), my = gsap.quickTo(b, 'y', { duration: .4, ease: 'power3' });
+      b.addEventListener('pointermove', function(e){ var r = b.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .35); my((e.clientY - r.top - r.height / 2) * .45); });
+      b.addEventListener('pointerleave', function(){ mx(0); my(0); });
     });
   }
-  items.forEach(function(p,i){thumb(p.src,520,function(u){th[i]=u;if(++done===items.length)build()})});
-})();
 
-/* ===== floating glossy shapes ===== */
-var gid=0;
-function glossy(kind){
-  var i=++gid,d='';
-  if(kind==='heart')d='<defs><radialGradient id="g'+i+'" cx=".34" cy=".3" r=".85"><stop offset="0" stop-color="#ff9a9a"/><stop offset=".45" stop-color="#e11d2e"/><stop offset="1" stop-color="#6b040e"/></radialGradient></defs><path d="M50 90C8 60 4 30 26 19c13-6 21 1 24 10 3-9 11-16 24-10 22 11 18 41-24 71z" fill="url(#g'+i+')"/><ellipse cx="33" cy="30" rx="11" ry="6" fill="#fff" opacity=".5" transform="rotate(-30 33 30)"/>';
-  else if(kind==='flower'){var p='';for(var a=0;a<6;a++){var r=a*60*Math.PI/180;p+='<circle cx="'+(50+26*Math.cos(r)).toFixed(1)+'" cy="'+(50+26*Math.sin(r)).toFixed(1)+'" r="19" fill="url(#g'+i+')"/>'}
-    d='<defs><radialGradient id="g'+i+'" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#d9c2ff"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b0f8c"/></radialGradient><radialGradient id="c'+i+'" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#f59e0b"/></radialGradient></defs>'+p+'<circle cx="50" cy="50" r="12" fill="url(#c'+i+')"/>'}
-  else if(kind==='cube')d='<defs><linearGradient id="g'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset=".5" stop-color="#3b82f6"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient></defs><g transform="rotate(14 50 50)"><rect x="14" y="14" width="72" height="72" rx="18" fill="url(#g'+i+')"/><path d="M30 30h40M30 50h40M30 70h40M30 30v40M50 30v40M70 30v40" stroke="#fff" stroke-opacity=".35" stroke-width="2.5"/><ellipse cx="34" cy="24" rx="14" ry="5" fill="#fff" opacity=".45"/></g>';
-  else if(kind==='star')d='<defs><radialGradient id="g'+i+'" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fef9c3"/><stop offset=".5" stop-color="#a3e635"/><stop offset="1" stop-color="#3f6212"/></radialGradient></defs><path d="M50 4C54 34 66 46 96 50 66 54 54 66 50 96 46 66 34 54 4 50 34 46 46 34 50 4z" fill="url(#g'+i+')"/>';
-  else d='<defs><linearGradient id="g'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset=".5" stop-color="#6d28d9"/><stop offset="1" stop-color="#2e1065"/></linearGradient></defs><g transform="rotate(-35 50 50)"><rect x="6" y="30" width="88" height="40" rx="20" fill="url(#g'+i+')"/><ellipse cx="32" cy="40" rx="16" ry="5" fill="#fff" opacity=".45"/></g>';
-  return '<svg viewBox="0 0 100 100" aria-hidden="true">'+d+'</svg>';
-}
-[['f1','flower'],['f2','cube'],['f3','heart'],['f4','star'],['f5','capsule'],['f6','star']].forEach(function(a){var e=document.getElementById(a[0]);if(e)e.innerHTML=glossy(a[1])});
+  /* ---------- pose swap with a "cut" ---------- */
+  function swap(img, name, opts){
+    if (!img || img.dataset.pose === name) return;
+    img.dataset.pose = name;
+    gsap.killTweensOf(img);
+    gsap.timeline()
+      .to(img, { scaleY: .9, scaleX: 1.06, y: 10, opacity: 0, duration: .16, ease: 'power2.in', transformOrigin: '50% 100%' })
+      .add(function(){ img.src = IMG(name); })
+      .fromTo(img, { rotationY: (opts && opts.spin) ? -90 : 0 }, { rotationY: 0, scaleX: 1, scaleY: 1, y: 0, opacity: 1, duration: .6, ease: 'back.out(2)' });
+  }
+  function pop(el, html){
+    if (!el) return; el.innerHTML = html;
+    gsap.fromTo(el, { scale: .5, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: 0, duration: .5, ease: 'back.out(2.6)' });
+  }
 
-/* ===== footer geometric shapes ===== */
-(function(){
-  var S=[
-   '<svg viewBox="0 0 100 100"><g fill="#8b5cf6"><circle cx="30" cy="30" r="22"/><circle cx="70" cy="30" r="22"/><circle cx="30" cy="70" r="22"/><circle cx="70" cy="70" r="22"/><rect x="30" y="30" width="40" height="40"/></g></svg>',
-   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#a3e635"/><g fill="#06060a"><circle cx="34" cy="34" r="10"/><circle cx="66" cy="34" r="10"/><circle cx="34" cy="66" r="10"/><circle cx="66" cy="66" r="10"/></g></svg>',
-   '<svg viewBox="0 0 100 100"><path d="M12 8h34a42 42 0 0 1 0 84H12z" fill="#f4f4f6"/><circle cx="40" cy="50" r="14" fill="#06060a"/></svg>',
-   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#7c3aed"/></svg>',
-   '<svg viewBox="0 0 100 100"><path d="M6 18l40 32L6 82zM40 18l40 32-40 32z" fill="#f4f4f6"/></svg>',
-   '<svg viewBox="0 0 100 100"><path d="M6 18l44 32L6 82zM94 18L50 50l44 32z" fill="#fb923c"/></svg>',
-   '<svg viewBox="0 0 100 100"><path d="M50 6l44 88-44-26L6 94z" fill="#f4f4f6"/></svg>',
-   '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#ec4899" stroke-width="22"/></svg>'];
-  document.getElementById('shp').innerHTML=S.join('');
-})();
+  /* ---------- HERO ---------- */
+  var heroChar = $('#heroChar'), speech = $('#speech'), clap = $('#clap');
+  heroChar.dataset.pose = 'crossed';
+  gsap.from('.hero-title .ln>span', { yPercent: 115, rotation: 4, duration: 1.1, stagger: .12, ease: 'power4.out', delay: introDelay });
+  gsap.from('#heroRig', { scale: .8, transformOrigin: '50% 100%', opacity: 0, rotationY: -70, duration: 1.5, ease: 'power3.out', delay: introDelay + .2 });
+  gsap.from('.hero-copy, .hero-cta, .eyebrow', { y: 24, opacity: 0, duration: .9, stagger: .08, ease: 'power3.out', delay: introDelay + .4 });
+  gsap.from('.ticket', { y: 80, rotation: 18, opacity: 0, duration: 1.2, ease: 'back.out(1.5)', delay: introDelay + .7 });
+  gsap.from(clap, { x: -60, rotation: -40, opacity: 0, duration: .9, ease: 'back.out(2)', delay: introDelay + 1 });
+  gsap.from(speech, { scale: 0, opacity: 0, duration: .6, ease: 'back.out(3)', delay: introDelay + 1.4 });
+  if (!reduced) gsap.to('.bigword', { xPercent: -33.3, duration: 40, ease: 'none', repeat: -1 });
 
-/* ===== tools strip ===== */
-(function(){
-  var T=[['Figma','UI/UX, flows & design systems'],['Illustrator','Logos, vectors & illustration'],['Photoshop','Retouching & composites'],['InDesign','Catalogs, brochures & layouts'],['After Effects','Motion graphics & animation'],['Premiere Pro','Video editing'],['ChatGPT','AI concepts, graphics & video'],['Google Flow','AI video generation'],['Claude','AI ideas & copy'],['Captivate','E-learning'],['Lottie','Lightweight UI animation'],['Miro','Workshops & journey maps'],['Adobe XD','Prototyping'],['PowerPoint','Decks & presentations']];
-  function row(id,arr){var h='';for(var k=0;k<2;k++)arr.forEach(function(t){h+='<div class="tc"><b>'+t[0]+'</b><span>'+t[1].replace(/&/g,'&amp;')+'</span></div>'});document.getElementById(id).innerHTML=h}
-  row('t1',T);row('t2',T.slice(7).concat(T.slice(0,7)));
-})();
-
-/* ===== projects: sticky stacked cards ===== */
-var stack=document.getElementById('stack'),chipsEl=document.getElementById('chips');
-function phBlock(p,k,label){var d=el('div','ph');d.style.background='linear-gradient(135deg,'+p.c[k%2]+','+p.c[(k+1)%2]+')';if(label)d.textContent=label;return d}
-function imgBlock(src,alt,pos,p){var im=new Image();im.src=src;im.alt=alt;im.loading='lazy';im.decoding='async';if(pos)im.style.objectPosition=pos;im.onclick=function(){open(p)};return im}
-function render(cat){
-  stack.innerHTML='';
-  var list=PROJECTS.filter(function(p){return cat==='All'||p.cat===cat});
-  list.forEach(function(p,i){
-    var c=el('article','card rv');c.style.setProperty('--o',(Math.min(i,6)*12)+'px');
-    var hd=el('div','hd');
-    hd.appendChild(el('div','no',(i<9?'0':'')+(i+1)));
-    var mt=el('div','mt');mt.appendChild(el('small','',p.cat+(p.year?' · '+p.year:'')));mt.appendChild(el('h3','',p.title));hd.appendChild(mt);
-    var lk=el('div','lk');
-    if(p.l&&p.l.length){p.l.forEach(function(x){var a=el('a','pill sm',x[0]);a.href=x[1];a.target='_blank';a.rel='noopener';lk.appendChild(a)})}
-    if(p.g&&p.g.length>1){var b=el('button','pill sm','View gallery');b.type='button';b.onclick=function(){open(p)};lk.appendChild(b)}
-    else if(p.v||p.yt||p.pl){var pb=el('button','pill sm',p.pl?'Watch playlist':'Watch video');pb.type='button';pb.onclick=function(){open(p)};lk.appendChild(pb)}
-    else if(!p.src&&!(p.l&&p.l.length)){lk.appendChild(el('span','pill sm dim','Coming soon'))}
-    hd.appendChild(lk);c.appendChild(hd);
-    var cm=el('div','cm');
-    if((p.v||p.yt||p.pl)&&!(p.g&&p.g.length>2)){
-      var va=el('div','a');if(p.v){var pv=document.createElement('video');pv.src=p.v;pv.poster=p.src;pv.muted=true;pv.loop=true;pv.autoplay=true;pv.playsInline=true;pv.setAttribute('muted','');pv.setAttribute('playsinline','');pv.preload='metadata';pv.className='m';pv.style.cssText='width:100%;height:100%;object-fit:cover;display:block;cursor:pointer';pv.onclick=function(){open(p)};va.appendChild(pv)}else{va.appendChild(imgBlock(p.src,p.title,'50% 50%',p))}va.appendChild(el('div','pl','▶'));
-      var vb=el('div');vb.appendChild(imgBlock(p.src,p.title,'15% 50%',p));var vc=el('div');vc.appendChild(imgBlock(p.src,p.title,'85% 50%',p));
-      cm.style.gridTemplateColumns='1fr';cm.style.gridTemplateRows='1fr';va.style.gridColumn='1';va.style.gridRow='1';cm.appendChild(va);
-    }else if(p.src&&p.g&&p.g.length>2){
-      var rest=p.g.filter(function(x){return x.src!==p.src});
-      var s2=rest[Math.min(1,rest.length-1)],s3=rest[Math.min(Math.ceil(rest.length/2),rest.length-1)];
-      var a=el('div','a');a.appendChild(imgBlock(p.src,p.title,p.pos,p));
-      var b2=el('div');b2.appendChild(imgBlock(s2.src,s2.cap,'50% 50%',p));
-      var b3=el('div');b3.appendChild(imgBlock(s3.src,s3.cap,'50% 50%',p));
-      cm.appendChild(a);cm.appendChild(b2);cm.appendChild(b3);
-    }else{
-      var a2=el('div','a');a2.appendChild(phBlock(p,0,'Work in progress — uploading soon'));
-      if(p.type==='video')a2.appendChild(el('div','pl','▶'));
-      var x2=el('div');x2.appendChild(phBlock(p,1));var x3=el('div');x3.appendChild(phBlock(p,0));
-      cm.appendChild(a2);cm.appendChild(x2);cm.appendChild(x3);
+  var takes = [
+    ['A blank canvas…', 'Scene 1'],
+    ['Then an idea sparks. 💡', 'Scene 2'],
+    ['Sketch, design, refine.', 'Scene 3'],
+    ['Add motion &amp; magic. ✨', 'Scene 4'],
+    ['A brand people remember.', 'Scene 5'],
+    ["That's a wrap! 🎬", 'The end']
+  ];
+  var take = 0, storyT = null;
+  function placeSpeech(){
+    var st = $('#heroStage').getBoundingClientRect(), c = heroChar.getBoundingClientRect();
+    if (!c.width) return;
+    var w = speech.offsetWidth, h = speech.offsetHeight, pad = 12;
+    var x = c.right - c.width * .12, y = c.top + c.height * .2, tail = '18px 18px 18px 4px';
+    if (x + w > innerWidth - pad){ x = c.left + c.width * .12 - w; tail = '18px 18px 4px 18px'; }
+    if (x < pad){ x = Math.max(pad, Math.min(innerWidth - pad - w, c.left + c.width / 2 - w / 2)); y = c.top - h - 14; tail = '18px'; }
+    var tk = document.querySelector('.ticket'), hr = document.querySelector('.hero-right');
+    if (tk && hr && getComputedStyle(hr).display !== 'none'){
+      var r = tk.getBoundingClientRect();
+      if (!(x + w < r.left || x > r.right || y + h < r.top || y > r.bottom)) y = Math.max(c.top - h * .2, r.top - h - 10);
     }
-    c.appendChild(cm);stack.appendChild(c);watch(c);
+    speech.style.left = (x - st.left) + 'px'; speech.style.top = (y - st.top) + 'px'; speech.style.right = 'auto'; speech.style.borderRadius = tail;
+  }
+  function action(){
+    var t = takes[take % takes.length]; take++;
+    clap.classList.remove('snap'); void clap.offsetWidth; clap.classList.add('snap');
+    setTimeout(function(){ clap.classList.remove('snap'); }, 260);
+    $('#take').textContent = ('0' + ((take - 1) % takes.length + 1)).slice(-2);
+    $('#clapTitle').textContent = t[1];
+    pop(speech, t[0]); placeSpeech();
+  }
+  function playStory(){
+    clearTimeout(storyT); take = 0;
+    (function next(){ action(); storyT = setTimeout(function(){ if (take >= takes.length) take = 0; next(); }, 1500); })();
+  }
+  addEventListener('resize', placeSpeech);
+  setTimeout(playStory, (introDelay + 1.6) * 1000);
+  // ticket rows preview a pose
+  $$('.ticket li').forEach(function(li){
+    li.addEventListener('mouseenter', function(){});
   });
-}
-var cats=['All'].concat(PROJECTS.map(function(p){return p.cat}).filter(function(v,i,a){return a.indexOf(v)===i}));
-cats.forEach(function(c,i){var b=el('button',i?'':'on',c);b.type='button';b.onclick=function(){[].forEach.call(chipsEl.children,function(x){x.className=''});b.className='on';render(c);setCd(c)};chipsEl.appendChild(b)});
+  // spotlight + 3D tilt follow the pointer
+  var spot = $('#spot'), home = $('#home');
+  var rigs = ['#heroRig', '#storyRig', '#wrapRig'].map(function(s){
+    var el = $(s); gsap.set(el, { transformPerspective: 1000 });
+    return { ry: gsap.quickTo(el, 'rotationY', { duration: .9, ease: 'power3' }), rx: gsap.quickTo(el, 'rotationX', { duration: .9, ease: 'power3' }) };
+  });
+  addEventListener('pointermove', function(e){
+    var mx = e.clientX / innerWidth - .5, my = e.clientY / innerHeight - .5;
+    rigs.forEach(function(r){ r.ry(mx * 26); r.rx(-my * 8); });
+    var hr = home.getBoundingClientRect();
+    spot.style.setProperty('--sx', (e.clientX - hr.left) + 'px'); spot.style.setProperty('--sy', (e.clientY - hr.top) + 'px');
+    if (window.__dust){ window.__dust.mx = mx; window.__dust.my = my; }
+  });
+  gsap.to('#heroStage', { yPercent: 14, scale: .9, ease: 'none', scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-left', { yPercent: -18, opacity: .2, ease: 'none', scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: true } });
 
-/* ===== reveal on scroll ===== */
-var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
-function watch(e){if(io)io.observe(e);else e.classList.add('in')}
-[].forEach.call(document.querySelectorAll('.rv'),watch);
+  /* ---------- STORY: words light up as you scroll ---------- */
+  var mono = $('#mono');
+  (function split(node){
+    Array.prototype.slice.call(node.childNodes).forEach(function(n){
+      if (n.nodeType === 3){
+        var frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if (!part) return;
+          if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part));
+          else { var s = document.createElement('span'); s.className = 'w'; s.textContent = part; frag.appendChild(s); }
+        });
+        node.replaceChild(frag, n);
+      } else if (n.nodeType === 1) split(n);
+    });
+  })(mono);
+  gsap.to('#mono .w', { opacity: 1, stagger: .05, ease: 'none', scrollTrigger: { trigger: '#mono', start: 'top 78%', end: 'bottom 45%', scrub: true } });
+  gsap.from('#storyRig', { rotationY: 80, scale: .85, transformOrigin: '50% 100%', opacity: 0, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: '#story', start: 'top 70%' } });
+  var thoughts = ['What\'s the story here?', 'Who is it for?', 'How should it feel?', 'Got it. Let\'s design.'];
+  ScrollTrigger.create({ trigger: '#story', start: 'top 60%', end: 'bottom 40%', onUpdate: function(s){
+    var i = Math.min(thoughts.length - 1, Math.floor(s.progress * thoughts.length));
+    var th = $('#thought'); if (th.dataset.i != i){ th.dataset.i = i; pop(th, thoughts[i]); }
+  }});
+  $$('[data-count]').forEach(function(b){
+    var o = { v: 0 };
+    gsap.to(o, { v: +b.dataset.count, duration: 1.6, ease: 'power2.out', scrollTrigger: { trigger: b, start: 'top 90%' },
+      onUpdate: function(){ b.textContent = Math.round(o.v) + (b.dataset.suffix || ''); } });
+  });
 
-/* ===== scroll effects: outline fill + floating shapes ===== */
-var fills=[].slice.call(document.querySelectorAll('[data-fill]')),fls=[].slice.call(document.querySelectorAll('.fl')),tick=false;
-function onScroll(){
-  tick=false;var vh=innerHeight;
-  fills.forEach(function(e){var r=e.getBoundingClientRect();var p=rm?1:Math.max(0,Math.min(1,(vh*.88-r.top)/(vh*.5)));e.style.setProperty('--p',p.toFixed(3))});
-  if(!rm)fls.forEach(function(e){var r=e.parentElement.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;var off=(r.top+r.height/2-vh/2)*parseFloat(e.dataset.s);e.style.transform='translate3d(0,'+off.toFixed(1)+'px,0) rotate('+(off*.12).toFixed(1)+'deg)'})
-}
-function req(){if(!tick){tick=true;requestAnimationFrame(onScroll)}}
-addEventListener('scroll',req,{passive:true});addEventListener('resize',req);
-req();
+  /* ---------- SCENES: pinned horizontal film strip ---------- */
+  var strip = $('#strip');
+  var dist = function(){ return strip.scrollWidth - innerWidth; };
+  var film = gsap.to(strip, { x: function(){ return -dist(); }, ease: 'none',
+    scrollTrigger: { trigger: '#scenes', pin: true, scrub: 1, end: function(){ return '+=' + dist(); }, invalidateOnRefresh: true } });
+  $$('.scene').forEach(function(sc){
+    var art = sc.querySelector('.art img.pchar') || sc.querySelector('.art img'), h = sc.querySelector('h3'), num = sc.querySelector('.bignum');
+    gsap.fromTo(art, { rotationY: -35, scale: .85, opacity: 0, transformOrigin: '50% 100%' }, { rotationY: 0, scale: 1, opacity: 1, ease: 'none',
+      scrollTrigger: { trigger: sc, containerAnimation: film, start: 'left 95%', end: 'left 35%', scrub: true } });
+    gsap.from(h, { x: innerWidth < 720 ? 0 : 40, opacity: 0, ease: 'none', scrollTrigger: { trigger: sc, containerAnimation: film, start: 'left 85%', end: 'left 45%', scrub: true } });
+    gsap.to(num, { x: -120, ease: 'none', scrollTrigger: { trigger: sc, containerAnimation: film, start: 'left right', end: 'right left', scrub: true } });
+    // card tilts toward the cursor
+    if (!touch){
+      var rx = gsap.quickTo(sc, 'rotationX', { duration: .6 }), ry = gsap.quickTo(sc, 'rotationY', { duration: .6 });
+      gsap.set(sc, { transformPerspective: 1400 });
+      sc.addEventListener('pointermove', function(e){ var r = sc.getBoundingClientRect(); ry(((e.clientX - r.left) / r.width - .5) * 8); rx(-((e.clientY - r.top) / r.height - .5) * 6); });
+      sc.addEventListener('pointerleave', function(){ rx(0); ry(0); });
+    }
+  });
 
-/* ===== hero emblem tilt ===== */
-(function(){
-  var h=document.getElementById('top'),e=document.getElementById('emb').firstElementChild;if(rm)return;
-  h.addEventListener('mousemove',function(ev){var r=h.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;e.style.setProperty('--ry',(x*26).toFixed(1)+'deg');e.style.setProperty('--rx',(-y*20).toFixed(1)+'deg')});
-  h.addEventListener('mouseleave',function(){e.style.setProperty('--ry','0deg');e.style.setProperty('--rx','0deg')});
+  /* ---------- SCREENING ROOM (projects from praveenm-portfolio) ---------- */
+  var PROJECTS = [{"id": "p0", "title": "The Green Bean Coffee Co. — Logo & Brand Identity", "genre": "Branding", "year": 2026, "cover": "images2/img-6306cc8995.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for The Green Bean Coffee Co., a nature-inspired café brand that blends coffee, freshness and a better tomorrow. The mark brings together a rising sun for energy and new beginnings, two leaves for nature and sustainability, and a roasted coffee bean for passion, all framed by a café-window arch. A warm palette of forest green, leaf green, terracotta, coffee brown and cream, with Montserrat and Poppins type, carries the brand across a logo construction sheet, clear-space rules, logo variations, a botanical pattern, stationery, signage, takeaway cups, tote bag, barista apron and coffee packaging.", "frames": [{"src": "images2/img-e86c7bc4e2.webp", "cap": "The Green Bean Coffee Co.: primary logo"}, {"src": "images2/img-806afd1058.webp", "cap": "Concept: sunrise for energy and new beginnings, leaves for nature and sustainability, coffee bean for passion"}, {"src": "images2/img-ec0a977e59.webp", "cap": "Logo construction grid and core shapes"}, {"src": "images2/img-d99329e08f.webp", "cap": "Clear space based on the height of the coffee bean"}, {"src": "images2/img-f487279dfc.webp", "cap": "Colour palette: forest green, leaf green, terracotta, coffee brown and warm cream"}, {"src": "images2/img-564c542bab.webp", "cap": "Logo variations: full colour, single colour and reversed"}, {"src": "images2/img-945935ecdc.webp", "cap": "Brand pattern: coffee beans, leaves, sunrise and coffee cherries"}, {"src": "images2/img-610cc103c8.webp", "cap": "Brand identity sheet: primary logo, palette and typography"}, {"src": "images2/img-bf2dc3a7f3.webp", "cap": "Stationery: letterhead, business cards and envelope"}, {"src": "images2/img-6306cc8995.webp", "cap": "Café applications: hanging sign, tote bag, cup and barista apron"}, {"src": "images2/img-0fdc13dedf.webp", "cap": "Takeaway cup with patterned sleeve"}, {"src": "images2/img-a4a560d018.webp", "cap": "Packaging: coffee bag and pastry box"}, {"src": "images2/img-49705a5263.webp", "cap": "Coffee botanical harvest pattern"}]}, {"id": "p1", "title": "The Green Bean Coffee Co. — AI Video Ad", "genre": "Videos", "year": 2026, "cover": "images2/green-bean-ad-poster.webp", "pos": "50% 50%", "video": "videos/green-bean-coffee-ad.mp4", "playlist": null, "desc": "A 15-second AI-generated ad for The Green Bean Coffee Co., built from a storyboard in a warm, user-generated style. A creator introduces the Signature Blend pack straight to camera, then the coffee goes from pack to cup: beans poured from the branded pouch, a slow pour-over brew, a relaxed first sip in an outdoor café, and an end card with the logo, the Signature Blend pack and the line \"Brew Fresh. Live Green.\" Natural light, earthy tones and close-up textures keep it true to the brand's fresh, nature-inspired identity.", "frames": []}, {"id": "p2", "title": "Scoop Haven Ice Cream — AI Video Ad", "genre": "Videos", "year": 2026, "cover": "images2/scoop-haven-ad-poster.webp", "pos": "50% 50%", "video": "videos/scoop-haven-ice-cream-ad.mp4", "playlist": null, "desc": "A 10-second AI-generated ad for Scoop Haven Ice Cream, made with Google Gemini. A customer walks into a cosy parlour, scoops of strawberry, chocolate and vanilla are piled into a sundae glass and finished with chocolate sauce, and her first bite says it all. It closes on the Scoop Haven logo with the line \"Scoop • Indulge • Repeat\", using soft neon, pastel colours and a playful, feel-good pace.", "frames": []}, {"id": "p3", "title": "Ampcus Cyber — Social Media Carousels (AI-Generated)", "genre": "AI Design", "year": 2026, "cover": "images2/img-cae9c12448.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "A series of four social media carousels for Ampcus Cyber, 31 slides in total, created with ChatGPT AI. The topics are agentic AI in third-party risk management, insider threat visibility, cybercrime and the law, and continuous vendor risk monitoring. The core of the design is a dark black and red cyber look with glowing 3D icons for the security stories, and a clean light version for vendor risk. Each slide carries one message with a bold headline, a red highlight on the key phrase, short supporting points, numbered slides, and a closing call to action.", "frames": [{"src": "images2/img-cae9c12448.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (1/7) — Every TPRM platform says “Agentic AI”"}, {"src": "images2/img-926c76c60e.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (2/7) — The promise: the pitch"}, {"src": "images2/img-ee5316fd53.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (3/7) — The reality: AI isn’t replacing your TPRM team"}, {"src": "images1/img-2163fcefc8.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (4/7) — The blind spot: your vendor has vendors too"}, {"src": "images2/img-ba194951c7.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (5/7) — AI adds new risk: the tool managing risk needs governance too"}, {"src": "images1/img-43f54dadac.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (6/7) — So what should AI do? Not replace accountability, remove friction"}, {"src": "images2/img-ff234e74bb.webp", "cap": "Carousel 1: Every TPRM Platform Says “Agentic AI” (7/7) — Move from AI promise to governed intelligence"}, {"src": "images1/img-7fa5224f8a.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (1/9) — Revealing insider threat risks before they become incidents"}, {"src": "images2/img-e6870d6287.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (2/9) — The risk was already inside the environment"}, {"src": "images1/img-16d7074d02.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (3/9) — The core challenge was visibility"}, {"src": "images2/img-ea704cf573.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (4/9) — Ampcus Cyber connected the signals"}, {"src": "images2/img-85eb462dc7.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (5/9) — Legitimate access was not always low risk"}, {"src": "images1/img-11c7abfe66.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (6/9) — Context changes the meaning of an activity"}, {"src": "images2/img-9039271921.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (7/9) — Insider threat defense requires multiple layers"}, {"src": "images2/img-cdd293b15e.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (8/9) — From hidden exposure to actionable visibility"}, {"src": "images1/img-6cfaf76a9e.webp", "cap": "Carousel 2: Revealing Insider Threat Risks (9/9) — You cannot protect what you cannot see"}, {"src": "images1/img-2bdeb00eb1.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (1/8) — When cybercrime moves faster than the law"}, {"src": "images1/img-6e8f372be3.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (2/8) — Cybercrime has changed the meaning of “stolen”"}, {"src": "images2/img-b6d6f6d545.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (3/8) — By the time investigation begins, the trail may already be cold"}, {"src": "images1/img-2bf6b3e473.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (4/8) — Cybercrime is exposing an enforcement gap"}, {"src": "images1/img-120b02534a.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (5/8) — Cybercrime needs cyber-native enforcement"}, {"src": "images1/img-2ae784bf89.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (6/8) — Prevention becomes the first line of defence"}, {"src": "images1/img-57bcc8a3f7.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (7/8) — Good cybersecurity creates good evidence"}, {"src": "images2/img-b2b15ea647.webp", "cap": "Carousel 3: When Data Exfiltration Outruns the Law (8/8) — Build for prevention, preserve for proof, respond at cyber speed"}, {"src": "images1/img-092c65c799.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (1/7) — Your vendor was low risk. Is that still true today?"}, {"src": "images1/img-8192068052.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (2/7) — Because risk doesn’t stay still"}, {"src": "images2/img-9bc9a4d516.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (3/7) — Move beyond the annual snapshot"}, {"src": "images1/img-59bd77f93e.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (4/7) — Turn signals into action"}, {"src": "images1/img-6ec3265290.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (5/7) — Focus where risk matters most"}, {"src": "images1/img-00831e7b7f.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (6/7) — But don’t stop at the vendor"}, {"src": "images2/img-ce71e990e2.webp", "cap": "Carousel 4: Your Vendor Was Low Risk (7/7) — Assess once. Monitor continuously."}]}, {"id": "p4", "title": "Ampcus Cyber — AI Explainer Videos (Google Flow)", "genre": "Videos", "year": 2026, "cover": "images2/video-cover.webp", "pos": "50% 50%", "video": null, "playlist": "https://www.youtube.com/playlist?list=PLVY7TO47cU7A", "desc": "AI-generated explainer videos for Ampcus Cyber on compliance and security topics (PCI P2PE). Tap the button to watch the full playlist on my YouTube channel. The concepts and prompts were written with ChatGPT, the shots were generated in Google Flow, and everything was edited, timed and sound-designed in Adobe Premiere Pro. The core idea is turning dense compliance topics into clear, cinematic motion that security and payments teams can follow quickly.", "frames": []}, {"id": "p5", "title": "ComplyX — Platform Logo & Brand Identity", "genre": "Branding", "year": 2026, "cover": "images1/img-7e73291bc2.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for ComplyX, the product platform of Ampcus Cyber that brings compliance, third-party risk and security intelligence tools under one name, with GRACE, Wizard, Mirror and DPDPA Navigator as its products. The core idea is signal and forward momentum: concentric arcs with red nodes stand for continuous monitoring and real-time visibility, and the red chevron that forms the X conveys progress and action. A bold, clean wordmark signals confidence and reliability, and the second chevron in the name repeats the symbol. This is the parent look that the product logos build on.", "frames": [{"src": "images1/img-7e73291bc2.webp", "cap": "COMPLYX — Logo on Dark"}, {"src": "images2/img-bdfedd4846.webp", "cap": "COMPLYX — Logo Construction"}, {"src": "images2/img-c65e6eeb53.webp", "cap": "COMPLYX — Full-Colour Logo"}]}, {"id": "p6", "title": "GRACE (ComplyX) — Logo & Brand Identity", "genre": "Branding", "year": 2026, "cover": "images2/img-fea0dfcf32.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for GRACE, the compliance platform from Ampcus Cyber's ComplyX product family, which brings multiple frameworks, audits and evidence into one interface. The core idea is a continuous cycle: chevron segments turn around a single ring, a red check mark shows a verified control and the outlined chevron is the next in line. Calm, wide geometric lettering keeps it precise. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage.", "frames": [{"src": "images2/img-fea0dfcf32.webp", "cap": "GRACE — Signage & Identity"}, {"src": "images2/img-c09fb3cad3.webp", "cap": "GRACE — Logo Construction"}, {"src": "images1/img-74dfd313f2.webp", "cap": "GRACE — Web & App"}, {"src": "images1/img-749f9eec09.webp", "cap": "GRACE — Stationery"}]}, {"id": "p7", "title": "Mirror (ComplyX) — Logo & Brand Identity", "genre": "Branding", "year": 2026, "cover": "images1/img-5a0a6a2333.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for Mirror, the AI penetration testing platform from Ampcus Cyber's ComplyX product family, which proves which vulnerabilities can really be exploited. The core idea is protect and reflect: a shield whose split interior is a mirror line, with a magnifier on that line looking into both halves to find and prove weaknesses. The rounded lowercase wordmark has a double r that is a mirrored pair, so the name reflects itself. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage.", "frames": [{"src": "images1/img-5a0a6a2333.webp", "cap": "MIRROR — Signage & Identity"}, {"src": "images1/img-2a04329982.webp", "cap": "MIRROR — Logo Construction"}, {"src": "images1/img-0e63de863c.webp", "cap": "MIRROR — Web & App"}, {"src": "images1/img-4fc566424f.webp", "cap": "MIRROR — Stationery"}]}, {"id": "p8", "title": "Wizard (ComplyX) — Logo & Brand Identity", "genre": "Branding", "year": 2026, "cover": "images1/img-7429f42ab9.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for Wizard, the AI-powered third-party risk management platform from Ampcus Cyber's ComplyX product family, which continuously monitors vendor cyber, financial and ESG risk. The core idea is intelligence beyond the perimeter: a red shield wrapped in orbiting rings, with circuit traces reaching six nodes that stand for vendors kept under continuous watch, and a four-point spark with a smaller twin to mark the AI at work. Bold, rounded lettering keeps a complex topic easy to read, and the dot of the i echoes the symbol's nodes. Delivered as a logo construction sheet, light, dark and brand-red app icons, web and mobile app visuals, stationery, ID badge and signage.", "frames": [{"src": "images1/img-7429f42ab9.webp", "cap": "WIZARD — Signage & Identity"}, {"src": "images1/img-6e4af5322b.webp", "cap": "WIZARD — Logo Construction"}, {"src": "images2/img-fb29bb9f70.webp", "cap": "WIZARD — Web & App"}, {"src": "images1/img-65f8b72a1e.webp", "cap": "WIZARD — Stationery"}]}, {"id": "p9", "title": "Clip & Clean — Brand Identity", "genre": "Branding", "year": null, "cover": "images1/img-1cea96cf1b.webp", "pos": "50% 40%", "video": null, "playlist": null, "desc": "Brand identity for Clip & Clean, built around a friendly dog mascot and a rounded, playful wordmark. I explored two directions: a calm sky-blue and navy mark with a bow-tie dog and sparkle details, and a bold navy and red mark with a happy bandana dog. Each was tested on logo backgrounds, mugs, caps and a van livery to keep it clear and consistent across applications.", "frames": [{"src": "images1/img-1cea96cf1b.webp", "cap": "Logo on sky blue"}, {"src": "images2/img-a301f07e98.webp", "cap": "Logo on white"}, {"src": "images2/img-c192016229.webp", "cap": "Logo reversed on navy"}, {"src": "images2/img-820b3453be.webp", "cap": "Cap with sparkle pattern"}, {"src": "images2/img-9f8ba0c967.webp", "cap": "Mug set"}, {"src": "images2/img-b6014d4510.webp", "cap": "Van livery"}, {"src": "images1/img-7c45d2730c.webp", "cap": "Alternate logo direction: mug set"}, {"src": "images2/img-8dee219365.webp", "cap": "Alternate logo direction: cap"}, {"src": "images2/img-abd2ef165f.webp", "cap": "Alternate logo direction: van"}]}, {"id": "p10", "title": "Sai Benaka's — Package Design", "genre": "Print", "year": null, "cover": "images2/img-a3132bed01.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Package design for Sai Benaka's, a range of nine ready-to-cook instant powder mixes. The core of the design is a warm red and gold pouch with a ribbon label for the dish name, a real food photo and hand-drawn vegetable line art that signals fresh, home-style food. One system lets all nine recipes look like a single family, and I explored colour and layout variants before the final Pulav pouch.", "frames": [{"src": "images2/img-e653bf5d70.webp", "cap": "Sai Benaka's: brand header with vegetable line-art pattern"}, {"src": "images2/img-ed3d582212.webp", "cap": "Nine ready-to-cook recipes"}, {"src": "images2/img-9c85c2ea51.webp", "cap": "Pouch design system for all nine recipes"}, {"src": "images2/img-a3132bed01.webp", "cap": "Semiya Bath ready-to-cook pouch"}, {"src": "images2/img-a28f00ce6e.webp", "cap": "Design variants: colour and layout explorations"}, {"src": "images1/img-3039580b6a.webp", "cap": "Design variants: Pulav pouches in four colourways"}, {"src": "images1/img-624c84401d.webp", "cap": "Final Pulav pouch design"}, {"src": "images2/img-cfcfe7855c.webp", "cap": "Full presentation board"}]}, {"id": "p11", "title": "Reviwell — Moringa Powder Package Design", "genre": "Print", "year": null, "cover": "images2/img-c87f9374ba.webp", "pos": "50% 45%", "video": null, "playlist": null, "desc": "Package design for Reviwell's Organic Pure Moringa Powder, a green superfood sourced from sustainably grown moringa leaves in South India. The core of the design is a single fresh green with white line art and clean typography on a stand-up pouch, so the product feels natural and trustworthy. The front label keeps the message simple, while the back label organises supplement facts, benefits and usage instructions into a clear hierarchy.", "frames": [{"src": "images2/img-e8911f5834.webp", "cap": "Moringa organic pure moringa powder: brand header"}, {"src": "images1/img-13fe20df94.webp", "cap": "About the product"}, {"src": "images1/img-5578bf9e18.webp", "cap": "Label artwork: front and back"}, {"src": "images1/img-39a085b839.webp", "cap": "Package style: stand-up pouches"}, {"src": "images2/img-cfe8026804.webp", "cap": "Package labelling process: label + pouch = final pack"}, {"src": "images2/img-9f861cea56.webp", "cap": "Product shots"}, {"src": "images2/img-c87f9374ba.webp", "cap": "Final pouch: front and back"}, {"src": "images1/img-2115f0b87d.webp", "cap": "Full presentation board"}]}, {"id": "p12", "title": "Prakruthi — Brochure Design", "genre": "Print", "year": null, "cover": "images1/img-4257b42bc2.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Brochure for Prakruthi Premium Sorted Rice, a red rice brand by Nagesh Enterprises, shown with its rice bag packaging. The core of the design is fresh green accents and natural grain photography that make the health story easy to follow: a paddy-field cover, an inside spread on health benefits and nutritional values, and a back page with firm details. Clear headings, short lists and a friendly portrait keep the information simple to read.", "frames": [{"src": "images2/img-ebaf77dc54.webp", "cap": "Prakruthi Premium Sorted Rice: brand header"}, {"src": "images2/img-d01f1e78bc.webp", "cap": "Rice bag packaging and red rice"}, {"src": "images1/img-4257b42bc2.webp", "cap": "Brochure mock-up: cover, back and inside spread"}, {"src": "images1/img-2d1f19a936.webp", "cap": "Brochure pages: cover, health benefits, nutritional values and firm details"}, {"src": "images1/img-273df0d618.webp", "cap": "Full presentation board"}]}, {"id": "p13", "title": "Elevate 2.0 — Logo Design", "genre": "Branding", "year": null, "cover": "images1/img-32156797c9.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo for Elevate 2.0, the 40-year celebration of Ratna Sagar Private Limited, an educational publisher. The core of the design is simple learning shapes: a circle for enlightenment and a triangle for growth and progress combine into an upward arrow that signifies elevation. Warm orange and deep maroon convey energy, optimism and a strong foundation, and the mark was tested on a pattern, polo shirts and a billboard.", "frames": [{"src": "images1/img-32156797c9.webp", "cap": "Elevate 2.0 logo: presentation header"}, {"src": "images1/img-576a08ed18.webp", "cap": "Logo construction: circle for enlightenment and triangle for growth and progress form an upward arrow"}, {"src": "images2/img-dfeb97023a.webp", "cap": "Colour palette: warm orange and deep maroon"}, {"src": "images1/img-7360c262ef.webp", "cap": "Logo marks and upward-arrow pattern"}, {"src": "images1/img-7c1d57df52.webp", "cap": "Final logo with colour variations"}, {"src": "images1/img-1d7f2c69f8.webp", "cap": "Mock-up: polo shirts"}, {"src": "images2/img-b9d5ec74e4.webp", "cap": "Mock-up: Celebrating 40 Years billboard"}, {"src": "images1/img-61b495df50.webp", "cap": "Full presentation board"}]}, {"id": "p14", "title": "SN City — Logo Design", "genre": "Branding", "year": 2020, "cover": "images1/img-1fdde62c6c.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand guidelines for SN City, a township in Kolar - Bangarpet created for a healthy and hassle-free lifestyle. The core of the design is a monogram that combines the letters S and N with a house inside a strong hexagon, so the mark feels secure and homely. Rich gold and brown add a premium warmth, supported by the tagline Serene. Seamless. Secure., colour and safe-area rules, Mirai typography and mock-ups on an ID card, helmet and mugs.", "frames": [{"src": "images2/img-aca0c3f7c7.webp", "cap": "SN City logo: cover, Kolar - Bangarpet"}, {"src": "images2/img-842f07f7bb.webp", "cap": "About SN City"}, {"src": "images1/img-1fdde62c6c.webp", "cap": "Idea and construction: S + N + house form the monogram"}, {"src": "images2/img-f0794cc172.webp", "cap": "Colour palette: gold and brown"}, {"src": "images1/img-102665af48.webp", "cap": "Logo combinations with the tagline Serene. Seamless. Secure."}, {"src": "images2/img-e0208bc45e.webp", "cap": "Safe area around the logo"}, {"src": "images1/img-55b373e2de.webp", "cap": "Mock-up: ID card and lanyard"}, {"src": "images1/img-1ef0200ed5.webp", "cap": "Typography: Mirai"}, {"src": "images2/img-9f2e9ac79c.webp", "cap": "Mock-up: safety helmet"}, {"src": "images1/img-3c30efdf1d.webp", "cap": "Mock-up: mugs"}, {"src": "images2/img-9e0f5a503f.webp", "cap": "Full presentation board"}]}, {"id": "p15", "title": "Sanmarga Shelters — Logo Design", "genre": "Branding", "year": null, "cover": "images2/img-e1f62603b3.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for Sanmarga Shelters Pvt. Ltd., a construction and real estate developer. The core of the design is a bird in flight built from flowing, flame-like strokes inside a circular arc, symbolising a rise towards new standards in modern, eco-friendly living. The mark works in black, white and a blue-to-green gradient, and was applied across stationery, a safety helmet and paper cups.", "frames": [{"src": "images2/img-e1f62603b3.webp", "cap": "Logo on dark with construction imagery"}, {"src": "images1/img-1087f98f2b.webp", "cap": "Primary logo on white with the SANMARGA wordmark"}, {"src": "images2/img-8d99f4b58f.webp", "cap": "Logo versions: black, white and gradient colour with values"}, {"src": "images2/img-fc7d882f6e.webp", "cap": "About Sanmarga Shelters"}, {"src": "images2/img-de42a2a57b.webp", "cap": "Stationery set: letterhead, folder, business cards, envelopes and more"}, {"src": "images2/img-8a601c1257.webp", "cap": "Mock-up: safety helmet"}, {"src": "images2/img-9a143c20aa.webp", "cap": "Mock-up: paper cups"}, {"src": "images2/img-f5586f60f0.webp", "cap": "Brand photography: engineers and blueprints"}, {"src": "images1/img-6da4f550db.webp", "cap": "Brand graphic: gradient line pattern"}]}, {"id": "p16", "title": "KVK Flower Decorations — Logo Design", "genre": "Branding", "year": null, "cover": "images1/img-05ea50e67d.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "Logo and brand identity for KVK Flower Decorations, a wedding and event floral styling business. The core of the design is an oval badge with a symmetrical monogram of mirrored, flowing strokes that read as petals or wings, with a lotus below. A warm cocoa brown and cream palette feels elegant and sits naturally with flowers, and the mark was applied to entrance arches, stage backdrops, signage, bouquet wrapping, stationery, uniforms and vehicles.", "frames": [{"src": "images1/img-05ea50e67d.webp", "cap": "KVK logo on dark"}, {"src": "images2/img-b4e4c8d10b.webp", "cap": "KVK logo on cocoa gradient"}, {"src": "images2/img-d015a72a5c.webp", "cap": "Brand applications: lit signage, stage, stationery, packaging and vehicle"}, {"src": "images2/img-8aefcb2ffb.webp", "cap": "Brand applications: entrance arch, tags, cards, van, uniform and ribbon"}, {"src": "images2/img-90fceb1d5d.webp", "cap": "Brand applications: arches, stage, easel sign, bouquets, uniform and gift bag"}]}, {"id": "p17", "title": "SN City — Street Billboard Designs", "genre": "Print", "year": null, "cover": "images1/img-74363817d3.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "A series of street billboard designs for SN City, with one poster for each amenity: park, water, gym, healthcare, roads, security, CCTV, swimming pool, supermarket and clubhouse. The core idea is a floating 3D scene in the sky for every amenity, with its own bold colour, one big headline, the SN City logo with its Kannada wordmark and a single phone number, so each board reads clearly from the street.", "frames": [{"src": "images1/img-74363817d3.webp", "cap": "Street billboard mock-up: 24x7 primary health care clinic"}, {"src": "images2/img-ab6cd282b8.webp", "cap": "Street billboard designs: presentation header"}, {"src": "images1/img-7cb9a410a6.webp", "cap": "Billboard mock-up: 10 acres park area"}, {"src": "images1/img-0324e7d4db.webp", "cap": "24 hours water"}, {"src": "images2/img-cfac74ac3a.webp", "cap": "Gym"}, {"src": "images1/img-776f75d5ed.webp", "cap": "24x7 primary health care clinic"}, {"src": "images1/img-28632612f8.webp", "cap": "50 feet roads"}, {"src": "images2/img-fbdbf965a1.webp", "cap": "24x7 security"}, {"src": "images2/img-c96d362da4.webp", "cap": "24x7 CCTV surveillance"}, {"src": "images1/img-2546dc5f3d.webp", "cap": "Infinity swimming pool"}, {"src": "images2/img-84ff4db319.webp", "cap": "Super market at your doorstep"}, {"src": "images2/img-c6b09380b4.webp", "cap": "World class clubhouse"}, {"src": "images1/img-3d5c39796b.webp", "cap": "Full presentation board"}]}, {"id": "p18", "title": "SN City — Catalog Design", "genre": "Print", "year": null, "cover": "images2/img-a74d165a2e.webp", "pos": "50% 50%", "video": null, "playlist": null, "desc": "A landscape hardcover catalog for SN City. The core of the design is a premium warm brown and gold palette with large visualization images and generous white space, so the project feels aspirational. Each spread has one clear message, from lifestyle and the signature resort to the location map, amenity icons and site layout, with clean typography that makes the details easy to find.", "frames": [{"src": "images1/img-6ef3065b25.webp", "cap": "SN City catalog: entrance gate and logo"}, {"src": "images2/img-a74d165a2e.webp", "cap": "Landscape catalog covers"}, {"src": "images1/img-12a9824309.webp", "cap": "Opening spread: an experience of a lifetime"}, {"src": "images1/img-4c1b59ed65.webp", "cap": "Introduction spread"}, {"src": "images2/img-c033acb181.webp", "cap": "What makes your home perfect?"}, {"src": "images1/img-49ae9627da.webp", "cap": "Sunrise and sunset"}, {"src": "images2/img-fbe40415bf.webp", "cap": "SN Signature Resort"}, {"src": "images2/img-eb103d2caf.webp", "cap": "Roads and landscape spread"}, {"src": "images1/img-49071986c1.webp", "cap": "Location map"}, {"src": "images2/img-b0ef387ba8.webp", "cap": "Amenities and layout plan"}, {"src": "images1/img-64602b8bb4.webp", "cap": "Sports and play area spread"}, {"src": "images2/img-bc0c692284.webp", "cap": "About the developer and disclaimer"}, {"src": "images2/img-8b3d0263de.webp", "cap": "Hardcover back covers"}, {"src": "images1/img-6ef3e50290.webp", "cap": "All spreads at a glance"}]}, {"id": "p19", "title": "Innoviti — Social Media Posters", "genre": "Campaigns", "year": null, "cover": "images1/img-3e8bfc1a27.webp", "pos": "50% 40%", "video": null, "playlist": null, "desc": "Social media posters for Innoviti's flagship fintech products: Genie, Genie Plus, UnipayNext and Link. The core of the design is one consistent brand system across every product, using the purple and orange palette, a clear headline, real product screens and friendly people, and a tagline strip, so complex payment features like instant settlement, lower MDR and payment history are understood at a glance in the feed.", "frames": [{"src": "images1/img-3e8bfc1a27.webp", "cap": "Innoviti social media posters: presentation header"}, {"src": "images1/img-2ab62e2e57.webp", "cap": "Genie posts: instant settlement, merchant offers and incentives"}, {"src": "images1/img-7e2d39d342.webp", "cap": "Genie Plus posts: T+1 settlement and 24-hour onboarding, shown in an Instagram feed"}, {"src": "images1/img-051d025cf0.webp", "cap": "UnipayNext posts: terminal performance and accepting payments"}, {"src": "images1/img-0afca3e877.webp", "cap": "Link posts: transaction history, Link 2.0 and 3-in-1 convenience"}, {"src": "images2/img-8944e26633.webp", "cap": "Link post series"}, {"src": "images2/img-a9a329afaa.webp", "cap": "Link campaign: post series layout"}, {"src": "images2/img-ec7a1bba14.webp", "cap": "Full presentation board"}]}];
+  var W = function(f){ return f; };
+  var POSE = { 'Branding':'s_idea', 'Videos':'vlog', 'AI Design':'studio', 'Print':'s_desk', 'Campaigns':'s_present' };
+  var LINE = { 'Branding':'Logos with a story!', 'Videos':'Rolling! 🎬', 'AI Design':'Made with AI.', 'Print':'Print-ready!', 'Campaigns':'Scroll-stoppers!' };
+  PROJECTS.forEach(function(p){
+    p.media = [];
+    if (p.video) p.media.push({ video: p.video, poster: p.cover, cap: '' });
+    if (p.frames.length) p.frames.forEach(function(f){ p.media.push({ img: f.src, cap: f.cap }); });
+    if (!p.media.length) p.media.push({ img: p.cover, cap: '' });
+  });
+  var grid = $('#grid'), filters = $('#filters');
+  var genres = ['All'].concat(PROJECTS.map(function(p){ return p.genre; }).filter(function(g, i, a){ return a.indexOf(g) === i; }));
+  genres.forEach(function(g, i){
+    var b = document.createElement('button'); if (!i) b.className = 'on';
+    var n = g === 'All' ? PROJECTS.length : PROJECTS.filter(function(p){ return p.genre === g; }).length;
+    b.innerHTML = g + '<sup>' + n + '</sup>'; b.dataset.g = g; filters.appendChild(b);
+  });
+  PROJECTS.forEach(function(p, i){
+    var parts = p.title.split(' — ');
+    var c = document.createElement('button'); c.className = 'pcard'; var FIT = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p13", "p14", "p15", "p16"]; c.dataset.open = p.id; c.dataset.g = p.genre;
+    c.dataset.cur = p.video ? 'PLAY' : (p.playlist ? 'WATCH' : 'VIEW');
+    var count = p.video ? 'Video' : (p.playlist ? 'YouTube playlist' : (p.frames.length + (p.frames.length === 1 ? ' frame' : ' frames')));
+    c.innerHTML = '<span class="sprocket l"></span><span class="sprocket r"></span>' +
+      '<div class="cover' + (FIT.indexOf(p.id) > -1 ? ' fit' : '') + '"><img loading="lazy" src="' + W(p.cover) + '" alt="' + p.title.replace(/"/g, '&quot;') + '" style="object-position:' + (p.pos || '50% 50%') + '"></div>' +
+      '<span class="play">' + (p.video || p.playlist ? '▶' : '◉') + '</span>' +
+      '<div class="meta"><span class="genre">' + p.genre + '</span><h3>' + parts[0] + '</h3>' +
+      (parts[1] ? '<p style="font-size:14px;margin-top:4px;color:var(--muted)">' + parts[1] + '</p>' : '') +
+      '<div class="frames"><span>Reel ' + ('0' + (i + 1)).slice(-2) + (p.year ? ' · ' + p.year : '') + '</span><span>' + count + '</span></div></div>';
+    grid.appendChild(c);
+  });
+  var cards = $$('.pcard');
+  gsap.from(cards, { y: 70, opacity: 0, duration: .9, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: grid, start: 'top 85%' } });
+  var dimg = $('#dimg'), dsay = $('#dsay'); dimg.dataset.pose = 's_present';
+  cards.forEach(function(c){
+    var p = PROJECTS.filter(function(x){ return x.id === c.dataset.open; })[0];
+    if (!touch){
+      gsap.set(c, { transformPerspective: 1200 });
+      var rx = gsap.quickTo(c, 'rotationX', { duration: .5 }), ry = gsap.quickTo(c, 'rotationY', { duration: .5 });
+      c.addEventListener('pointermove', function(e){ var r = c.getBoundingClientRect(); ry(((e.clientX - r.left) / r.width - .5) * 10); rx(-((e.clientY - r.top) / r.height - .5) * 8); });
+      c.addEventListener('pointerleave', function(){ rx(0); ry(0); });
+    }
+    c.addEventListener('mouseenter', function(){ swap(dimg, POSE[p.genre] || 's_present'); pop(dsay, LINE[p.genre] || 'Nice pick!'); });
+  });
+  filters.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    $$('#filters button').forEach(function(x){ x.classList.toggle('on', x === b); });
+    var g = b.dataset.g, show = cards.filter(function(c){ return g === 'All' || c.dataset.g === g; });
+    gsap.to(cards, { opacity: 0, y: 20, duration: .18, onComplete: function(){
+      cards.forEach(function(c){ c.style.display = show.indexOf(c) > -1 ? '' : 'none'; });
+      gsap.fromTo(show, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .45, stagger: .05, ease: 'back.out(1.5)' });
+      ScrollTrigger.refresh();
+    }});
+    pop(dsay, g === 'All' ? 'The full lineup!' : g + ', nice pick.');
+    if (POSE[g]) swap(dimg, POSE[g]);
+  });
+
+  // ---- lightbox ----
+  var lb = $('#lb'), screen = $('#lbScreen'), strip2 = $('#lbStrip'), curP = 0, curF = 0, lastFocus;
+  function showFrame(f){
+    var p = PROJECTS[curP], n = p.media.length; curF = (f + n) % n;
+    var m = p.media[curF];
+    var old = screen.querySelector('.fr'); if (old){ if (old.pause) old.pause(); old.remove(); }
+    var el;
+    if (m.video){ el = document.createElement('video'); el.src = W(m.video); el.poster = W(m.poster); el.controls = true; el.playsInline = true; el.autoplay = true; el.preload = 'metadata'; }
+    else { el = document.createElement('img'); el.src = W(m.img); el.alt = m.cap || p.title; }
+    el.className = 'fr'; screen.insertBefore(el, screen.firstChild);
+    gsap.fromTo(el, { opacity: 0, scale: .97 }, { opacity: 1, scale: 1, duration: .4, ease: 'power2.out' });
+    $$('#lbStrip button').forEach(function(b, i){ b.classList.toggle('on', i === curF); });
+    var cap = $('#lbCap'); cap.textContent = m.cap ? (n > 1 ? (curF + 1) + '/' + n + ' · ' : '') + m.cap : '';
+    $('#lbP').style.display = $('#lbN').style.display = n > 1 ? '' : 'none';
+    var on = strip2.children[curF]; if (on && on.scrollIntoView) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
+  function openP(i, f){
+    curP = (i + PROJECTS.length) % PROJECTS.length; var p = PROJECTS[curP];
+    $('#lbCount').textContent = ('0' + (curP + 1)).slice(-2) + '/' + PROJECTS.length;
+    $('#lbGenre').textContent = p.genre; $('#lbTitle').textContent = p.title; $('#lbDesc').textContent = p.desc;
+    $('#lbTags').innerHTML = '';
+    var role = [['Category', p.genre]]; if (p.year) role.push(['Year', p.year]);
+    role.push(['Frames', p.video ? 'Video' : (p.playlist ? 'YouTube playlist' : p.frames.length)]);
+    $('#lbRole').innerHTML = role.map(function(r){ return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>'; }).join('');
+    var yt = $('#lbYT'); if (p.playlist){ yt.href = p.playlist; yt.style.display = 'inline-flex'; } else yt.style.display = 'none';
+    strip2.innerHTML = '';
+    p.media.forEach(function(m, k){
+      var b = document.createElement('button'); b.setAttribute('aria-label', m.cap || ('Frame ' + (k + 1)));
+      b.innerHTML = '<img loading="lazy" src="' + W(m.img || m.poster) + '" alt="">' + (m.video ? '<span class="vb">▶</span>' : '');
+      b.addEventListener('click', function(){ showFrame(k); }); strip2.appendChild(b);
+    });
+    strip2.style.display = p.media.length > 1 ? '' : 'none';
+    if (!lb.classList.contains('open')){ lastFocus = document.activeElement; lb.classList.add('open'); document.body.style.overflow = 'hidden'; $('#lbX').focus(); say('Enjoy the show 🍿'); }
+    $('#lb .info').scrollTop = 0;
+    gsap.fromTo('#lb .info > *', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .45, stagger: .04, ease: 'power3.out' });
+    showFrame(f || 0);
+  }
+  function closeLb(){ var v = screen.querySelector('video'); if (v) v.pause(); lb.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+  document.addEventListener('click', function(e){
+    var o = e.target.closest && e.target.closest('[data-open]'); if (!o) return;
+    var i = PROJECTS.map(function(p){ return p.id; }).indexOf(o.dataset.open); if (i > -1){ e.preventDefault(); openP(i); }
+  });
+  $('#lbX').addEventListener('click', closeLb);
+  $('#lbP').addEventListener('click', function(){ showFrame(curF - 1); });
+  $('#lbN').addEventListener('click', function(){ showFrame(curF + 1); });
+  $('#lbPrevP').addEventListener('click', function(){ openP(curP - 1); });
+  $('#lbNextP').addEventListener('click', function(){ openP(curP + 1); });
+  addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') showFrame(curF + 1);
+    if (e.key === 'ArrowLeft') showFrame(curF - 1);
+  });
+  var sx0 = null;
+  screen.addEventListener('touchstart', function(e){ sx0 = e.touches[0].clientX; }, { passive: true });
+  screen.addEventListener('touchend', function(e){ if (sx0 === null) return; var d = e.changedTouches[0].clientX - sx0; if (Math.abs(d) > 50) showFrame(curF + (d < 0 ? 1 : -1)); sx0 = null; });
+
+  /* ---------- CHAPTERS ---------- */
+    $$('.chap').forEach(function(c){
+    var go = function(){ gsap.fromTo(c.querySelector('.fill'), { scaleX: 0 }, { scaleX: 1, duration: .6, ease: 'power3.out' }); };
+    c.addEventListener('mouseenter', go);
+    ScrollTrigger.create({ trigger: c, start: 'top 55%', end: 'bottom 55%', onToggle: function(s){ if (s.isActive && touch) go(); } });
+  });
+
+  /* ---------- reveals ---------- */
+  $$('.reveal').forEach(function(el){
+    gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+
+  /* ---------- OFF-SET mini game ---------- */
+  var arena = $('#arena'), startEl = $('#start'), scoreEl = $('#score'), timeEl = $('#time'), gamer = $('#gamer');
+  var score = 0, left = 20, timer, spawner, playing = false;
+  function spawn(){
+    var b = document.createElement('img'); b.src = IMG('bulb'); b.className = 'bulb'; b.alt = 'idea';
+    var w = arena.clientWidth, x = 30 + Math.random() * (w - 120);
+    b.style.left = x + 'px'; b.style.top = arena.clientHeight + 'px';
+    arena.appendChild(b);
+    var tw = gsap.to(b, { y: -(arena.clientHeight + 120), x: (Math.random() - .5) * 220, rotation: (Math.random() - .5) * 60, duration: 2.6 + Math.random() * 1.4, ease: 'none', onComplete: function(){ b.remove(); } });
+    b.addEventListener('pointerdown', function(e){
+      if (!playing) return;
+      tw.kill(); score++; scoreEl.textContent = score;
+      var p = document.createElement('div'); p.className = 'pop'; p.textContent = ['Nice!', 'Idea!', '+1', 'Eureka!', 'Brilliant!'][score % 5];
+      p.style.left = b.style.left; p.style.top = (b.offsetTop + gsap.getProperty(b, 'y')) + 'px'; arena.appendChild(p);
+      gsap.to(p, { y: -60, opacity: 0, duration: .9, onComplete: function(){ p.remove(); } });
+      gsap.to(b, { scale: 1.8, opacity: 0, duration: .3, onComplete: function(){ b.remove(); } });
+      gsap.fromTo(gamer, { y: 0 }, { y: -14, duration: .12, yoyo: true, repeat: 1 });
+      if (score >= 8) end(true);
+    });
+  }
+  function end(win){
+    playing = false; clearInterval(timer); clearInterval(spawner); arena.classList.remove('playing');
+    var nz = arena.querySelector('.neon'); if (nz) nz.firstChild.textContent = win ? 'GG!' : 'game over';
+    $$('#arena .bulb').forEach(function(b){ gsap.to(b, { opacity: 0, duration: .3, onComplete: function(){ b.remove(); } }); });
+    startEl.style.display = 'flex';
+    startEl.querySelector('h3').textContent = win ? 'You think like a designer!' : 'Time\'s up! Ideas escaped.';
+    startEl.querySelector('p').textContent = win ? 'all 8 ideas caught' : 'you caught ' + score + ' of 8';
+    $('#play').textContent = 'Play again ▶';
+    gamer.src = IMG(win ? 's_gamer' : 'gamer');
+    if (win){ confetti(arena.getBoundingClientRect()); say('GG! 🏆'); }
+  }
+  $('#play').addEventListener('click', function(){
+    score = 0; left = 20; scoreEl.textContent = 0; timeEl.textContent = 20; playing = true; gamer.src = IMG('gamer');
+    startEl.style.display = 'none'; arena.classList.add('playing');
+    var nz = arena.querySelector('.neon'); if (nz) nz.firstChild.textContent = 'game on';
+    spawner = setInterval(spawn, 620); spawn();
+    timer = setInterval(function(){ left--; timeEl.textContent = left; if (left <= 0) end(false); }, 1000);
+  });
+
+  /* ---------- WRAP ---------- */
+  var wrapChar = $('#wrapChar'); wrapChar.dataset.pose = 'celebrate';
+  gsap.from('#wrapRig', { scale: .6, transformOrigin: '50% 100%', opacity: 0, duration: 1.2, ease: 'back.out(1.4)', scrollTrigger: { trigger: '#wrapStage', start: 'top 80%' } });
+  wrapChar.addEventListener('click', function(){ gsap.fromTo(wrapChar, { y: 0 }, { y: -60, duration: .3, yoyo: true, repeat: 1, ease: 'power2.out' }); confetti(wrapChar.getBoundingClientRect()); });
+  function confetti(r){
+    var cols = ['#f08a35', '#f4e6d0', '#d9483b', '#ffd36a', '#7fb6a6'];
+    for (var i = 0; i < 70; i++){
+      var c = document.createElement('div'); c.className = 'confetti'; c.style.background = cols[i % cols.length];
+      document.body.appendChild(c);
+      gsap.set(c, { x: r.left + r.width / 2, y: r.top + r.height / 3, rotation: Math.random() * 360 });
+      gsap.to(c, { x: '+=' + (Math.random() - .5) * 700, y: '+=' + (Math.random() * 500 - 380), rotation: '+=' + (Math.random() * 720), opacity: 0, duration: 1.4 + Math.random(), ease: 'power2.out', onComplete: (function(el){ return function(){ el.remove(); }; })(c) });
+    }
+  }
+  var toast = $('#toast');
+  $('#copy').addEventListener('click', function(){
+    var done = function(){ toast.classList.add('show'); setTimeout(function(){ toast.classList.remove('show'); }, 2200); confetti($('#copy').getBoundingClientRect()); say('Talk soon!'); };
+    try { navigator.clipboard.writeText('praveenm18011994@gmail.com').then(done, done); } catch (e) { done(); }
+  });
+
+  /* ---------- buddy ---------- */
+  var buddy = $('#buddy'), bsay = $('#bsay'), bt, idle;
+  function say(t){ bsay.textContent = t; bsay.classList.add('show'); gsap.fromTo(buddy, { rotation: -12 }, { rotation: 0, duration: .6, ease: 'elastic.out(1,.4)' }); clearTimeout(bt); bt = setTimeout(function(){ bsay.classList.remove('show'); }, 1800); }
+  $$('nav [data-say]').forEach(function(a){ a.addEventListener('mouseenter', function(){ say(a.dataset.say); }); });
+  buddy.addEventListener('click', function(){ say('Rewinding…'); scrollTo({ top: 0, behavior: 'smooth' }); });
+  function resetIdle(){ clearTimeout(idle); idle = setTimeout(function(){ if (buddy.classList.contains('show')) say('Still watching? 🍿'); }, 10000); }
+  addEventListener('pointermove', resetIdle, { passive: true });
+
+  /* ---------- nav / progress / scene label ---------- */
+  var nav = $('#nav'), prog = $('#progress'), sceneEl = $('#scene');
+  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: function(s){
+    prog.style.transform = 'scaleX(' + s.progress + ')';
+    nav.classList.toggle('solid', scrollY > 40);
+    buddy.classList.toggle('show', scrollY > innerHeight * .7);
+    resetIdle();
+  }});
+  $$('section[data-scene]').forEach(function(sec){
+    ScrollTrigger.create({ trigger: sec, start: 'top 50%', end: 'bottom 50%', onToggle: function(s){ if (s.isActive) sceneEl.textContent = 'Scene ' + sec.dataset.scene; } });
+  });
+  // smooth anchor scrolling that respects the pinned section
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href'); var t = $(id); if (!t) return;
+      e.preventDefault();
+      var st = ScrollTrigger.getAll().filter(function(x){ return x.pin && x.trigger === t; })[0];
+      var y = st ? st.start : t.getBoundingClientRect().top + scrollY;
+      scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  /* ---------- warm 3D bokeh (Three.js) ---------- */
+  try {
+    var cv = $('#dust'), r = new THREE.WebGLRenderer({ canvas: cv, alpha: true, antialias: false });
+    r.setPixelRatio(Math.min(devicePixelRatio || 1, 1.5)); r.setSize(innerWidth, innerHeight);
+    var sc = new THREE.Scene(), cam = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, .1, 100); cam.position.z = 10;
+    var N = innerWidth < 700 ? 220 : 520, P = new Float32Array(N * 3), S = new Float32Array(N);
+    for (var i = 0; i < N; i++){ P[i*3] = (Math.random() - .5) * 26; P[i*3+1] = (Math.random() - .5) * 18; P[i*3+2] = (Math.random() - .5) * 14; S[i] = Math.random(); }
+    var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(P, 3));
+    var c = document.createElement('canvas'); c.width = c.height = 64; var x = c.getContext('2d');
+    var gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, 'rgba(255,214,160,1)'); gr.addColorStop(.35, 'rgba(240,138,53,.45)'); gr.addColorStop(1, 'rgba(240,138,53,0)');
+    x.fillStyle = gr; x.fillRect(0, 0, 64, 64);
+    var pts = new THREE.Points(g, new THREE.PointsMaterial({ size: .22, map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: .5 }));
+    sc.add(pts);
+    var D = window.__dust = { mx: 0, my: 0 }, t0 = performance.now();
+    addEventListener('resize', function(){ cam.aspect = innerWidth / innerHeight; cam.updateProjectionMatrix(); r.setSize(innerWidth, innerHeight); });
+    r.setAnimationLoop(function(){
+      var t = (performance.now() - t0) / 1000, a = g.attributes.position.array;
+      if (!reduced) for (var i = 0; i < N; i++){ a[i*3+1] += .004 + S[i] * .006; if (a[i*3+1] > 9) a[i*3+1] = -9; a[i*3] += Math.sin(t * .5 + S[i] * 6) * .003; }
+      g.attributes.position.needsUpdate = true;
+      pts.rotation.y += (D.mx * .25 - pts.rotation.y) * .04; pts.rotation.x += (D.my * .15 - pts.rotation.x) * .04;
+      r.render(sc, cam);
+    });
+  } catch (e) { $('#dust').style.display = 'none'; }
+
+  addEventListener('load', function(){ ScrollTrigger.refresh(); });
 })();
-
-/* ===== contact form -> opens the visitor's email app ===== */
-document.getElementById('cf').addEventListener('submit',function(ev){
-  ev.preventDefault();var f=ev.target.elements;
-  var sub='Portfolio enquiry from '+f.n.value.trim();
-  var body=f.m.value.trim()+'\n\n'+f.n.value.trim()+' ('+f.e.value.trim()+')';
-  location.href='mailto:praveenm18011994@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
-});
-
-document.getElementById('x').onclick=close;
-lb.onclick=function(e){if(e.target===lb)close()};
-document.getElementById('yr').textContent=new Date().getFullYear();
-render('All');setCd('All');
-
 </script>
 </body>
 </html>
