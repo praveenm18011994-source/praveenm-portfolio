@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Praveen M — The Director's Cut</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="description" content="Praveen M — Senior Graphic Designer and storyteller. Branding, UI/UX, campaigns, motion and AI video.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -58,6 +60,8 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;transition:background .3s,padding .3s}
 nav.solid{background:rgba(23,13,8,.8);backdrop-filter:blur(12px);padding:12px 5vw;border-bottom:1px solid var(--line)}
 .logo{font-family:var(--slab);font-weight:900;font-size:22px}.logo span{color:var(--accent)}
+.logo{display:inline-flex;align-items:center}.logo img{height:46px;width:auto;display:block;transition:transform .3s}.logo:hover img{transform:rotate(-4deg) scale(1.06)}.logo img.logo-foot{height:30px}
+@media (max-width:720px){.logo img{height:32px}}
 .rec{display:flex;align-items:center;gap:10px;color:var(--muted)}
 .rec i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s infinite}
 @keyframes blink{50%{opacity:.2}}
@@ -400,7 +404,7 @@ html.no-gsap .monologue .w{opacity:1}
 <div class="progress" id="progress"></div>
 
 <nav id="nav">
-  <a href="#home" class="logo" data-say="From the top!">Pr<span>.</span>M</a>
+  <a href="#home" class="logo" data-say="From the top!" aria-label="Pr.M — Praveen M, home"><img src="img/logo-prm.webp" alt="Pr.M" width="640" height="329"></a>
   <div class="rec mono"><i></i><span id="scene">Scene 01</span></div>
   <ul class="mono">
     <li><a href="#story" data-say="My story.">Story</a></li>
@@ -663,7 +667,7 @@ html.no-gsap .monologue .w{opacity:1}
 </section>
 </main>
 
-<footer class="mono"><span class="logo" style="font-size:18px;letter-spacing:0;text-transform:none">Pr<span>.</span>M</span><span>© Praveen M · Senior Graphic Designer</span><a href="#home">Rewind ↺</a></footer>
+<footer class="mono"><span class="logo"><img src="img/logo-prm.webp" alt="Pr.M" class="logo-foot"></span><span>© Praveen M · Senior Graphic Designer</span><a href="#home">Rewind ↺</a></footer>
 
 <div class="buddy" id="buddy"><img src="img/face.webp" alt="Praveen"></div>
 <div class="bsay" id="bsay"></div>
