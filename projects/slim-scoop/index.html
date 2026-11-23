@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slim Scoop · Concept Brand · Praveen M</title>
+<meta name="description" content="Slim Scoop, a concept brand by Praveen M: strategy, logo, packaging, brand character, retail, campaign and motion for a low-calorie ice cream.">
+<meta property="og:title" content="Slim Scoop · Concept Brand by Praveen M">
+<meta property="og:image" content="assets/retail-shop.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EC; --cream2:#FBEBDA; --forest:#1F4D3A; --forest2:#163A2B; --orange:#EA5D37;
+  --vanilla:#F3DFA2; --cocoa:#6B4232; --straw:#F28B9A; --mint:#9ED9C2; --caramel:#D9964B; --berry:#8C4D8F;
+  --ink:#1F4D3A; --muted:#5d7368;
+  --serif:'Fraunces',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+.wrap{width:min(1200px,90vw);margin:0 auto}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor;border-radius:2px}
+.h2{font-size:clamp(38px,5.6vw,76px);margin:14px 0 22px}
+.h2 em{font-style:italic;color:var(--orange)}
+.lead{font-size:clamp(17px,1.5vw,20px);max-width:620px;color:var(--muted)}
+section{position:relative}
+.pad{padding:clamp(80px,12vw,150px) 0}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* top bar */
+.bar{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(18px,4vw,44px);transition:background .3s, box-shadow .3s}
+.bar.solid{background:rgba(255,246,236,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(31,77,58,.1)}
+.back{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:15px;padding:9px 18px;border-radius:99px;background:var(--forest);color:var(--cream);transition:transform .2s,background .2s}
+.back:hover{transform:translateX(-4px);background:var(--orange)}
+.tag{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--forest);border-radius:99px;padding:7px 16px}
+.progress{position:fixed;top:0;left:0;height:4px;background:var(--orange);z-index:60;width:0}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;align-items:center;overflow:hidden;padding:120px 0 60px}
+.drip{position:absolute;inset:0 0 auto;height:42vh;pointer-events:none}
+.drip svg{width:100%;height:100%}
+.drip .melt{transform:translateY(-100%);animation:melt 2.2s cubic-bezier(.6,0,.2,1) .15s forwards}
+.drip .melt2{transform:translateY(-100%);animation:melt 2.4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes melt{to{transform:translateY(0)}}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:end;margin-top:14vh}
+.hero h1{font-size:clamp(50px,7.4vw,120px);font-weight:800}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.15s;color:var(--orange);font-style:italic;font-weight:600}
+@keyframes up{to{transform:none}}
+.hero .intro{margin-top:26px;max-width:540px;font-size:19px;color:var(--muted);opacity:0;animation:fade 1s 1.1s forwards}
+@keyframes fade{to{opacity:1}}
+.hero-art{position:relative;justify-self:center;width:min(440px,90%);aspect-ratio:1/1.05}
+.hero-art .sun{position:absolute;inset:8% 4% 2%;border-radius:50%;background:var(--orange);transform:scale(0);animation:pop 1s cubic-bezier(.3,1.5,.5,1) .9s forwards}
+.hero-art img{position:absolute;bottom:0;left:50%;width:92%;transform:translate(-50%,30px);opacity:0;animation:rise 1s cubic-bezier(.2,.8,.2,1) 1.2s forwards}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes rise{to{transform:translate(-50%,0);opacity:1}}
+.chip{position:absolute;background:var(--cream);border-radius:99px;padding:8px 16px;font-size:14px;font-weight:600;box-shadow:0 10px 30px rgba(31,77,58,.18);opacity:0;animation:fade .6s forwards}
+.chip.a{top:14%;left:-6%;animation-delay:1.8s}.chip.b{top:44%;right:-8%;animation-delay:2s}.chip.c{bottom:10%;left:-2%;animation-delay:2.2s}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:70px;padding-top:28px;border-top:1.5px solid rgba(31,77,58,.15);opacity:0;animation:fade 1s 1.5s forwards}
+.meta b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+.meta span{font-size:15px}
+.scrollcue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.7}
+.scrollcue::after{content:"";width:2px;height:38px;background:linear-gradient(var(--forest),transparent);animation:cue 1.6s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* BRIEF */
+.brief{background:var(--forest);color:var(--cream)}
+.brief .lead{color:rgba(255,246,236,.75)}
+.brief .h2 em{color:var(--orange)}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.2vw,42px);line-height:1.2;max-width:900px;margin:10px 0 60px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pill{background:rgba(255,246,236,.06);border:1.5px solid rgba(255,246,236,.14);border-radius:var(--r);padding:30px;transition:transform .35s,background .35s}
+.pill:hover{transform:translateY(-8px);background:rgba(234,93,55,.14)}
+.pill .n{font-family:var(--serif);font-size:48px;color:var(--orange);line-height:1}
+.pill h3{font-size:28px;margin:14px 0 8px}
+.pill p{color:rgba(255,246,236,.7);font-size:15.5px}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px}
+.person{border-top:2px solid var(--orange);padding-top:18px}
+.person h4{font-family:var(--serif);font-size:24px;font-weight:600}
+.person small{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:10px}
+.person p{font-size:15px;opacity:.8}
+.traits{display:flex;flex-wrap:wrap;gap:10px;margin-top:50px}
+.traits span{padding:8px 18px;border-radius:99px;background:var(--cream);color:var(--forest);font-weight:600;font-size:14px}
+
+/* CONSTRUCTION (pinned) */
+.build{height:320vh;background:var(--cream)}
+.build .stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center}
+.build .head{position:absolute;top:13vh;left:0;right:0;text-align:center}
+.build .head .eyebrow{justify-content:center}
+.build .head .eyebrow::before{display:none}
+.build .head h2{font-size:clamp(34px,5vw,64px);margin-top:12px}
+.piece{position:absolute;left:50%;top:54%;width:clamp(64px,11vw,170px);height:clamp(64px,11vw,170px);display:grid;place-items:center;will-change:transform,opacity}
+.piece img{max-width:100%;max-height:100%}
+.piece small{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center;font-size:clamp(12px,1.2vw,16px);font-weight:700}
+.piece small i{display:block;font-style:normal;font-weight:400;opacity:.65}
+.plus{position:absolute;top:54%;left:50%;font-size:clamp(28px,3.5vw,48px);font-weight:700;transform:translate(-50%,-50%)}
+.mark{position:absolute;left:50%;top:55%;width:clamp(170px,24vw,330px);transform:translate(-50%,-50%) scale(.4);opacity:0}
+.mark .spark-flash{position:absolute;inset:-30%;border-radius:50%;background:radial-gradient(circle,rgba(234,93,55,.28),transparent 60%);opacity:0}
+.build .say{position:absolute;bottom:9vh;left:0;right:0;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,30px);opacity:0;padding:0 6vw}
+
+/* LOGO SYSTEM */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.tile{aspect-ratio:1;border-radius:28%;display:grid;place-items:center;transition:transform .4s cubic-bezier(.3,1.6,.5,1);cursor:pointer}
+.tile:hover{transform:rotate(-6deg) scale(1.05)}
+.tile img{width:55%}
+.tile.w img{filter:brightness(0) invert(1)}
+.tile.cr{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(31,77,58,.12)}
+.tile.fo{background:var(--forest)}.tile.or{background:var(--orange)}.tile.bk{background:#262626}
+.board{border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 30px 60px -30px rgba(31,77,58,.35);cursor:zoom-in}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.lockup{background:#fff;border-radius:var(--r);padding:8% 10%;margin-top:50px;box-shadow:0 30px 60px -30px rgba(31,77,58,.3);position:relative;overflow:hidden}
+.lockup img{width:100%}
+.lockup .cs{position:absolute;inset:6%;border:1.5px dashed rgba(31,77,58,.35);border-radius:10px;opacity:0;transition:opacity .4s}
+.lockup:hover .cs{opacity:1}
+.lockup .cs::after{content:"Clear space = x (scoop height)";position:absolute;top:8px;left:12px;font-size:12px;font-weight:600;color:var(--orange)}
+
+/* COLOUR */
+.colour{transition:background-color .6s}
+.swatches{display:grid;grid-template-columns:2fr 1.3fr .8fr;gap:16px;margin-top:40px;height:clamp(200px,26vw,320px)}
+.sw{border-radius:var(--r);padding:24px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;position:relative;transition:transform .3s}
+.sw:hover{transform:translateY(-6px)}
+.sw b{font-family:var(--serif);font-size:clamp(20px,2vw,28px);font-weight:600}
+.sw span{font-size:14px;opacity:.8}
+.sw .pc{position:absolute;top:20px;right:22px;font-family:var(--serif);font-size:clamp(30px,4vw,56px);font-weight:800;opacity:.9}
+.sw.c1{background:var(--cream2);color:var(--forest);box-shadow:inset 0 0 0 1.5px rgba(31,77,58,.1)}
+.sw.c2{background:var(--forest);color:var(--cream)}.sw.c3{background:var(--orange);color:var(--cream)}
+.copied{position:fixed;left:50%;bottom:30px;transform:translate(-50%,80px);background:var(--forest);color:var(--cream);padding:10px 22px;border-radius:99px;font-weight:600;z-index:90;transition:transform .35s}
+.copied.on{transform:translate(-50%,0)}
+.flav{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:110px}
+.picker{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+.picker button{font:600 15px var(--sans);border:none;border-radius:99px;padding:11px 20px;cursor:pointer;background:#fff;color:var(--forest);display:flex;align-items:center;gap:10px;transition:transform .2s,box-shadow .2s}
+.picker button i{width:16px;height:16px;border-radius:50%;background:var(--c)}
+.picker button:hover{transform:translateY(-2px)}
+.picker button.on{box-shadow:0 0 0 2.5px var(--forest)}
+.fname{font-family:var(--serif);font-size:clamp(44px,6vw,80px);font-weight:800;line-height:1;transition:color .5s}
+.fhex{font-size:15px;font-weight:600;letter-spacing:.1em;margin-top:8px}
+.fview{position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--fc,#6B4232);transition:background .6s;box-shadow:0 40px 80px -40px rgba(0,0,0,.4)}
+.fview .ph{position:absolute;inset:0;background-size:cover;transition:opacity .5s,background-position .8s cubic-bezier(.5,0,.2,1)}
+.fview .ring{position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 14px var(--fc,#6B4232);transition:box-shadow .6s}
+
+/* TYPE */
+.type{background:var(--cream2)}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.font{background:var(--cream);border-radius:var(--r);padding:clamp(24px,4vw,50px)}
+.font .aa{font-size:clamp(110px,14vw,200px);line-height:.9;color:var(--forest)}
+.font.f1 .aa{font-family:var(--serif);font-weight:600}
+.font.f2 .aa{font-family:var(--sans);font-weight:700}
+.font h3{font-size:26px;color:var(--orange);margin-top:20px}
+.font.f2 h3{font-family:var(--sans);font-weight:700}
+.font p{font-size:15px;color:var(--muted)}
+.font .abc{margin-top:18px;font-size:clamp(15px,1.4vw,19px);letter-spacing:.08em;word-break:break-all}
+.font.f1 .abc{font-family:var(--serif)}
+.tester{margin-top:20px;background:var(--forest);color:var(--cream);border-radius:var(--r);padding:clamp(28px,5vw,60px)}
+.tester small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+.tester [contenteditable]{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6vw,86px);line-height:1.05;outline:none;margin-top:10px;caret-color:var(--orange)}
+.tester [contenteditable] em{color:var(--orange)}
+.tester .body{font-size:17px;opacity:.75;margin-top:16px;max-width:560px}
+
+/* PATTERN band */
+.band{height:clamp(160px,22vw,260px);background-color:var(--forest);background-image:url(assets/logo-mark.webp);background-size:90px auto;background-repeat:space;animation:slide 30s linear infinite;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:var(--forest);mix-blend-mode:color;opacity:0}
+.band.mk{background-image:none}
+.band .tex{position:absolute;inset:-50% -10%;background-image:url(assets/logo-mark.webp);background-size:80px auto;filter:brightness(0) invert(1);opacity:.9;transform:rotate(-12deg);animation:slide 40s linear infinite}
+@keyframes slide{to{background-position:900px 0}}
+.patterns{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.patterns div{aspect-ratio:1;border-radius:var(--r);background-image:url(assets/board-patterns.webp);background-size:325% auto;cursor:zoom-in;transition:transform .3s}
+.patterns div:hover{transform:scale(1.03)}
+.patterns div:nth-child(1){background-position:10.4% 50%}
+.patterns div:nth-child(2){background-position:50% 50%}
+.patterns div:nth-child(3){background-position:89.6% 50%}
+
+/* SANA */
+.sana{background:var(--forest);color:var(--cream);overflow:hidden}
+.sana .lead{color:rgba(255,246,236,.75)}
+.sana-hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.sana-hero .art{position:relative;aspect-ratio:1}
+.sana-hero .art::before{content:"";position:absolute;inset:6%;border-radius:50%;background:var(--orange)}
+.sana-hero .art img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;transition:opacity .3s}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.rules div{border:1.5px solid rgba(255,246,236,.18);border-radius:16px;padding:18px 20px;font-size:15px}
+.rules b{display:block;color:var(--orange);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.poses{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:70px}
+.pose{background:var(--cream);border-radius:18px;padding:14px 10px 12px;cursor:pointer;color:var(--forest);text-align:center;transition:transform .35s cubic-bezier(.3,1.6,.5,1),background .3s;border:none;font:inherit}
+.pose .im{height:170px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}
+.pose img{height:100%;width:auto;max-width:100%;object-fit:contain;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pose span{display:block;font-size:13px;font-weight:600;margin-top:10px}
+.pose:hover,.pose.on{transform:translateY(-8px);background:#fff}
+.pose:hover img{transform:scale(1.08) rotate(-3deg)}
+.pose.on{box-shadow:0 0 0 3px var(--orange)}
+
+/* PACKAGING horizontal */
+.pack{background:var(--cream)}
+.hz{position:relative}
+.hz .pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hz .track{display:flex;gap:30px;padding:0 5vw;will-change:transform}
+.hz .intro{flex:0 0 min(420px,80vw);display:flex;flex-direction:column;justify-content:center}
+.card{flex:0 0 auto;width:min(62vw,760px);cursor:zoom-in}
+.card .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:3/2;box-shadow:0 40px 70px -40px rgba(31,77,58,.5)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .cap{display:flex;gap:16px;align-items:baseline;margin-top:16px}
+.card .cap b{font-family:var(--serif);font-size:24px;font-weight:600}
+.card .cap span{font-size:14.5px;color:var(--muted)}
+.card .cap i{font-style:normal;font-size:13px;font-weight:700;color:var(--orange)}
+.hz-bar{position:absolute;bottom:7vh;left:5vw;right:5vw;height:3px;background:rgba(31,77,58,.12);border-radius:3px}
+.hz-bar i{display:block;height:100%;width:0;background:var(--orange);border-radius:3px}
+
+/* RETAIL */
+.retail{height:180vh;background:var(--forest2)}
+.retail .pin{position:sticky;top:0;height:100vh;overflow:hidden}
+.retail img{width:100%;height:100%;object-fit:cover;transform:scale(1.35);will-change:transform}
+.retail .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,58,43,.7),rgba(22,58,43,0) 45%,rgba(22,58,43,.75));}
+.retail .txt{position:absolute;left:5vw;right:5vw;bottom:9vh;color:var(--cream);display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.retail .txt h2{font-size:clamp(38px,6vw,88px)}
+.retail .txt p{max-width:420px;opacity:.85}
+.retail .top{position:absolute;top:12vh;left:5vw;color:var(--cream)}
+
+/* CAMPAIGN */
+.camp{background:var(--cream2);overflow:hidden}
+.phones{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:50px 5vw 40px;margin-top:20px;scrollbar-width:none;cursor:grab}
+.phones::-webkit-scrollbar{display:none}
+.phone{flex:0 0 clamp(260px,24vw,320px);scroll-snap-align:center;background:#111;border-radius:42px;padding:12px;box-shadow:0 40px 60px -30px rgba(31,77,58,.55);transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.phone:nth-child(odd){transform:translateY(24px)}
+.phone:hover{transform:translateY(-10px) rotate(-1.5deg)}
+.screen{background:#fff;border-radius:32px;overflow:hidden;color:#111}
+.ig-top{display:flex;align-items:center;gap:9px;padding:30px 14px 10px;font-size:13px;font-weight:600}
+.ig-top .av{width:30px;height:30px;border-radius:50%;background:var(--cream) url(assets/logo-mark.webp) center/62% no-repeat;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--orange)}
+.ig-top small{display:block;font-weight:400;font-size:11px;opacity:.6}
+.screen img{width:100%;aspect-ratio:1;object-fit:cover;pointer-events:none}
+.ig-act{display:flex;gap:14px;padding:10px 14px 4px;font-size:20px}
+.ig-act .lk{transition:transform .3s;cursor:pointer;user-select:none}
+.ig-act .lk.on{color:#e0245e;transform:scale(1.25)}
+.ig-cap{padding:0 14px 20px;font-size:12.5px;line-height:1.45}
+.ig-cap b{font-weight:600}
+.ig-cap span{color:#00376b}
+
+/* FILM */
+.film{background:var(--forest);color:var(--cream)}
+.film .lead{color:rgba(255,246,236,.75)}
+.screenbox{position:relative;margin-top:44px;border-radius:var(--r);overflow:hidden;box-shadow:0 50px 100px -40px rgba(0,0,0,.6);aspect-ratio:16/9;background:#000}
+.screenbox video{width:100%;height:100%;object-fit:cover}
+.snd{position:absolute;right:18px;bottom:18px;background:var(--orange);color:#fff;border:none;font:600 14px var(--sans);padding:10px 18px;border-radius:99px;cursor:pointer}
+
+/* BOOK */
+.book{background:var(--cream)}
+.viewer{margin-top:40px;display:grid;grid-template-columns:1fr;gap:18px}
+.page{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#fff;box-shadow:0 40px 80px -40px rgba(31,77,58,.45);perspective:1600px}
+.page img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s,transform .45s}
+.page img.out{opacity:0;transform:rotateY(-12deg) translateX(-30px)}
+.ctrl{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.ctrl .btns{display:flex;gap:10px}
+.ctrl button,.btn{font:600 15px var(--sans);border:none;border-radius:99px;padding:12px 22px;cursor:pointer;background:var(--forest);color:var(--cream);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s}
+.ctrl button:hover,.btn:hover{background:var(--orange);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest)}
+.btn.ghost:hover{color:var(--cream)}
+.count{font-family:var(--serif);font-size:22px}
+.thumbs{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 12px;scrollbar-width:thin}
+.thumbs img{flex:0 0 120px;height:68px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.5;transition:opacity .2s,transform .2s;border:2px solid transparent}
+.thumbs img:hover{opacity:.85}
+.thumbs img.on{opacity:1;border-color:var(--orange);transform:translateY(-3px)}
+
+/* END */
+.end{background:var(--forest);color:var(--cream);text-align:center;overflow:hidden}
+.end h2{font-size:clamp(44px,7vw,110px)}
+.end h2 em{color:var(--orange)}
+.deliv{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:34px auto 50px;max-width:900px}
+.deliv span{border:1.5px solid rgba(255,246,236,.25);border-radius:99px;padding:8px 18px;font-size:14.5px}
+.end .btn{background:var(--orange)}
+.end .btn.ghost{color:var(--cream);box-shadow:inset 0 0 0 1.5px var(--cream);background:transparent}
+.end .btn.ghost:hover{background:var(--cream);color:var(--forest)}
+.end .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.end .wave{margin-top:80px;height:90px}
+.end .sign{font-size:14px;opacity:.6;margin-top:24px}
+
+/* SANA sidekick */
+.buddy{position:fixed;right:clamp(10px,2vw,26px);bottom:0;z-index:40;width:clamp(80px,7.5vw,115px);pointer-events:none;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.buddy.hide{transform:translateY(110%)}
+.buddy img{width:100%;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));transform-origin:bottom center}
+.buddy img.hop{animation:hop .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes hop{0%{transform:translateY(30px) scale(.9)}100%{transform:none}}
+.bubble{position:absolute;right:85%;bottom:72%;background:#fff;color:var(--forest);font-size:13.5px;font-weight:600;line-height:1.35;padding:10px 14px;border-radius:16px 16px 4px 16px;width:max-content;max-width:210px;box-shadow:0 12px 30px rgba(31,77,58,.22);opacity:0;transform:translateY(8px) scale(.9);transition:opacity .3s,transform .3s}
+.bubble.on{opacity:1;transform:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(14,32,24,.92);z-index:100;display:grid;place-items:center;padding:4vw;opacity:0;pointer-events:none;transition:opacity .3s;cursor:zoom-out}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:100%;max-height:92vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid,.two,.flav,.sana-hero,.spec{grid-template-columns:1fr}
+  .hero-grid{margin-top:6vh}
+  .meta{grid-template-columns:1fr 1fr}
+  .pillars,.people{grid-template-columns:1fr}
+  .poses{grid-template-columns:repeat(3,1fr)}
+  .pose .im{height:130px}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .swatches{grid-template-columns:1fr;height:auto}.sw{min-height:120px}
+  .hz{height:auto!important}.hz .pin{position:relative;height:auto;padding:90px 0}
+  .hz .track{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important;padding-bottom:20px}
+  .card{width:84vw;scroll-snap-align:center}.hz-bar{display:none}
+  .retail{height:auto}.retail .pin{position:relative;height:80vh}
+  .rules{grid-template-columns:1fr}
+  .bubble{display:none}
+  .drip{height:24vh}
+  .hero{padding-top:28vh}
+  .hero-grid{margin-top:0}
+  .chip.a{left:0}.chip.b{right:0}
+  .hero-art{margin-top:30px}.hero-art img{width:auto;height:112%}
+}
+@media (max-width:700px){.buddy{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<header class="bar" id="bar">
+  <a class="back" href="../../#projects" aria-label="Back to projects">← Projects</a>
+  <span class="tag">Concept Brand</span>
+</header>
+
+<!-- HERO -->
+<section class="hero" data-sana="chill-treat" data-say="Hi, I'm Sana! Let me show you around 🍦">
+  <div class="drip" aria-hidden="true">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path class="melt2" fill="#EA5D37" d="M0,0H1440V250C1400,260 1380,330 1340,330C1300,330 1300,240 1250,240C1200,240 1190,300 1140,300C1090,300 1100,200 1040,200C980,200 990,370 930,370C870,370 880,250 820,250C760,250 760,290 700,290C640,290 650,210 590,210C530,210 540,340 480,340C420,340 430,230 370,230C310,230 300,280 250,280C200,280 200,190 150,190C100,190 100,300 50,300C20,300 10,270 0,260Z"/>
+      <path class="melt" fill="#1F4D3A" d="M0,0H1440V170C1400,180 1390,240 1350,240C1310,240 1300,150 1250,150C1200,150 1200,210 1150,210C1100,210 1090,120 1040,120C990,120 990,260 940,260C890,260 890,160 840,160C790,160 780,200 730,200C680,200 690,130 640,130C590,130 590,250 540,250C490,250 490,150 440,150C390,150 390,190 340,190C290,190 290,110 240,110C190,190 180,230 130,230C80,230 80,150 30,150C15,150 5,160 0,165Z"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow" style="opacity:0;animation:fade .8s 1s forwards">Slim Scoop · Concept Brand · 2026</div>
+        <h1><span><i>Full flavour.</i></span><span><i>Light scoop.</i></span></h1>
+        <p class="intro">How do you sell ice cream to people who count calories, without it ever feeling like diet food? This is the story of Slim Scoop, a brand I built end to end: from strategy and logo to packaging, a brand character, retail, a social campaign and a product film.</p>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div>
+        <img src="assets/sana-chill-treat.webp" alt="Sana, the Slim Scoop brand character, enjoying an ice cream">
+        <span class="chip a">🍃 Natural</span><span class="chip b">🔥 Low-calorie</span><span class="chip c">❤ Delicious</span>
+      </div>
+    </div>
+    <div class="meta">
+      <div><b>Project</b><span>Concept brand</span></div>
+      <div><b>Category</b><span>Low-calorie ice cream</span></div>
+      <div><b>My role</b><span>Strategy, identity, packaging, character, campaign, motion</span></div>
+      <div><b>Deliverables</b><span>30-page brand book, 6 packs, 5 social posts, product film</span></div>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll</div>
+</section>
+
+<!-- BRIEF -->
+<section class="brief pad" data-sana="blissful" data-say="Real treat. Zero guilt. That's the whole idea.">
+  <div class="wrap">
+    <div class="eyebrow rv">01 · The brief</div>
+    <h2 class="h2 rv d1">Indulgence, <em>without the heaviness.</em></h2>
+    <p class="quote rv d2">"Light" usually means bland: pale packs, clinical claims, a little sad. I wanted Slim Scoop to feel like the opposite: warm, joyful and full of flavour, with the lightness shown, not shouted.</p>
+    <div class="pillars">
+      <div class="pill rv"><div class="n">01</div><h3>Low-Calorie</h3><p>A lighter scoop, so the treat fits into everyday life.</p></div>
+      <div class="pill rv d1"><div class="n">02</div><h3>Natural Ingredients</h3><p>Real cocoa, fruit, mint and vanilla. Nothing that needs explaining.</p></div>
+      <div class="pill rv d2"><div class="n">03</div><h3>Delicious Flavours</h3><p>Taste comes first. Light never means bland.</p></div>
+    </div>
+    <div class="people">
+      <div class="person rv"><small>18–30 · gym & sport</small><h4>The Fit Foodie</h4><p>Wants a treat that fits their goals. Found on Instagram Reels, with fitness creators, in gyms and cafés.</p></div>
+      <div class="person rv d1"><small>25–40 · busy, urban</small><h4>The Mindful Professional</h4><p>Wants a lighter dessert after work. Found on quick-commerce apps, LinkedIn, office snacking.</p></div>
+      <div class="person rv d2"><small>30–45 · shops for family</small><h4>The Health-First Parent</h4><p>Wants better-for-you treats for everyone. Found in supermarkets, on Facebook, in family packs.</p></div>
+    </div>
+    <div class="traits rv"><span>Indulgent</span><span>Light</span><span>Natural</span><span>Wholesome</span><span>Joyful</span></div>
+  </div>
+</section>
+
+<!-- CONSTRUCTION -->
+<section class="build" id="build" data-sana="wow-moment" data-say="Watch the letter S turn into a scoop!">
+  <div class="stage">
+    <div class="head"><div class="eyebrow">02 · The idea</div><h2>One letter. One scoop.</h2></div>
+    <div class="piece" data-i="0"><img src="assets/piece-s.webp" alt="Letter S"><small>S<i>Brand initial</i></small></div>
+    <div class="plus" data-p="0">+</div>
+    <div class="piece" data-i="1"><img src="assets/piece-scoop.webp" alt="Scoop shape"><small>Scoop<i>Ice cream</i></small></div>
+    <div class="plus" data-p="1">+</div>
+    <div class="piece" data-i="2"><img src="assets/piece-cone.webp" alt="Cone shape"><small>Cone<i>Base</i></small></div>
+    <div class="plus" data-p="2">+</div>
+    <div class="piece" data-i="3"><img src="assets/piece-spark.webp" alt="Spark lines"><small>Spark<i>Freshness & joy</i></small></div>
+    <div class="mark" id="mark"><div class="spark-flash"></div><img src="assets/logo-full.webp" alt="Slim Scoop logo"></div>
+    <p class="say" id="say">An abstract "S" that becomes a scoop on a cone, with a spark of joy.</p>
+  </div>
+</section>
+
+<!-- LOGO SYSTEM -->
+<section class="pad" data-sana="recommend" data-say="Psst… try hovering the icons 😉">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <div class="eyebrow rv">03 · Logo system</div>
+        <h2 class="h2 rv d1">Built to <em>flex.</em></h2>
+        <p class="lead rv d2">The vertical lockup leads on pack fronts and signage. The horizontal version handles lids, web headers and shop fascias. The mark alone works as an app icon, avatar or sticker once people know the name.</p>
+      </div>
+      <div class="lockup rv d2"><div class="cs"></div><img src="assets/logo-full.webp" alt="Slim Scoop primary vertical logo"></div>
+    </div>
+    <div class="tiles">
+      <div class="tile cr rv"><img src="assets/logo-mark.webp" alt="Mark on cream"></div>
+      <div class="tile or w rv d1"><img src="assets/logo-mark.webp" alt="Mark on terracotta"></div>
+      <div class="tile fo w rv d2"><img src="assets/logo-mark.webp" alt="Mark on forest"></div>
+      <div class="tile bk w rv d3"><img src="assets/logo-mark.webp" alt="Mark on black"></div>
+    </div>
+    <div class="board rv" style="margin-top:40px"><img class="zoom" src="assets/board-variations.webp" alt="Logo variations board" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- COLOUR -->
+<section class="colour pad" id="colour" data-sana="cant-choose" data-say="Okay but… which flavour do I pick?!">
+  <div class="wrap">
+    <div class="eyebrow rv">04 · Colour</div>
+    <h2 class="h2 rv d1">Cream, forest <em>& a spark.</em></h2>
+    <p class="lead rv d2">Cream says indulgent, forest says natural, terracotta adds the joy. They're used in a strict 60 / 30 / 10 ratio, so every touchpoint feels like the same brand. Tap a colour to copy its code.</p>
+    <div class="swatches">
+      <div class="sw c1 rv" data-hex="#FFF6EC"><span class="pc" data-to="60">0%</span><b>Scoop Cream</b><span>#FFF6EC · backgrounds, pack bodies</span></div>
+      <div class="sw c2 rv d1" data-hex="#1F4D3A"><span class="pc" data-to="30">0%</span><b>Forest</b><span>#1F4D3A · logo, headlines, lids</span></div>
+      <div class="sw c3 rv d2" data-hex="#EA5D37"><span class="pc" data-to="10">0%</span><b>Terracotta</b><span>#EA5D37 · accents, spark</span></div>
+    </div>
+    <div class="flav">
+      <div>
+        <div class="eyebrow rv">One layout, every flavour</div>
+        <p class="lead rv d1" style="margin-top:14px">Each flavour owns one colour. It fills the wave band on packs and cone sleeves and colours the flavour name, while the brand colours stay the same.</p>
+        <div class="picker rv d2" id="picker">
+          <button data-n="Cocoa" data-c="#6B4232" data-x="17" class="on" style="--c:#6B4232"><i></i>Cocoa</button>
+          <button data-n="Strawberry" data-c="#F28B9A" data-x="34" style="--c:#F28B9A"><i></i>Strawberry</button>
+          <button data-n="Mint Chip" data-c="#9ED9C2" data-x="50.5" style="--c:#9ED9C2"><i></i>Mint Chip</button>
+          <button data-n="Salted Caramel" data-c="#D9964B" data-x="66.5" style="--c:#D9964B"><i></i>Salted Caramel</button>
+          <button data-n="Berry Swirl" data-c="#8C4D8F" data-x="83" style="--c:#8C4D8F"><i></i>Berry Swirl</button>
+          <button data-n="Vanilla" data-c="#F3DFA2" data-v="1" style="--c:#F3DFA2"><i></i>Vanilla</button>
+        </div>
+        <div class="fname" id="fname" style="color:#6B4232">Cocoa</div>
+        <div class="fhex" id="fhex">#6B4232</div>
+      </div>
+      <div class="fview rv d2" id="fview" style="--fc:#6B4232">
+        <div class="ph" id="fcone" style="background-image:url(assets/pack-cones.webp);background-size:auto 112%;background-position:17% 30%"></div>
+        <div class="ph" id="fvan" style="background-image:url(assets/cone-vanilla.webp);background-position:center;opacity:0"></div>
+        <div class="ring"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section class="type pad" data-sana="excited-reveal" data-say="Go on, type something in the green box!">
+  <div class="wrap">
+    <div class="eyebrow rv">05 · Typography</div>
+    <h2 class="h2 rv d1">A soft serif <em>with a clean partner.</em></h2>
+    <div class="spec">
+      <div class="font f1 rv"><div class="aa">Aa</div><h3>Fraunces</h3><p>Headlines & display · Weight 600</p><div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div></div>
+      <div class="font f2 rv d1"><div class="aa">Aa</div><h3>Poppins</h3><p>Body, subheads & labels · 400 / 500 / 700</p><div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div></div>
+    </div>
+    <div class="tester rv">
+      <small>Type tester · click and edit</small>
+      <div contenteditable="true" spellcheck="false">Nature made it <em>delicious.</em></div>
+      <p class="body">Low-calorie ice cream with natural ingredients. Body copy in Poppins Regular: friendly, clear and easy to read on packs, posts and screens.</p>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true" style="background-image:none"><div class="tex"></div></div>
+
+<section class="pad" data-sana="share-a-scoop" data-say="That drip pattern is my favourite.">
+  <div class="wrap">
+    <div class="eyebrow rv">06 · Patterns</div>
+    <h2 class="h2 rv d1">Melt, repeat, <em>wrap.</em></h2>
+    <p class="lead rv d2">A melting drip for hero moments and banners, plus two repeat patterns built from the mark for tissue paper, bags and backgrounds.</p>
+    <div class="patterns"><div class="rv" data-full="assets/board-patterns.webp" role="img" aria-label="Melt drip pattern"></div><div class="rv d1" data-full="assets/board-patterns.webp" role="img" aria-label="Cream repeat pattern"></div><div class="rv d2" data-full="assets/board-patterns.webp" role="img" aria-label="Forest repeat pattern"></div></div>
+  </div>
+</section>
+
+<!-- SANA -->
+<section class="sana pad" id="sana" data-sana="none">
+  <div class="wrap">
+    <div class="sana-hero">
+      <div class="art rv"><img id="sanaBig" src="assets/sana-offer.webp" alt="Sana pose"></div>
+      <div>
+        <div class="eyebrow rv">07 · Brand character</div>
+        <h2 class="h2 rv d1">Meet <em>Sana.</em></h2>
+        <p class="lead rv d2">Sana is the everyday Slim Scoop fan: active, cheerful and never guilty about a treat. She shows that light can still be indulgent. She's who I'd tell this story through.</p>
+        <div class="rules rv d3">
+          <div><b>Her look</b>Forest crop top and leggings, a cream hoodie and cream sneakers. She wears the brand palette.</div>
+          <div><b>Always</b>Holding or enjoying a Slim Scoop product. Never recoloured, stretched or redrawn.</div>
+        </div>
+      </div>
+    </div>
+    <div class="eyebrow rv" style="margin-top:80px">Her pose library · tap one</div>
+    <div class="poses" id="poses"></div>
+  </div>
+</section>
+
+<!-- PACKAGING -->
+<section class="pack hz" id="hz" data-sana="offer" data-say="Tubs, cones, sandwiches… I'll take one of each.">
+  <div class="pin">
+    <div class="track" id="track">
+      <div class="intro">
+        <div class="eyebrow">08 · Packaging</div>
+        <h2 class="h2">One family <em>on every shelf.</em></h2>
+        <p class="lead">Cream body, forest lid, flavour-coloured wave. The system stays the same from a 120 ml cup to a 1 L family pack. Keep scrolling →</p>
+      </div>
+      <figure class="card" data-full="assets/pack-cocoa-tub.webp"><div class="ph"><img src="assets/pack-cocoa-tub.webp" alt="Cocoa 500 ml tub" loading="lazy"></div><figcaption class="cap"><i>01</i><b>Cocoa Tub</b><span>500 ml hero pack</span></figcaption></figure>
+      <figure class="card" data-full="assets/pack-cocoa-120.webp"><div class="ph"><img src="assets/pack-cocoa-120.webp" alt="Cocoa 120 ml cup" loading="lazy"></div><figcaption class="cap"><i>02</i><b>Single Cup</b><span>120 ml, with the logo on the lid too</span></figcaption></figure>
+      <figure class="card" data-full="assets/pack-sandwich.webp"><div class="ph"><img src="assets/pack-sandwich.webp" alt="Ice cream sandwich wrapper" loading="lazy"></div><figcaption class="cap"><i>03</i><b>Ice Cream Sandwich</b><span>Flow-wrap with the terracotta wave</span></figcaption></figure>
+      <figure class="card" data-full="assets/pack-family.webp"><div class="ph"><img src="assets/pack-family.webp" alt="Vanilla family pack" loading="lazy"></div><figcaption class="cap"><i>04</i><b>Family Pack</b><span>1 L Classic Vanilla</span></figcaption></figure>
+      <figure class="card" data-full="assets/pack-cones.webp"><div class="ph"><img src="assets/pack-cones.webp" alt="Five flavour cone sleeves" loading="lazy"></div><figcaption class="cap"><i>05</i><b>Cone Sleeves</b><span>One layout, five flavours</span></figcaption></figure>
+    </div>
+    <div class="hz-bar"><i id="hzbar"></i></div>
+  </div>
+</section>
+
+<!-- RETAIL -->
+<section class="retail" id="retail" data-sana="celebrate" data-say="Welcome to the scoop shop! 🎉">
+  <div class="pin">
+    <img id="shop" src="assets/retail-shop.webp" alt="Slim Scoop retail store showcase" loading="lazy">
+    <div class="ov"></div>
+    <div class="top eyebrow" style="color:var(--cream)">09 · Retail</div>
+    <div class="txt">
+      <h2>Step inside<br>the scoop shop.</h2>
+      <p>A backlit logo wall, flavour menu boards, the tub lineup, cone stand, carry bag and tasting counter. The same palette and wave, scaled up into a space people can walk into.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN -->
+<section class="camp pad" data-sana="pure-joy" data-say="Double-tap the hearts. I dare you 💚">
+  <div class="wrap">
+    <div class="eyebrow rv">10 · Social campaign</div>
+    <h2 class="h2 rv d1">Five posts, <em>one feeling.</em></h2>
+    <p class="lead rv d2">A two-tone Fraunces headline, three benefit icons and a hero product or Sana moment. Each post says the same thing differently: you don't have to choose between taste and balance. Drag to scroll →</p>
+  </div>
+  <div class="phones" id="phones"></div>
+</section>
+
+<!-- FILM -->
+<section class="film pad" id="film" data-sana="cheeky-lick" data-say="Sound on, please. 🎬">
+  <div class="wrap">
+    <div class="eyebrow rv">11 · Motion</div>
+    <h2 class="h2 rv d1">The product <em>film.</em></h2>
+    <p class="lead rv d2">A short product film that brings the packs, the flavours and the mood to life, cut for Reels and ads.</p>
+    <div class="screenbox rv">
+      <video id="vid" src="assets/slim-scoop-film.mp4" poster="assets/film-poster.webp" muted loop playsinline preload="metadata" controls></video>
+      <button class="snd" id="snd">🔊 Sound on</button>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book pad" id="book" data-sana="strawberry-bliss" data-say="All 30 pages. Use your arrow keys!">
+  <div class="wrap">
+    <div class="eyebrow rv">12 · Brand book</div>
+    <h2 class="h2 rv d1">Flip through <em>the guidelines.</em></h2>
+    <p class="lead rv d2">The full 30-page brand book: essence, logo, visual language and brand in action. Use the arrows or your keyboard.</p>
+    <div class="viewer rv">
+      <div class="page" id="page"><img id="pg" src="assets/book/page-01.webp" alt="Brand book page 1"></div>
+      <div class="ctrl">
+        <div class="btns"><button id="prev" aria-label="Previous page">←</button><button id="next" aria-label="Next page">→</button></div>
+        <div class="count"><span id="pn">01</span> / 30</div>
+        <a class="btn ghost" href="assets/Slim-Scoop-Brand-Guidelines.pdf" target="_blank" rel="noopener">Download PDF ↓</a>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- END -->
+<section class="end pad" data-sana="celebrate" data-say="Thanks for scooping by! 💚">
+  <div class="wrap">
+    <div class="eyebrow rv" style="justify-content:center">That's a wrap</div>
+    <h2 class="rv d1" style="margin-top:16px">One brand. <em>Every scoop.</em></h2>
+    <div class="deliv rv d2">
+      <span>Brand strategy</span><span>Logo & mark</span><span>Colour & type system</span><span>Patterns & icons</span><span>Brand character</span><span>Packaging range</span><span>Retail concept</span><span>Social campaign</span><span>Product film</span><span>30-page brand book</span>
+    </div>
+    <div class="row rv d3">
+      <a class="btn" href="../../#projects">← More projects</a>
+      <a class="btn ghost" href="mailto:praveenm18011994@gmail.com?subject=Loved%20Slim%20Scoop%20%E2%80%94%20let's%20talk">Let's work together</a>
+    </div>
+    <p class="sign">Slim Scoop is a concept brand designed by Praveen M · praveenm18011994@gmail.com</p>
+  </div>
+</section>
+
+<div class="buddy hide" id="buddy" aria-hidden="true"><div class="bubble" id="bubble"></div><img id="buddyImg" src="assets/sana-chill-treat.webp" alt=""></div>
+<div class="copied" id="copied">Copied!</div>
+<div class="lb" id="lb"><img id="lbImg" alt=""></div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+
+/* pose data */
+const POSES=[['offer','Offer'],['excited-reveal','Excited reveal'],['celebrate','Celebrate'],['blissful','Blissful'],['share-a-scoop','Share a scoop'],['cheeky-lick','Cheeky lick'],['recommend','Recommend'],['strawberry-bliss','Strawberry bliss'],['pure-joy','Pure joy'],['wow-moment','Wow moment'],['cant-choose',"Can't choose"],['chill-treat','Chill treat']];
+const src=p=>`assets/sana-${p}.webp`;
+POSES.forEach(([p])=>{const i=new Image();i.src=src(p)});
+const poses=$('#poses'),big=$('#sanaBig');
+POSES.forEach(([p,n],k)=>{
+  const b=document.createElement('button');b.className='pose rv'+(k===0?' on':'');b.style.transitionDelay=(k%6)*.06+'s';
+  b.innerHTML=`<div class="im"><img src="${src(p)}" alt="Sana: ${n}" loading="lazy"></div><span>${n}</span>`;
+  b.onclick=()=>{$$('.pose').forEach(x=>x.classList.remove('on'));b.classList.add('on');big.style.opacity=0;setTimeout(()=>{big.src=src(p);big.alt='Sana: '+n;big.style.opacity=1},200)};
+  poses.appendChild(b);io.observe(b);
+});
+
+/* sidekick */
+const buddy=$('#buddy'),bImg=$('#buddyImg'),bub=$('#bubble');let cur='',tm;
+const sio=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(!e.isIntersecting)return;const p=e.target.dataset.sana,s=e.target.dataset.say;
+    if(p==='none'){buddy.classList.add('hide');cur='';return}
+    if(e.target.classList.contains('hero')){buddy.classList.add('hide');cur='';return}
+    buddy.classList.remove('hide');
+    if(p!==cur){cur=p;bImg.src=src(p);bImg.classList.remove('hop');void bImg.offsetWidth;bImg.classList.add('hop');
+      bub.textContent=s||'';bub.classList.remove('on');clearTimeout(tm);
+      if(s){setTimeout(()=>bub.classList.add('on'),350);tm=setTimeout(()=>bub.classList.remove('on'),4200)}}
+  })},{rootMargin:'-45% 0px -45% 0px'});
+$$('[data-sana]').forEach(s=>sio.observe(s));
+
+/* colour % counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const to=+e.target.dataset.to,t0=performance.now();(function f(t){const k=clamp((t-t0)/1400);e.target.textContent=Math.round(ease(k)*to)+'%';if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+$$('.pc').forEach(el=>cio.observe(el));
+const cp=$('#copied');
+$$('.sw').forEach(s=>s.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(s.dataset.hex).catch(()=>{});cp.textContent='Copied '+s.dataset.hex;cp.classList.add('on');setTimeout(()=>cp.classList.remove('on'),1500)});
+
+/* flavour picker */
+const colSec=$('#colour'),fv=$('#fview'),fc=$('#fcone'),fvan=$('#fvan'),fn=$('#fname'),fh=$('#fhex');
+$$('#picker button').forEach(b=>b.onclick=()=>{
+  $$('#picker button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const c=b.dataset.c;fv.style.setProperty('--fc',c);fn.textContent=b.dataset.n;fh.textContent=c;
+  fn.style.color=(c==='#F3DFA2'||c==='#9ED9C2')?'#1F4D3A':c;
+  colSec.style.backgroundColor=`color-mix(in srgb, ${c} 16%, #FFF6EC)`;
+  if(b.dataset.v){fvan.style.opacity=1;fc.style.opacity=0}else{fvan.style.opacity=0;fc.style.opacity=1;fc.style.backgroundPosition=b.dataset.x+'% 30%'}
+});
+
+/* campaign phones */
+const POSTS=[['social-all-flavour','All the flavour. Less of the calories. 🍓','#SlimScoop #GuiltFree'],['social-nature','Nature made it delicious. Mint chip, real cocoa. 🌿','#NaturalIngredients'],['social-balance','Your cravings. Your balance. 🍨','#LightScoop'],['social-indulgence','Indulgence without compromise. Post-yoga, pre-nap. ☀️','#TreatYourselfLightly'],['social-six','Six flavours. Endless happiness. Which one are you? 💚','#PickYourScoop']];
+const ph=$('#phones');
+POSTS.forEach(([f,c,h],k)=>{const d=document.createElement('div');d.className='phone';
+  d.innerHTML=`<div class="screen"><div class="ig-top"><div class="av"></div><div>slimscoop<small>Sponsored</small></div></div><img src="assets/${f}.webp" alt="${c}" loading="lazy" draggable="false"><div class="ig-act"><span class="lk">♡</span><span>💬</span><span>➤</span></div><div class="ig-cap"><b>slimscoop</b> ${c} <span>${h}</span></div></div>`;
+  const lk=d.querySelector('.lk'),im=d.querySelector('img');
+  const like=()=>{lk.classList.toggle('on');lk.textContent=lk.classList.contains('on')?'♥':'♡'};
+  lk.onclick=like;im.ondblclick=like;ph.appendChild(d)});
+/* drag scroll */
+let dn=false,sx,sl;ph.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=ph.scrollLeft;ph.style.scrollSnapType='none';ph.style.cursor='grabbing'});
+addEventListener('pointerup',()=>{if(!dn)return;dn=false;ph.style.scrollSnapType='';ph.style.cursor=''});
+addEventListener('pointermove',e=>{if(dn)ph.scrollLeft=sl-(e.clientX-sx)});
+
+/* film */
+const vid=$('#vid'),snd=$('#snd');
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!reduce)vid.play().catch(()=>{});else vid.pause()}),{threshold:.5}).observe(vid);
+snd.onclick=()=>{vid.muted=!vid.muted;snd.textContent=vid.muted?'🔊 Sound on':'🔇 Mute';vid.play()};
+
+/* book */
+const N=30,pg=$('#pg'),pn=$('#pn'),th=$('#thumbs');let pi=1;
+const pad=n=>String(n).padStart(2,'0'),bsrc=n=>`assets/book/page-${pad(n)}.webp`;
+for(let i=1;i<=N;i++){const t=new Image();t.src=bsrc(i);t.loading='lazy';t.alt='Page '+i;t.onclick=()=>go(i);th.appendChild(t)}
+function go(n){n=((n-1+N)%N)+1;if(n===pi)return;pi=n;pg.classList.add('out');
+  const nx=new Image();nx.src=bsrc(n);nx.onload=()=>{setTimeout(()=>{pg.src=nx.src;pg.alt='Brand book page '+n;pg.classList.remove('out')},180)};
+  pn.textContent=pad(n);[...th.children].forEach((t,k)=>t.classList.toggle('on',k===n-1));th.children[n-1].scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'})}
+th.children[0].classList.add('on');
+$('#prev').onclick=()=>go(pi-1);$('#next').onclick=()=>go(pi+1);
+const bookSec=$('#book');
+addEventListener('keydown',e=>{const r=bookSec.getBoundingClientRect();if(r.top>innerHeight*.6||r.bottom<innerHeight*.4)return;if(e.key==='ArrowRight')go(pi+1);if(e.key==='ArrowLeft')go(pi-1)});
+let tx0=null;$('#page').addEventListener('touchstart',e=>tx0=e.touches[0].clientX,{passive:true});
+$('#page').addEventListener('touchend',e=>{if(tx0===null)return;const d=e.changedTouches[0].clientX-tx0;if(Math.abs(d)>40)go(pi+(d<0?1:-1));tx0=null});
+$('#page').onclick=()=>open(pg.src);
+
+/* lightbox */
+const lb=$('#lb'),lbi=$('#lbImg');
+function open(s){lbi.src=s;lb.classList.add('on')}
+lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+$$('.zoom').forEach(i=>i.onclick=()=>open(i.src));
+$$('[data-full]').forEach(el=>el.addEventListener('click',()=>{if(!hzDragged)open(el.dataset.full)}));
+let hzDragged=false;
+
+/* scroll-driven: construction, horizontal pack, retail zoom, progress */
+const build=$('#build'),pieces=$$('.piece'),pluses=$$('.plus'),mark=$('#mark'),flash=mark.querySelector('.spark-flash'),say=$('#say');
+const hz=$('#hz'),track=$('#track'),hzbar=$('#hzbar'),retail=$('#retail'),shop=$('#shop'),bar=$('#bar'),prog=$('#prog');
+const mobile=()=>innerWidth<=900;
+function sizeHz(){if(mobile()){hz.style.height='';return}hz.style.height=(track.scrollWidth-innerWidth+innerHeight)+'px'}
+const secP=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
+function frame(){
+  const st=scrollY,H=document.documentElement.scrollHeight-innerHeight;prog.style.width=(st/H*100)+'%';
+  bar.classList.toggle('solid',st>60);
+  // construction
+  const p=reduce?1:secP(build),W=Math.min(innerWidth,1300),gap=W*.235;
+  pieces.forEach((el,i)=>{
+    const slot=(i-1.5)*gap, appear=clamp((p-i*.05)/.12), conv=ease(clamp((p-.3)/.35));
+    const x=slot*(1-conv), s=1-conv*.55, o=appear*(1-clamp((p-.55)/.12));
+    el.style.transform=`translate(calc(-50% + ${x}px), calc(-50% + ${(1-appear)*40}px)) scale(${s})`;el.style.opacity=o;
+    el.querySelector('small').style.opacity=1-clamp((p-.28)/.08)});
+  pluses.forEach((el,i)=>{el.style.left=`calc(50% + ${(i-1)*gap}px)`;el.style.opacity=clamp((p-.1-i*.04)/.08)*(1-clamp((p-.28)/.06))});
+  const m=clamp((p-.6)/.18);mark.style.opacity=m;mark.style.transform=`translate(-50%,-50%) scale(${.4+ease(m)*.6})`;
+  flash.style.opacity=m>0&&m<1?Math.sin(m*Math.PI):0;say.style.opacity=clamp((p-.78)/.1);
+  // horizontal
+  if(!mobile()){const hp=secP(hz),max=track.scrollWidth-innerWidth;track.style.transform=`translateX(${-hp*max}px)`;hzbar.style.width=hp*100+'%'}
+  // retail zoom
+  const rp=mobile()?.6:secP(retail);shop.style.transform=`scale(${1.35-rp*.35})`;
+  ticking=false}
+let ticking=false;addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});
+addEventListener('resize',()=>{sizeHz();frame()});
+addEventListener('load',()=>{sizeHz();frame()});sizeHz();frame();
+})();
+</script>
+</body>
+</html>
