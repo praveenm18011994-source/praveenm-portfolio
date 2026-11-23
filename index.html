@@ -48,6 +48,12 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 @keyframes blFade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.bl-s{animation:none;stroke-dashoffset:0}.bl-dot{animation:none;transform:none}}
 /* intro countdown */
+/* intro: spotlight look for the brush logo */
+#intro{background:radial-gradient(ellipse 60% 50% at 50% 50%,#1d110a 0%,#0c0604 70%,#050302 100%)}
+#intro .leader{border:none;width:min(70vmin,520px)}
+#intro .leader::before,#intro .leader::after,#intro .sweep{display:none}
+#intro .intro-logo{width:100%}
+
 #intro{position:fixed;inset:0;z-index:200;background:#0f0805;display:grid;place-items:center;animation:introOut .6s 3.6s forwards}
 @keyframes introOut{to{opacity:0;visibility:hidden}}
 .leader{position:relative;width:min(56vmin,380px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(244,230,208,.35);display:grid;place-items:center}
@@ -410,7 +416,7 @@ html.no-gsap .monologue .w{opacity:1}
 </head>
 <body class="loading">
 <div id="intro" aria-hidden="true">
-  <div class="leader"><div class="sweep"></div><div class="brushlogo intro-logo" data-delay="0.25" data-speed="1" role="img" aria-label="Pr.M"></div></div>
+  <div class="leader"><div class="sweep"></div><div class="brushlogo intro-logo" data-delay="0.2" data-speed="0.85" role="img" aria-label="Pr.M"></div></div>
   <div class="presents mono">Praveen M presents — a story told in design</div>
 </div>
 <canvas id="dust" aria-hidden="true"></canvas>
@@ -419,7 +425,7 @@ html.no-gsap .monologue .w{opacity:1}
 <div class="progress" id="progress"></div>
 
 <nav id="nav">
-  <a href="#home" class="logo" data-say="From the top!" aria-label="Pr.M — Praveen M, home"><span class="brushlogo head-logo" data-delay="3.3" data-speed="0.7" data-hover="1" role="img" aria-label="Pr.M"></span></a>
+  <a href="#home" class="logo" data-say="From the top!" aria-label="Pr.M — Praveen M, home"><span class="brushlogo head-logo" data-delay="3.3" data-speed="0.7" data-hover="1" data-burst="flash" role="img" aria-label="Pr.M"></span></a>
   <div class="rec mono"><i></i><span id="scene">Scene 01</span></div>
   <ul class="mono">
     <li><a href="#story" data-say="My story.">Story</a></li>
@@ -1130,40 +1136,124 @@ html.no-gsap .monologue .w{opacity:1}
 })();
 </script>
 <script>
-/* Pr.M brush-paint logo */
+/* Pr.M brush-paint logo: glowing brush tip, sparks, dot pop, underline swipe, spark burst */
 (function(){
-  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches, n = 0;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches, n = 0, NS = 'http://www.w3.org/2000/svg';
   // [path, brush width, start (s), duration (s)] in logo units (640 x 329)
   var STROKES = [
-    ['M152,82 C130,130 105,190 72,250 C58,280 46,302 34,324', 64, 0.00, 0.42],
-    ['M8,132 C40,96 120,42 210,24 C272,14 302,58 262,100 C222,144 140,182 36,214', 60, 0.30, 0.62],
-    ['M214,250 C226,210 238,172 250,140 C276,118 314,108 342,122 C362,136 348,160 334,164', 56, 0.86, 0.42],
-    ['M360,236 C392,170 424,108 452,50 C460,100 466,150 474,202 C520,138 572,70 622,10 C612,110 592,210 572,308', 64, 1.20, 0.80]
+    ['M152,82 C130,130 105,190 72,250 C58,280 46,302 34,324', 64, 0.00, 0.45],
+    ['M8,132 C40,96 120,42 210,24 C272,14 302,58 262,100 C222,144 140,182 36,214', 60, 0.32, 0.70],
+    ['M214,250 C226,210 238,172 250,140 C276,118 314,108 342,122 C362,136 348,160 334,164', 56, 0.98, 0.45],
+    ['M360,236 C392,170 424,108 452,50 C460,100 466,150 474,202 C520,138 572,70 622,10 C612,110 592,210 572,308', 64, 1.38, 0.85]
   ];
-  var DOT = [322, 215, 27, 2.06, 0.42];
-  var LINE = ['M112,324 C200,282 330,256 452,256 C500,256 530,262 552,266', 58, 2.24, 0.48];
-  function build(el){
-    var id = 'bl' + (n++), sp = parseFloat(el.dataset.speed || 1), d0 = reduced ? 0 : parseFloat(el.dataset.delay || 0);
-    function seg(dd, w, t, du, cls){ return '<path class="bl-s" pathLength="1" d="' + dd + '" stroke-width="' + w + '" style="--t:' + (d0 + t * sp).toFixed(2) + 's;--d:' + (du * sp).toFixed(2) + 's"/>'; }
-    var m = STROKES.map(function(s){ return seg(s[0], s[1], s[2], s[3]); }).join('');
-    var m2 = '<circle class="bl-dot" cx="' + DOT[0] + '" cy="' + DOT[1] + '" r="' + DOT[2] + '" style="--t:' + (d0 + DOT[3] * sp).toFixed(2) + 's;--d:' + (DOT[4] * sp).toFixed(2) + 's"/>' +
-      seg(LINE[0], LINE[1], LINE[2], LINE[3]);
-    el.innerHTML = '<svg viewBox="0 0 640 329" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>' +
-      '<filter id="' + id + 'f" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="14"/></filter>' +
-      '<mask id="' + id + 'm" maskUnits="userSpaceOnUse" x="-20" y="-20" width="680" height="370"><g filter="url(#' + id + 'f)">' + m + '</g></mask>' +
-      '<mask id="' + id + 'o" maskUnits="userSpaceOnUse" x="-20" y="-20" width="680" height="370"><g filter="url(#' + id + 'f)">' + m2 + '</g></mask></defs>' +
-      '<image href="img/logo-prm-cream.webp" width="640" height="329" mask="url(#' + id + 'm)"/>' +
-      '<image href="img/logo-prm-orange.webp" width="640" height="329" mask="url(#' + id + 'o)"/></svg>';
-    if (el.dataset.hover){
-      var a = el.closest('a') || el;
-      a.addEventListener('mouseenter', function(){
-        if (reduced || el._busy) return; el._busy = true;
-        el.dataset.delay = 0; build(el); setTimeout(function(){ el._busy = false; }, 2000);
-      });
-      el.dataset.hover = '';
+  var DOT = [322, 215, 27, 2.28, 0.40];
+  var LINE = ['M112,324 C200,282 330,256 452,256 C500,256 530,262 552,266', 58, 2.50, 0.55];
+  var BURST = [[636,20,652,4],[642,40,664,36],[638,60,654,72]], BURST_T = 3.05;
+  function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function back(t){ var c = 1.9; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); }
+  function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function el(tag, at, parent){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; }
+
+  function build(host){
+    var id = 'bl' + (n++), sp = parseFloat(host.dataset.speed || 1), d0 = reduced ? 0 : parseFloat(host.dataset.delay || 0);
+    var keepBurst = host.dataset.burst !== 'flash';
+    host.innerHTML = '';
+    var svg = el('svg', { viewBox: '-14 -24 690 360', 'aria-hidden': 'true' });
+    var defs = el('defs', {}, svg);
+    var f = el('filter', { id: id + 'r', x: '-10%', y: '-10%', width: '120%', height: '120%' }, defs);
+    el('feTurbulence', { type: 'fractalNoise', baseFrequency: '.75', numOctaves: '2', seed: '7' }, f);
+    el('feDisplacementMap', { 'in': 'SourceGraphic', scale: '14' }, f);
+    var g = el('filter', { id: id + 'g', x: '-100%', y: '-100%', width: '300%', height: '300%' }, defs);
+    el('feGaussianBlur', { stdDeviation: '7' }, g);
+    var mc = el('mask', { id: id + 'm', maskUnits: 'userSpaceOnUse', x: '-20', y: '-30', width: '700', height: '380' }, defs);
+    var mo = el('mask', { id: id + 'o', maskUnits: 'userSpaceOnUse', x: '-20', y: '-30', width: '700', height: '380' }, defs);
+    var ml = el('mask', { id: id + 'l', maskUnits: 'userSpaceOnUse', x: '-20', y: '-30', width: '700', height: '380' }, defs);
+    el('image', { href: 'img/logo-prm-cream.webp', width: 640, height: 329 }, ml);
+    var gc = el('g', { filter: 'url(#' + id + 'r)' }, mc), go = el('g', { filter: 'url(#' + id + 'r)' }, mo);
+
+    // glow behind finished logo
+    var halo = el('ellipse', { cx: 320, cy: 170, rx: 340, ry: 190, fill: '#f08a35', opacity: 0, filter: 'url(#' + id + 'g)' }, svg);
+    halo.style.filter = 'blur(40px)';
+    el('image', { href: 'img/logo-prm-cream.webp', width: 640, height: 329, mask: 'url(#' + id + 'm)' }, svg);
+    el('image', { href: 'img/logo-prm-orange.webp', width: 640, height: 329, mask: 'url(#' + id + 'o)' }, svg);
+    var comets = el('g', { mask: 'url(#' + id + 'l)' }, svg);
+    var sparks = el('g', {}, svg);
+    var head = el('g', { opacity: 0 }, svg);
+    el('circle', { r: 26, fill: '#f08a35', opacity: .75, filter: 'url(#' + id + 'g)' }, head);
+    el('circle', { r: 9, fill: '#ffe2bd' }, head);
+    var burst = el('g', { stroke: '#f08a35', 'stroke-width': 7, 'stroke-linecap': 'round' }, svg);
+    var bl = BURST.map(function(b){ return el('line', { x1: b[0], y1: b[1], x2: b[0], y2: b[1] }, burst); });
+    burst.setAttribute('opacity', 0);
+
+    var parts = [];
+    function stroke(def, cometOn){
+      var m = el('path', { d: def[0], 'stroke-width': def[1], pathLength: 1, fill: 'none', stroke: '#fff', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1 }, def.target);
+      var c = cometOn ? el('path', { d: def[0], 'stroke-width': def[1] * 1.1, pathLength: 1, fill: 'none', stroke: '#f08a35', 'stroke-linecap': 'round', 'stroke-dasharray': '0.22 3', 'stroke-dashoffset': 0.22, opacity: 0 }, comets) : null;
+      parts.push({ m: m, c: c, t: d0 + def[2] * sp, d: def[3] * sp, len: m.getTotalLength ? 0 : 0 });
     }
+    STROKES.forEach(function(s){ s.target = gc; stroke(s, true); });
+    LINE.target = go; stroke(LINE, false);
+    var dot = el('circle', { cx: DOT[0], cy: DOT[1], r: DOT[2], fill: '#fff' }, go);
+    host.appendChild(svg);
+    parts.forEach(function(p){ p.len = p.m.getTotalLength(); });
+
+    if (reduced){
+      parts.forEach(function(p){ p.m.setAttribute('stroke-dashoffset', 0); });
+      if (keepBurst){ burst.setAttribute('opacity', 1); bl.forEach(function(l, i){ l.setAttribute('x2', BURST[i][2]); l.setAttribute('y2', BURST[i][3]); }); }
+      return;
+    }
+    dot.setAttribute('r', 0);
+    var t0 = performance.now(), end = d0 + (BURST_T + .9) * sp + .6, flicker = 0;
+    function spawn(x, y){
+      if (Math.random() > .75) return;
+      var a = Math.random() * Math.PI * 2, v = 30 + Math.random() * 90;
+      var c = el('circle', { cx: x, cy: y, r: 1.5 + Math.random() * 2.5, fill: Math.random() > .5 ? '#ffb26b' : '#f08a35' }, sparks);
+      parts.length && sparkList.push({ c: c, x: x, y: y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 20, life: 0, max: .35 + Math.random() * .35 });
+    }
+    var sparkList = [], last = t0;
+    function frame(now){
+      var t = (now - t0) / 1000, dt = Math.min(.05, (now - last) / 1000); last = now;
+      var active = null;
+      parts.forEach(function(p){
+        var k = clamp((t - p.t) / p.d), e = ease(k);
+        p.m.setAttribute('stroke-dashoffset', 1 - e);
+        if (p.c){ p.c.setAttribute('stroke-dashoffset', 0.22 - e); p.c.setAttribute('opacity', k > 0 && k < 1 ? 1 : (k >= 1 ? Math.max(0, 1 - (t - p.t - p.d) / .35) : 0)); }
+        if (k > 0 && k < 1) active = p.m.getPointAtLength(e * p.len);
+      });
+      // dot pop
+      var kd = clamp((t - d0 - DOT[3] * sp) / (DOT[4] * sp));
+      dot.setAttribute('r', DOT[2] * (kd > 0 ? back(kd) : 0));
+      if (kd > 0 && kd < .35 && !active) active = { x: DOT[0], y: DOT[1] };
+      // head
+      if (active){ head.setAttribute('opacity', 1); head.setAttribute('transform', 'translate(' + active.x + ',' + active.y + ')'); spawn(active.x, active.y); spawn(active.x, active.y); }
+      else head.setAttribute('opacity', 0);
+      // sparks
+      sparkList = sparkList.filter(function(s){
+        s.life += dt; if (s.life > s.max){ s.c.remove(); return false; }
+        s.vy += 160 * dt; s.x += s.vx * dt; s.y += s.vy * dt;
+        s.c.setAttribute('cx', s.x); s.c.setAttribute('cy', s.y); s.c.setAttribute('opacity', 1 - s.life / s.max); return true;
+      });
+      // burst lines
+      var kb = clamp((t - d0 - BURST_T * sp) / (.35 * sp)), eb = back(kb);
+      bl.forEach(function(l, i){ var b = BURST[i]; l.setAttribute('x2', b[0] + (b[2] - b[0]) * eb); l.setAttribute('y2', b[1] + (b[3] - b[1]) * eb); });
+      if (kb > 0 && keepBurst) burst.setAttribute('opacity', 1);
+      if (!keepBurst && kb > 0) burst.setAttribute('opacity', 1 - clamp((t - d0 - (BURST_T + .6) * sp) / .4));
+      if (kb > 0 && kb < .2){ BURST.forEach(function(b){ spawn(b[2], b[3]); }); }
+      // halo
+      var kh = clamp((t - d0 - (BURST_T - .2) * sp) / .5);
+      halo.setAttribute('opacity', (kh < 1 ? kh : Math.max(0, 1 - (t - d0 - (BURST_T + .3) * sp) / 1.2)) * .35);
+      if (t < end || sparkList.length) requestAnimationFrame(frame);
+      else halo.setAttribute('opacity', 0);
+    }
+    requestAnimationFrame(frame);
   }
-  document.querySelectorAll('.brushlogo').forEach(build);
+  document.querySelectorAll('.brushlogo').forEach(function(h){
+    build(h);
+    if (h.dataset.hover){
+      var a = h.closest('a') || h, busy = false;
+      a.addEventListener('mouseenter', function(){ if (reduced || busy) return; busy = true; h.dataset.delay = 0; build(h); setTimeout(function(){ busy = false; }, 2600); });
+    }
+  });
 })();
 </script>
 </body>
