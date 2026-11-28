@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitekind App — UX/UI Case Study · Praveen M</title>
+<meta name="description" content="Bitekind snack ordering app: UX/UI case study by Praveen M. Problem, users, flow, information architecture, 14 annotated screens, UI kit, states and accessibility.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0B3D00;--lime:#C7F000;--orange:#FF6A00;--cream:#FFF6E0;--mint:#E9F5C7;--leaf:#F4FAE6;--ink:#24301c;--muted:#5b5148;--line:rgba(11,61,0,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--leaf);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(1200px,92vw);margin:0 auto}
+h1,h2,h3,h4{font-family:"Baloo 2",system-ui,sans-serif;color:var(--forest);line-height:1.05}
+.eyebrow{font-weight:800;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:.7rem}
+.h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800;margin-bottom:1rem}
+.h3{font-size:clamp(1.3rem,2.1vw,1.7rem);font-weight:800;margin:3rem 0 .5rem}
+.lead{font-size:1.1rem;max-width:64ch;color:var(--muted)}
+.note{color:var(--muted);max-width:70ch;margin-bottom:1.3rem}
+.pad{padding:6rem 0}
+.white{background:#fff}.mint{background:var(--mint)}.cream{background:var(--cream)}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:1.6rem}
+.g{display:grid;gap:1.1rem}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.zoom{cursor:zoom-in}
+/* bar */
+.bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:1rem;padding:.7rem 4vw;background:rgba(244,250,230,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.back{font-weight:800;text-decoration:none;color:var(--forest);padding:.45rem .9rem;border-radius:999px;background:#fff;border:1px solid var(--line);white-space:nowrap}
+.back:hover{background:var(--lime)}
+.bar nav{display:flex;gap:.3rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{font-weight:700;font-size:.86rem;text-decoration:none;padding:.42rem .8rem;border-radius:999px;white-space:nowrap;color:var(--forest)}
+.bar nav a.on{background:var(--forest);color:#fff}
+/* hero */
+.hero{padding:8rem 0 5rem;background:linear-gradient(180deg,#fff 0%,var(--leaf) 100%);overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5rem);font-weight:800}
+.hero h1 span{background:var(--lime);padding:0 .18em;border-radius:.2em}
+.trio{position:relative;height:560px}
+.trio .phone{position:absolute;width:250px}
+.trio .p1{left:2%;top:60px;transform:rotate(-7deg)}
+.trio .p2{left:50%;top:0;transform:translateX(-50%);z-index:2;width:270px}
+.trio .p3{right:2%;top:60px;transform:rotate(7deg)}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.meta div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:.8rem 1rem;font-size:.88rem}
+.meta b{display:block;font-family:"Baloo 2";color:var(--forest);font-size:1rem}
+.honest{margin-top:1.2rem;font-size:.85rem;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:14px;padding:.7rem 1rem;max-width:62ch}
+/* phone */
+.phone{border-radius:36px;padding:8px;background:#151a12;box-shadow:0 30px 60px -28px rgba(11,61,0,.55)}
+.phone img{border-radius:29px;width:100%}
+/* lists */
+.ticks{list-style:none;display:grid;gap:.55rem}
+.ticks li{padding-left:1.7rem;position:relative}
+.ticks li:before{content:"";position:absolute;left:0;top:.42em;width:1rem;height:1rem;border-radius:50%;background:var(--lime);box-shadow:inset 0 0 0 4px #fff,0 0 0 1px var(--forest)}
+.num{font-family:"Baloo 2";font-size:2.6rem;font-weight:800;color:var(--forest);line-height:1}
+.tag{display:inline-block;font-weight:800;font-size:.72rem;padding:.22rem .65rem;border-radius:999px;background:var(--mint);color:var(--forest);margin:0 .3rem .35rem 0}
+/* personas */
+.persona{display:flex;flex-direction:column;gap:.7rem}
+.persona .av{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 1.3rem "Baloo 2";color:var(--forest)}
+.persona h4{font-size:1.35rem}
+.persona .q{font-style:italic;color:var(--forest);font-weight:700}
+.persona dt{font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-top:.4rem}
+.persona dd{font-size:.92rem;color:var(--muted)}
+/* IA */
+.ia{display:flex;flex-direction:column;align-items:center;gap:0}
+.ia .root{background:var(--forest);color:#fff;font:800 1.05rem "Baloo 2";padding:.6rem 1.4rem;border-radius:14px}
+.ia .stem{width:2px;height:26px;background:var(--forest)}
+.ia .row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;width:100%;position:relative;padding-top:26px}
+.ia .row:before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:var(--forest)}
+.ia .col{position:relative;display:flex;flex-direction:column;gap:.5rem;align-items:stretch}
+.ia .col:before{content:"";position:absolute;top:-26px;left:50%;width:2px;height:26px;background:var(--forest)}
+.ia .tab{background:var(--lime);color:var(--forest);font:800 1rem "Baloo 2";padding:.55rem;border-radius:12px;text-align:center}
+.ia .leaf{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.42rem .7rem;font-size:.86rem;font-weight:700;text-align:center}
+.ia .pre{display:flex;gap:.6rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap}
+.ia .pre span{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:.4rem .8rem;font-weight:700;font-size:.86rem}
+/* screens */
+.chapter{margin-top:4.5rem}
+.chapter:first-of-type{margin-top:2rem}
+.chap-h{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--forest);padding-bottom:.7rem;margin-bottom:2rem}
+.chap-h h3{margin:0;font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.chap-h span{font-weight:800;color:var(--orange);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
+.scr{display:grid;grid-template-columns:260px 1fr;gap:1.8rem;align-items:start;background:#fff;border:1px solid var(--line);border-radius:28px;padding:1.4rem;margin-bottom:1.2rem}
+.scr h4{font-size:1.5rem;margin-bottom:.3rem}
+.scr .why{color:var(--muted);margin-bottom:1rem}
+.scr ol{list-style:none;counter-reset:n;display:grid;gap:.7rem}
+.scr ol li{counter-increment:n;position:relative;padding-left:2.4rem;font-size:.95rem}
+.scr ol li:before{content:counter(n);position:absolute;left:0;top:-.05em;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--forest);color:#fff;font:800 .85rem/1.7rem "Baloo 2";text-align:center}
+.scr ol li b{color:var(--forest)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.pair .scr{grid-template-columns:210px 1fr;margin:0}
+/* tokens */
+.tok{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem}
+.tok div{border-radius:16px;padding:.8rem;min-height:110px;display:flex;flex-direction:column;justify-content:flex-end;font-size:.78rem;border:1px solid var(--line)}
+.tok b{font-family:"Baloo 2";font-size:1rem}
+.space{display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.space div{display:flex;flex-direction:column;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700}
+.space i{display:block;background:var(--lime);border:1px solid var(--forest);border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th,td{text-align:left;padding:.7rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+td b{color:var(--forest)}
+.end{background:var(--forest);color:#fff;text-align:center;padding:6.5rem 0}
+.end h2{color:#fff;font-size:clamp(2.2rem,5.5vw,4.2rem)}
+.end h2 span{color:var(--lime)}
+.end .btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.end a{background:var(--lime);color:var(--forest);font-weight:800;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none}
+.end a.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,6,.94);display:none;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:86vh;border-radius:12px;object-fit:contain;background:#fff}
+.lb p{position:absolute;bottom:2.2vh;left:0;right:0;text-align:center;color:#fff;font-weight:700}
+.lb button{position:absolute;top:1.2rem;right:1.4rem;background:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+.lb .nav{top:50%;transform:translateY(-50%)}.lb .prev{left:1.4rem;right:auto}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:980px){
+ .hero .grid,.pair{grid-template-columns:1fr}
+ .g3,.g4{grid-template-columns:repeat(2,1fr)}
+ .tok{grid-template-columns:repeat(3,1fr)}
+ .meta{grid-template-columns:repeat(2,1fr)}
+ .trio{height:470px}.trio .phone{width:200px}.trio .p2{width:220px}
+}
+@media (max-width:640px){
+ .g2,.g3,.g4{grid-template-columns:1fr}
+ .scr,.pair .scr{grid-template-columns:1fr}.scr .phone{max-width:240px;margin:0 auto}
+ .ia .row{grid-template-columns:repeat(2,1fr);row-gap:2rem}.ia .row:before{display:none}.ia .col:before{display:none}
+ .trio{height:380px}.trio .phone{width:150px}.trio .p2{width:170px}
+ .pad{padding:4.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="back" href="../../#projects">← Projects</a>
+  <nav id="nav">
+    <a href="#problem">Problem</a><a href="#users">Users</a><a href="#principles">Principles</a><a href="#ia">Structure</a><a href="#flow">Flow</a><a href="#screens">Screens</a><a href="#system">UI kit</a><a href="#states">States</a><a href="#a11y">Accessibility</a><a href="#next">Next</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">UX/UI case study · Mobile app</p>
+      <h1>Snacks at the door, <span>one tap</span> away.</h1>
+      <p class="lead" style="margin-top:1.2rem">The Bitekind app lets people re-order healthy roasted snacks in under a minute. I designed it end to end: problem framing, users, structure, user flow, 14 screens, a UI kit and every error state.</p>
+      <div class="meta">
+        <div><b>Role</b>UX/UI designer, solo</div>
+        <div><b>Platform</b>iOS &amp; Android</div>
+        <div><b>Scope</b>14 screens + UI kit</div>
+        <div><b>Year</b>2026</div>
+      </div>
+      <p class="honest">Bitekind is a concept brand made for my portfolio. The users and research below are assumptions I designed from, not results from real customers.</p>
+    </div>
+    <div class="trio rv">
+      <div class="phone p1"><img class="zoom" src="../bitekind/assets/cs/app-onboarding.webp" alt="Onboarding screen" data-cap="Onboarding"></div>
+      <div class="phone p2"><img class="zoom" src="../bitekind/assets/cs/app-home.webp" alt="Home screen" data-cap="Home"></div>
+      <div class="phone p3"><img class="zoom" src="../bitekind/assets/cs/app-product.webp" alt="Product screen" data-cap="Product"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="pad white" id="problem">
+  <div class="wrap">
+    <p class="eyebrow rv">01 · The problem</p>
+    <h2 class="h2 rv">Healthy snacking loses to the nearest packet of chips.</h2>
+    <div class="g g2 rv" style="margin-top:2rem">
+      <div class="card">
+        <h3 style="margin:0 0 .8rem">What gets in the way</h3>
+        <ul class="ticks">
+          <li><b>Hunger is sudden.</b> The 4 pm craving doesn't wait for a long checkout.</li>
+          <li><b>Labels are hard to read.</b> People can't quickly tell what is roasted, high protein or gluten-free.</li>
+          <li><b>Big apps bury small brands.</b> Healthy snacks sit between a thousand other products.</li>
+          <li><b>Re-ordering is a chore.</b> People buy the same few snacks but search for them every time.</li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--forest);color:#fff">
+        <h3 style="margin:0 0 .8rem;color:var(--lime)">Design goals</h3>
+        <ul class="ticks" style="color:#fff">
+          <li>From open to paid in <b style="color:var(--lime)">under 60 seconds</b> for a returning snacker.</li>
+          <li>Find a snack <b style="color:var(--lime)">by need</b> (protein, breakfast, gluten-free), not just by name.</li>
+          <li>Show what's inside in <b style="color:var(--lime)">plain words</b> on every card.</li>
+          <li>Make errors feel <b style="color:var(--lime)">friendly, never broken</b>, with BITY to help.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="h3 rv">How I worked</h3>
+    <div class="g g4 rv">
+      <div class="card"><div class="num">01</div><h4 style="margin:.4rem 0">Frame</h4><p class="note" style="margin:0">Wrote the problem, goals and three proto-personas.</p></div>
+      <div class="card"><div class="num">02</div><h4 style="margin:.4rem 0">Structure</h4><p class="note" style="margin:0">Mapped the app into 4 tabs and drew the full user flow with error paths.</p></div>
+      <div class="card"><div class="num">03</div><h4 style="margin:.4rem 0">Design</h4><p class="note" style="margin:0">Built the UI kit from the brand, then all 14 screens on top of it.</p></div>
+      <div class="card"><div class="num">04</div><h4 style="margin:.4rem 0">Stress-test</h4><p class="note" style="margin:0">Designed empty, offline and failed-payment states and checked accessibility.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- USERS -->
+<section class="pad" id="users">
+  <div class="wrap">
+    <p class="eyebrow rv">02 · Who it's for</p>
+    <h2 class="h2 rv">Three snackers I designed for.</h2>
+    <p class="lead rv">Proto-personas based on who buys healthy packaged snacks in Indian cities. Each one shaped a part of the app.</p>
+    <div class="g g3 rv" style="margin-top:2rem">
+      <div class="card persona">
+        <div class="av" style="background:var(--lime)">AR</div>
+        <h4>Aarav, 27</h4><span class="tag">Office worker · Bengaluru</span>
+        <p class="q">"At 4 pm I just want something crunchy that won't make me feel bad."</p>
+        <dl><dt>Needs</dt><dd>Fast re-order, snacks for his desk, UPI payment.</dd>
+        <dt>Shaped</dt><dd>Phone + OTP login, home bestseller banner, one-tap add.</dd></dl>
+      </div>
+      <div class="card persona">
+        <div class="av" style="background:#FFE3CC">MS</div>
+        <h4>Meera, 34</h4><span class="tag">Working parent · Pune</span>
+        <p class="q">"I read every label. I need to know it's roasted and has no preservatives."</p>
+        <dl><dt>Needs</dt><dd>Clear ingredients, breakfast options, family packs.</dd>
+        <dt>Shaped</dt><dd>"Good for" filters, Nutrition and Ingredients tabs, pack of 3 and 6.</dd></dl>
+      </div>
+      <div class="card persona">
+        <div class="av" style="background:#DDEFFC">KN</div>
+        <h4>Karthik, 22</h4><span class="tag">Student, gym-goer · Chennai</span>
+        <p class="q">"High protein, cheap, and I want to know when it arrives."</p>
+        <dl><dt>Needs</dt><dd>Protein search, price filters, live tracking, offers.</dd>
+        <dt>Shaped</dt><dd>Search suggestions, price chips, order tracking, crunch points.</dd></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="pad white" id="principles">
+  <div class="wrap">
+    <p class="eyebrow rv">03 · Design principles</p>
+    <h2 class="h2 rv">Four rules behind every screen.</h2>
+    <div class="g g2 rv" style="margin-top:2rem">
+      <div class="card"><span class="tag">Speed</span><h3 style="margin:.3rem 0 .5rem">Fewer taps, not fewer features</h3><p class="note" style="margin:0">Add to cart sits on every card. Checkout fits address, delivery and payment on one page instead of three steps.</p></div>
+      <div class="card"><span class="tag">Clarity</span><h3 style="margin:.3rem 0 .5rem">Say what's inside, plainly</h3><p class="note" style="margin:0">Every card shows the snack type and weight. Product pages lead with "Roasted, not fried", "High protein" and "Gluten-free" chips.</p></div>
+      <div class="card"><span class="tag">Colour as a map</span><h3 style="margin:.3rem 0 .5rem">Each snack owns a tint</h3><p class="note" style="margin:0">The same flavour colour from the pouch sits behind its photo in the app, so people learn the range by colour.</p></div>
+      <div class="card"><span class="tag">Personality</span><h3 style="margin:.3rem 0 .5rem">BITY shows up when it helps</h3><p class="note" style="margin:0">The mascot greets, celebrates and explains errors, but stays out of the way while people shop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- IA -->
+<section class="pad mint" id="ia">
+  <div class="wrap">
+    <p class="eyebrow rv">04 · Information architecture</p>
+    <h2 class="h2 rv">Four tabs. Nothing more than one level deep.</h2>
+    <p class="lead rv" style="margin-bottom:2.4rem">A short entry path, then a bottom bar with Home, Search, Orders and Profile. Cart and checkout open on top of any tab so people never lose their place.</p>
+    <div class="card rv">
+      <div class="ia">
+        <div class="pre"><span>Splash</span><span>→</span><span>Onboarding (3 slides)</span><span>→</span><span>Login</span><span>→</span><span>OTP</span></div>
+        <div class="root">Bitekind app</div><div class="stem"></div>
+        <div class="row">
+          <div class="col"><div class="tab">Home</div><div class="leaf">Bestseller banner</div><div class="leaf">Snacks you'll love</div><div class="leaf">Product page</div><div class="leaf">Cart → Checkout</div></div>
+          <div class="col"><div class="tab">Search</div><div class="leaf">Suggestions</div><div class="leaf">Results</div><div class="leaf">Filter &amp; sort sheet</div><div class="leaf">Empty results</div></div>
+          <div class="col"><div class="tab">Orders</div><div class="leaf">Active · Past</div><div class="leaf">Order tracking</div><div class="leaf">Re-order</div></div>
+          <div class="col"><div class="tab">Profile</div><div class="leaf">Addresses</div><div class="leaf">Favourites</div><div class="leaf">Payments</div><div class="leaf">Notifications</div><div class="leaf">Help</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="pad white" id="flow">
+  <div class="wrap">
+    <p class="eyebrow rv">05 · User flow</p>
+    <h2 class="h2 rv">From first open to snacks at the door.</h2>
+    <p class="lead rv" style="margin-bottom:2rem">The main path runs left to right. Side paths cover search and filters, and a failed payment loops back to checkout without losing the cart.</p>
+    <img class="zoom card rv" style="padding:0" src="../bitekind/assets/cs/app-flow.webp" alt="App user flow" data-cap="App user flow">
+  </div>
+</section>
+
+<!-- SCREENS -->
+<section class="pad" id="screens">
+  <div class="wrap">
+    <p class="eyebrow rv">06 · Screens</p>
+    <h2 class="h2 rv">All 14 screens, and why each part is there.</h2>
+    <p class="lead rv">Grouped by the four moments of the journey. Numbers match the notes. Click any screen to see it large.</p>
+    <div id="chapters"></div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="pad white" id="system">
+  <div class="wrap">
+    <p class="eyebrow rv">07 · UI kit</p>
+    <h2 class="h2 rv">Built from parts, so every screen matches.</h2>
+    <p class="lead rv" style="margin-bottom:2rem">The kit turns the brand guidelines into app parts: colour roles, a type scale, buttons, inputs, chips, cards, icons and the bottom bar.</p>
+    <img class="zoom card rv" style="padding:0" src="../bitekind/assets/cs/app-uikit.webp" alt="App UI kit" data-cap="App UI kit">
+    <h3 class="h3 rv">Colour roles</h3>
+    <div class="tok rv">
+      <div style="background:#0B3D00;color:#fff"><b>Forest</b>Text, primary buttons</div>
+      <div style="background:#C7F000"><b>Lime</b>Highlights, active tab</div>
+      <div style="background:#FF6A00;color:#fff"><b>Orange</b>Badges, counts</div>
+      <div style="background:#E9F5C7"><b>Mint</b>Panels, banners</div>
+      <div style="background:#F4FAE6"><b>Leaf</b>Input fields</div>
+      <div style="background:#fff"><b>White</b>Screens, cards</div>
+    </div>
+    <div class="g g2 rv" style="margin-top:1.2rem">
+      <div class="card">
+        <h4 style="font-size:1.2rem;margin-bottom:.8rem">Type scale</h4>
+        <table>
+          <tr><th>Use</th><th>Font</th><th>Size</th></tr>
+          <tr><td><b style="font:800 1.6rem 'Baloo 2'">Hi, snacker!</b></td><td>Baloo 2 · 800</td><td>32–36</td></tr>
+          <tr><td><b style="font:800 1.2rem 'Baloo 2'">Snacks you'll love</b></td><td>Baloo 2 · 800</td><td>22</td></tr>
+          <tr><td><b style="font:800 1rem Nunito">Add to cart</b></td><td>Nunito · 800</td><td>16</td></tr>
+          <tr><td>Air-roasted foxnuts</td><td>Nunito · 400</td><td>15</td></tr>
+          <tr><td style="font-size:.8rem;font-weight:700">Roasted foxnuts · 60 g</td><td>Nunito · 700</td><td>12.5</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h4 style="font-size:1.2rem;margin-bottom:.8rem">Spacing &amp; sizes</h4>
+        <p class="note">Everything snaps to an 8 px grid.</p>
+        <div class="space"><div><i style="width:8px;height:8px"></i>8</div><div><i style="width:16px;height:16px"></i>16</div><div><i style="width:24px;height:24px"></i>24</div><div><i style="width:32px;height:32px"></i>32</div><div><i style="width:48px;height:48px"></i>48</div></div>
+        <ul class="ticks" style="margin-top:1.3rem">
+          <li><b>44 px</b> minimum touch target</li>
+          <li><b>Pill</b> buttons; <b>16–24 px</b> card corners</li>
+          <li><b>2.2 px</b> stroke icons with round ends</li>
+          <li><b>20 px</b> side margins on every screen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATES -->
+<section class="pad cream" id="states">
+  <div class="wrap">
+    <p class="eyebrow rv">08 · States &amp; edge cases</p>
+    <h2 class="h2 rv">When things go wrong, BITY helps.</h2>
+    <p class="lead rv" style="margin-bottom:2rem">Each state says what happened, reassures, and gives one clear next step.</p>
+    <img class="zoom card rv" style="padding:0" src="../bitekind/assets/cs/app-states-crop.webp" alt="Empty cart, no internet and payment failed states" data-cap="States: empty cart, no internet, payment failed">
+    <div class="card rv" style="margin-top:1.2rem;overflow-x:auto">
+      <table>
+        <tr><th>State</th><th>What the user sees</th><th>Next step</th><th>Why</th></tr>
+        <tr><td><b>Empty cart</b></td><td>"BITY is getting hungry."</td><td>Browse snacks</td><td>Turns a dead end into a path back to the shop.</td></tr>
+        <tr><td><b>No internet</b></td><td>"Your connection took a snack break."</td><td>Try again</td><td>Blames the connection, not the user, and keeps the cart.</td></tr>
+        <tr><td><b>Payment failed</b></td><td>"No money was taken."</td><td>Retry payment · or cash on delivery</td><td>Answers the scariest question first, and offers a way out.</td></tr>
+        <tr><td><b>No search results</b></td><td>Suggestions to try instead</td><td>Tap a suggestion</td><td>Keeps people searching instead of leaving.</td></tr>
+        <tr><td><b>Wrong pincode</b></td><td>Red field with "Enter a 6-digit pincode"</td><td>Fix the field</td><td>Says exactly what's wrong, right where it is.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- A11Y -->
+<section class="pad white" id="a11y">
+  <div class="wrap">
+    <p class="eyebrow rv">09 · Accessibility</p>
+    <h2 class="h2 rv">Easy for everyone to use.</h2>
+    <div class="g g3 rv" style="margin-top:2rem">
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Contrast</h4><p class="note" style="margin:0">Body text is Forest on white or mint. Lime is only ever used behind Forest text, never as text on white.</p></div>
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Touch</h4><p class="note" style="margin:0">All buttons, chips and steppers are at least 44 px tall, with space between them so thumbs don't hit the wrong one.</p></div>
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Not colour alone</h4><p class="note" style="margin:0">Active tabs get a pill plus a label. Errors get red plus a message. Order status uses ticks, not only colour.</p></div>
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Labels always visible</h4><p class="note" style="margin:0">Bottom bar icons always have text under them, and form fields keep their label above the input.</p></div>
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Plain language</h4><p class="note" style="margin:0">Short sentences, no jargon. "No money was taken" instead of "Transaction declined".</p></div>
+      <div class="card"><h4 style="font-size:1.2rem;margin-bottom:.6rem">Readable type</h4><p class="note" style="margin:0">Body text never drops below 15 px, and small labels use bold weights to stay sharp.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="pad" id="next">
+  <div class="wrap">
+    <p class="eyebrow rv">10 · What's next</p>
+    <h2 class="h2 rv">How I'd test and grow it.</h2>
+    <div class="g g2 rv" style="margin-top:2rem">
+      <div class="card">
+        <h3 style="margin:0 0 .8rem">Usability test plan</h3>
+        <p class="note">5–6 people who buy packaged snacks online, on a clickable prototype.</p>
+        <ul class="ticks">
+          <li>"Order a high-protein snack under ₹150." Can they use search and filters?</li>
+          <li>"Buy a pack of 3 Makhana Pops." Do they find pack sizes?</li>
+          <li>"Your payment failed. What now?" Do they trust the retry?</li>
+          <li>Measure: task success, time to pay, and where they hesitate.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 .8rem">Ideas for version 2</h3>
+        <ul class="ticks">
+          <li><b>One-tap re-order</b> of the last basket from Home.</li>
+          <li><b>Snack subscription</b>: a monthly box with a skip button.</li>
+          <li><b>Snack-time reminders</b> people set themselves.</li>
+          <li><b>Kannada and Hindi</b> versions of the app.</li>
+        </ul>
+        <h3 style="margin:1.6rem 0 .6rem">What I learned</h3>
+        <p class="note" style="margin:0">A mascot earns its place in the moments people feel stuck. So I kept BITY out of the shopping screens and gave him the welcome, the celebration and the error states.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap">
+    <img src="../bitekind/assets/cs/logo-reverse.webp" alt="" style="width:240px;margin:0 auto 2rem">
+    <h2>Snack happy, <span>one tap away.</span></h2>
+    <div class="btns">
+      <a href="../bitekind/#brand">See the full Bitekind brand →</a>
+      <a class="ghost" href="../../#projects">← Back to all projects</a>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="close" aria-label="Close">×</button>
+  <button class="nav prev" aria-label="Previous">‹</button>
+  <button class="nav next" aria-label="Next">›</button>
+  <img alt=""><p></p>
+</div>
+
+<script>
+var A='../bitekind/assets/cs/app-';
+var CH=[
+ ['Get started','Moment 1',[
+  ['main','Splash','The first second sets the mood.',['<b>Logo on a lime circle</b> brings the pouch colours straight into the app.','<b>BITY waves hello</b> so the brand feels friendly from the start.','<b>"Tap to start"</b> and dots hint that onboarding is short.']],
+  ['onboarding','Onboarding','Three slides, each with one promise.',['<b>Skip</b> sits top-right for people who just want to shop.','<b>One headline, one line</b> of support: "Roasted, wholesome snacks. Never fried."','<b>Progress pill</b> shows where you are in the three slides.','<b>Big Next button</b> in thumb reach.']],
+  ['login','Login','Phone number first, because that\'s how India signs in.',['<b>+91 prefix</b> is fixed, so people only type their 10 digits.','<b>Get OTP</b> is the one strong button on the screen.','<b>Continue with Google</b> as a quieter second choice.','<b>Terms link</b> at the bottom, out of the way.']],
+  ['otp','OTP','Enter the code and go.',['<b>4 big boxes</b> that move to the next box as you type.','<b>Masked number</b> confirms where the code went.','<b>Resend timer</b> stops people tapping resend too early.','<b>Verify &amp; continue</b> pinned to the bottom.']]
+ ]],
+ ['Discover','Moment 2',[
+  ['home','Home','Everything you need above the fold.',['<b>Delivery pincode</b> at the top, so people know it ships to them.','<b>Cart badge</b> with a count, always one tap away.','<b>Search bar</b> with real examples: "makhana, nuts, chana".','<b>Bestseller banner</b> for people who don\'t know what to pick.','<b>Tinted cards</b> in each snack\'s colour, with weight, price and a + button.','<b>Bottom bar</b>: active tab gets a lime pill and keeps its label.']],
+  ['search','Search','Search by need, not just by name.',['<b>"Try" chips</b> suggest searches like protein or breakfast.','<b>Result count</b> confirms what you searched for.','<b>Rows show the need</b> they match ("high protein"), the weight and price.','<b>Filter button</b> sits next to the search field.']],
+  ['filters','Filter & sort','A bottom sheet, so the results stay in view.',['<b>Sort</b>: popular, price low to high, high to low, newest.','<b>"Good for" chips</b>: high protein, high fibre, gluten-free, no preservatives.','<b>Price chips</b> instead of a fiddly slider.','<b>Clear all</b> and <b>Show results</b> side by side.']]
+ ]],
+ ['Decide & buy','Moment 3',[
+  ['product','Product','Answer "is this good for me?" fast.',['<b>Big pack shot</b> on the snack\'s own tint, with a favourite heart.','<b>Claim chips</b>: Roasted not fried, High protein, Gluten-free.','<b>Pack choice</b>: 1, 3 or 6, with the weight under each.','<b>Quantity stepper</b> with 44 px buttons.','<b>Nutrition, Ingredients, Enjoy</b> tabs keep details tidy.','<b>Price and Add to cart</b> stay pinned at the bottom.']],
+  ['cart','Cart','Edit, save and add a little extra.',['<b>Free delivery bar</b> shows when you\'ve unlocked it.','<b>Each item</b> shows its pack and a stepper, with a clear ✕ to remove.','<b>"Add a little extra"</b> suggests a snack in one tap.','<b>Clear totals</b>: subtotal, delivery, total.','<b>Checkout</b> button always visible.']],
+  ['checkout','Checkout','Address, delivery and payment on one calm page.',['<b>Saved address</b> with a Change link instead of a long form.','<b>Delivery speed</b>: Standard free or Express ₹49.','<b>UPI first</b>: Google Pay, PhonePe, other UPI, then card and cash.','<b>"To pay" and Pay now</b> pinned at the bottom.']]
+ ]],
+ ['After the order','Moment 4',[
+  ['tracking','Order placed & tracking','Celebrate, then keep people informed.',['<b>BITY celebrates</b>: "Yay! Order placed."','<b>Arrival date</b> in plain words.','<b>4-step tracker</b>: placed, packed, out for delivery, delivered.','<b>"In this order"</b> summary, and Keep shopping.']],
+  ['orders','My orders','Track or re-order in one place.',['<b>Active and Past</b> tabs.','<b>Status badge</b> on every order, like "Out for delivery".','<b>Order card</b> shows items, total and payment method.','<b>Track order</b> button; the live one is filled lime.']],
+  ['notifications','Notifications','Only the updates worth reading.',['<b>Offer card</b> at the top, marked "sample offer".','<b>Grouped by day</b> with time stamps.','<b>Orange dot</b> marks unread; <b>Mark all read</b> clears them.','<b>BITY tips</b> add a bit of fun between order updates.']],
+  ['profile','Profile','Your account, rewards and settings.',['<b>Stats</b>: orders, favourites and crunch points.','<b>Refer a friend</b> banner with BITY.','<b>Simple list</b>: orders, addresses, favourites, payments, notifications, help.','<b>Log out</b> in red, away from the other items.']]
+ ]]
+];
+var h='';
+CH.forEach(function(c){
+  h+='<div class="chapter"><div class="chap-h rv"><span>'+c[1]+'</span><h3>'+c[0]+'</h3></div><div class="pair">';
+  c[2].forEach(function(s){
+    h+='<div class="scr rv"><div class="phone"><img class="zoom" loading="lazy" src="'+A+s[0]+'.webp" alt="'+s[1]+' screen" data-cap="'+s[1]+'"></div><div><h4>'+s[1]+'</h4><p class="why">'+s[2]+'</p><ol>'+s[3].map(function(t){return '<li>'+t+'</li>'}).join('')+'</ol></div></div>';
+  });
+  h+='</div></div>';
+});
+document.getElementById('chapters').innerHTML=h;
+
+var lb=document.getElementById('lb'),li=lb.querySelector('img'),lp=lb.querySelector('p'),list=[],cur=0;
+function openLB(i){cur=(i+list.length)%list.length;var im=list[cur];li.src=im.src;lp.textContent=im.dataset.cap||im.alt||'';lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('click',function(e){var t=e.target;
+  if(t.classList&&t.classList.contains('zoom')){list=[].slice.call(document.querySelectorAll('img.zoom'));openLB(list.indexOf(t));return}
+  if(!lb.classList.contains('open'))return;
+  if(t.classList.contains('next'))openLB(cur+1);else if(t.classList.contains('prev'))openLB(cur-1);else if(t!==li)closeLB()});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')openLB(cur+1);if(e.key==='ArrowLeft')openLB(cur-1)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var links=[].slice.call(document.querySelectorAll('#nav a'));
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('on',on);if(on)a.parentNode.scrollLeft=a.offsetLeft-40})}})},{rootMargin:'-45% 0px -50% 0px'});
+links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)so.observe(s)});
+</script>
+</body>
+</html>
