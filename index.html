@@ -299,7 +299,7 @@ section{position:relative}
 .zv.open{display:block}
 .zv .in{min-width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:56px 3vw}
 .zv img{max-width:100%;max-height:calc(100vh - 112px);object-fit:contain;display:block;border-radius:6px}
-.zv.big{cursor:zoom-out}.zv.big .in{padding:0;display:block}.zv.big img{max-width:none;max-height:none;border-radius:0}
+.zv.big{cursor:zoom-out}.zv.big .in{padding:0;display:block}.zv.big img{max-width:none;max-height:none;border-radius:0;margin:0 auto}
 .zv .zb{position:fixed;top:14px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:11px 15px;border-radius:999px;border:0;background:#fff;color:#111;cursor:pointer}
 .zv .zx{right:16px}.zv .zt{left:16px;pointer-events:none;background:rgba(255,255,255,.14);color:#fff}
 .zv .zp,.zv .zn{top:50%;transform:translateY(-50%);font-size:18px;padding:12px 16px}.zv .zp{left:16px}.zv .zn{right:16px}
@@ -721,7 +721,7 @@ html.no-gsap .monologue .w{opacity:1}
   </div>
   <div class="strip2" id="lbStrip"></div>
 </div>
-<div class="zv" id="zv" role="dialog" aria-modal="true" aria-label="Image detail view"><span class="zb zt" id="zvT">Click image to zoom · drag/scroll to explore</span><button class="zb zx" id="zvX" aria-label="Close detail view">✕ Close</button><button class="zb zp" id="zvP" aria-label="Previous">←</button><button class="zb zn" id="zvN" aria-label="Next">→</button><div class="in"><img id="zvI" alt=""></div></div>
+<div class="zv" id="zv" role="dialog" aria-modal="true" aria-label="Image detail view"><span class="zb zt" id="zvT">Click to fit screen width · scroll or drag to explore</span><button class="zb zx" id="zvX" aria-label="Close detail view">✕ Close</button><button class="zb zp" id="zvP" aria-label="Previous">←</button><button class="zb zn" id="zvN" aria-label="Next">→</button><div class="in"><img id="zvI" alt=""></div></div>
 <div class="toast" id="toast">Email copied. Talk soon!</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1027,7 +1027,7 @@ html.no-gsap .monologue .w{opacity:1}
     e.stopPropagation();
     if (zv.classList.contains('big')){ zv.classList.remove('big'); zi.style.width = ''; return; }
     var r = zi.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
-    var w = Math.max(zi.naturalWidth, r.width * 2.2);
+    var nat = zi.naturalWidth || r.width, vw = zv.clientWidth, w = Math.min(vw, nat); if (w < r.width * 1.3) w = Math.min(r.width * 2.2, Math.max(nat, r.width * 1.3));
     zv.classList.add('big'); zi.style.width = w + 'px';
     zv.scrollLeft = fx * w - innerWidth / 2; zv.scrollTop = fy * zi.offsetHeight - innerHeight / 2;
   });
